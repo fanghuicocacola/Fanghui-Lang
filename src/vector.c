@@ -59,6 +59,9 @@ void vec_realloc(struct IntVec* iv)
 	iv->data = new_place;
 	iv->length = iv->length * 2 + 1;
 }
-
+// Á´±í
+// ¶ÓÁÐ
+// Ê÷
+// Í¼
 /*
 */

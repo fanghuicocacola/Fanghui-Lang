@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 #include "lexer.h"
+#include "parser.h"
 #include "vector.h"
 // 第一步:
 //比如你的程序要处理这样一个表达式
@@ -21,14 +22,12 @@ void lexer() {
 	}
 }
 int main() {
-	struct IntVec vec = create_int_vec(1);
-	for (int i = 0; i < 1000; i++) {
-		ipush_back(&vec, i);
+	lexer();
+	printf("\n");
+	if (parser())
+	{
+		printf("分析成功");
 	}
-	for (int i = 0; i < 100; i++) {
-		printf("%d", visit_int_vec(vec, i));
-	}
-	ipop_back(&vec);
 	while (1);
 	return 0;
 }

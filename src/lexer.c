@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "lexer.h"
+int token_stream_pos = 0;
 void print_token(struct Token tok) {
 	switch (tok.token_type)
 	{
@@ -34,6 +35,11 @@ void print_token(struct Token tok) {
 		printf("<ERROR>");
 		break;
 	}
+}
+
+struct Token next_token()
+{
+	return token_stream[token_stream_pos++];
 }
 
 struct Token build_int_v(long long n) {

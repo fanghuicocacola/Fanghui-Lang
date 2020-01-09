@@ -1,7 +1,9 @@
 #pragma once
 #include <stdio.h>
 extern struct Token token_stream[100000];
+extern int token_stream_pos;
 void print_token(struct Token tok);
+struct Token next_token();
 struct Token build_int_v(long long n);
 struct Token build_real_v(long double s);
 struct Token build_op(enum Tag t);
