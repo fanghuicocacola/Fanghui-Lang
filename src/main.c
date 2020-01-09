@@ -21,8 +21,8 @@ void lexer() {
 	}
 }
 int main() {
-	struct IntVec vec = create_int_vec(1000);
-	for (int i = 0; i < 100; i++) {
+	struct IntVec vec = create_int_vec(1);
+	for (int i = 0; i < 1000; i++) {
 		ipush_back(&vec, i);
 	}
 	for (int i = 0; i < 100; i++) {
