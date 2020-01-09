@@ -28,6 +28,10 @@
 
 */
 #include "lexer.h"
+/*
+Interpreter: Lexer-> Parser -> Check -> Run
+Compiler: Lexer-> Parser -> Check -> bin
+*/
 enum NodeType {
 	BinOp,Factor
 };
