@@ -14,6 +14,8 @@ void build_token_stream(string str)
 step 1->一个单词一个单词的分拣出来
 <INTEGER: int_v:1> <PLUS> <INTEGER:int_v: 1> 
 */
+int scheme_code_index = 0;
+char scheme_code[10000];
 void lexer() {
 	input();
 	build_token_stream();
@@ -31,3 +33,7 @@ int main() {
 	while (1);
 	return 0;
 }
+/*
+factor-> 
+	Token -> 
+*/

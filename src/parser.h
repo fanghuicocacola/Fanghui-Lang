@@ -25,7 +25,6 @@
 	Tiger eat sheep
 	sheep eat sheep
 	sheep eat Tiger 
-
 */
 #include "lexer.h"
 /*
@@ -35,7 +34,7 @@ Compiler: Lexer-> Parser -> Check -> bin
 enum NodeType {
 	BinOp,Factor
 };
-int parser();
-int expr();
-int term();
-int factor();
+char* parser();
+char* expr();
+char* term();
+char* factor();
