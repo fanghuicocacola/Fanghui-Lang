@@ -2,11 +2,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<SDL_image.h>
+#include<stdbool.h>
+#define Window_height 888
+#define Window_width 666
+SDL_Rect rect;
+bool moveright = true;
+bool movedown = true;
+void updatepostion() {
+	if (moveright == true) {
+		rect.x++;
+		if (rect.x + rect.w>= Window_width)
+			moveright = false;
+	}
+	else
+	{
+		rect.x--;
+		if (rect.x <= 0) {
+			moveright = true;
+		}
+	}
+	if (movedown == true) {
+		rect.y++;
+		if (rect.y + rect.h>= Window_height)
+			movedown = false;
+	}
+	else
+	{
+		rect.y--;
+		if (rect.y <= 0) {
+			movedown = true;
+		}
+	}
+}
 
 int main(int argc, char* argv[]) {
 
-	/*SDL_Init(SDL_INIT_VIDEO);
-	// windows title , pos_x, pos_y, windows_size,windows mod.
+	SDL_Init(SDL_INIT_VIDEO);
+	/*// windows title , pos_x, pos_y, windows_size,windows mod.
 	SDL_Window* window = SDL_CreateWindow("你好房辉", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 		800, 600,
 		SDL_WINDOW_FULLSCREEN);//全屏拉伸
@@ -14,9 +46,6 @@ int main(int argc, char* argv[]) {
 	SDL_DestroyWindow(window);//销毁窗口
 	SDL_Quit();//退出
 	return 0;*/
-
-	SDL_Init(SDL_INIT_VIDEO);
-	// windows title , pos_x, pos_y, windows_size,windows mod.
 	/*SDL_Window* window = SDL_CreateWindow("Lana Del Ray", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 		782, 900,
 		SDL_WINDOW_SHOWN);
@@ -54,7 +83,7 @@ int main(int argc, char* argv[]) {
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 	return 0;*/
-	SDL_Window* window = SDL_CreateWindow("hello world",
+	/*SDL_Window* window = SDL_CreateWindow("hello world",
 		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 		800, 600, SDL_WINDOW_SHOWN);
 	SDL_Surface* surface = SDL_GetWindowSurface(window);
@@ -121,7 +150,44 @@ int main(int argc, char* argv[]) {
 	}
 	SDL_FreeSurface(surface);
 	SDL_DestroyWindow(window);
+	SDL_Quit();*/
+SDL_Window* window = SDL_CreateWindow("hello darkness", 100, 100,
+	Window_height,Window_width , SDL_WINDOW_SHOWN);
+SDL_Renderer* rend = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+SDL_RenderClear(rend);
+SDL_Surface* lanasurface = SDL_LoadBMP("sample.bmp");
+SDL_Texture* lana = SDL_CreateTextureFromSurface(rend, lanasurface);
+SDL_Surface* surface = SDL_GetWindowSurface(window);
+SDL_Event event;
+rect.x = 0;
+rect.y = 0;
+rect.h = lanasurface->h;
+rect.w = lanasurface->w;
+bool quit = false;
+while (quit == false)
+{
+	while (SDL_PollEvent(&event))
+	{
+		if (event.type == SDL_QUIT) {
+			quit = true;
+		}
+		/*else if (event.type == SDL_MOUSEMOTION)
+		{
+			rect.x = event.motion.x - rect.w / 2;
+			rect.y = event.motion.y - rect.h / 2;
+			SDL_RenderClear(rend);
+			SDL_RenderCopy(rend,lana,NULL,&rect);
+		}*/
+	}
+	updatepostion();
+	SDL_Delay(5);
+	SDL_RenderClear(rend);
+	SDL_RenderCopy(rend, lana, NULL, &rect);
+	SDL_RenderPresent(rend);
+}
+	SDL_DestroyWindow(window);
 	SDL_Quit();
+
 	return 0;
 }
 
