@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include<SDL_image.h>
 #include<stdbool.h>
-#define Window_height 888
-#define Window_width 666
+#define Window_height 800
+#define Window_width 600
 SDL_Rect rect;
 bool moveright = true;
 bool movedown = true;
@@ -38,6 +38,48 @@ void updatepostion() {
 int main(int argc, char* argv[]) {
 
 	SDL_Init(SDL_INIT_VIDEO);
+	SDL_Window* window = SDL_CreateWindow("never give up",
+		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+		Window_width, Window_height, SDL_WINDOW_SHOWN);
+	SDL_Renderer* rend = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	SDL_Surface* image = SDL_LoadBMP("hywj.bmp");
+	SDL_SetColorKey(image, SDL_TRUE, SDL_MapRGB(image->format, 6, 6, 6));
+	SDL_Texture*texture= SDL_CreateTextureFromSurface(rend, image);
+	int i;
+	int imgwidth = image->w;
+	int imgheight = image->h/5;
+	SDL_Rect postion ;
+	postion.x = 0;
+	postion.y = 0;
+	postion.w = imgwidth;
+	postion.h = imgheight;
+	SDL_Rect clips[5];
+	for (i = 0; i < 5; i++) {
+		clips[i].x = 0;
+		clips[i].y = i * imgheight;
+		clips[i].h = imgheight;
+		clips[i].w = imgwidth;
+
+		SDL_Event event;
+		bool quit = false;
+		while (quit == false) {
+			while (SDL_PollEvent(&event))
+			{
+				if (event.type == SDL_QUIT)
+					quit = true;
+			}
+		}
+		SDL_RenderClear(rend);
+		SDL_RenderCopy(rend, texture, &clips[i], &postion);
+		SDL_RenderPresent(rend);
+		
+		SDL_Delay(20);
+	}
+	SDL_DestroyWindow(window);
+	SDL_Quit();
+	return 0;
+
+	
 	/*// windows title , pos_x, pos_y, windows_size,windows mod.
 	SDL_Window* window = SDL_CreateWindow("ÄãºÃ·¿»Ô", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 		800, 600,
@@ -151,8 +193,8 @@ int main(int argc, char* argv[]) {
 	SDL_FreeSurface(surface);
 	SDL_DestroyWindow(window);
 	SDL_Quit();*/
-SDL_Window* window = SDL_CreateWindow("hello darkness", 100, 100,
-	Window_height,Window_width , SDL_WINDOW_SHOWN);
+    /*SDL_Window* window = SDL_CreateWindow("hello darkness", 100, 100,
+	Window_width,Window_height, SDL_WINDOW_SHOWN);
 SDL_Renderer* rend = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 SDL_RenderClear(rend);
 SDL_Surface* lanasurface = SDL_LoadBMP("sample.bmp");
@@ -161,8 +203,8 @@ SDL_Surface* surface = SDL_GetWindowSurface(window);
 SDL_Event event;
 rect.x = 0;
 rect.y = 0;
-rect.h = lanasurface->h;
-rect.w = lanasurface->w;
+rect.h = lanasurface->h/2;
+rect.w = lanasurface->w/2;
 bool quit = false;
 while (quit == false)
 {
@@ -171,13 +213,6 @@ while (quit == false)
 		if (event.type == SDL_QUIT) {
 			quit = true;
 		}
-		/*else if (event.type == SDL_MOUSEMOTION)
-		{
-			rect.x = event.motion.x - rect.w / 2;
-			rect.y = event.motion.y - rect.h / 2;
-			SDL_RenderClear(rend);
-			SDL_RenderCopy(rend,lana,NULL,&rect);
-		}*/
 	}
 	updatepostion();
 	SDL_Delay(5);
@@ -186,9 +221,9 @@ while (quit == false)
 	SDL_RenderPresent(rend);
 }
 	SDL_DestroyWindow(window);
-	SDL_Quit();
+	SDL_Quit();*/
 
-	return 0;
+	
 }
 
 
