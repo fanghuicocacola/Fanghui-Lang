@@ -54,14 +54,15 @@ int main(int argc, char* argv[]) {
 	postion.w = imgwidth;
 	postion.h = imgheight;
 	SDL_Rect clips[5];
-	for (i = 0; i < 5; i++) {
+	bool quit = false;
+	for (i = 0; i < 5; i++)
+	{
+		i = i % 5;
 		clips[i].x = 0;
 		clips[i].y = i * imgheight;
 		clips[i].h = imgheight;
 		clips[i].w = imgwidth;
-
 		SDL_Event event;
-		bool quit = false;
 		while (quit == false) {
 			while (SDL_PollEvent(&event))
 			{
@@ -69,15 +70,14 @@ int main(int argc, char* argv[]) {
 					quit = true;
 			}
 		}
+		SDL_Delay(100);
 		SDL_RenderClear(rend);
 		SDL_RenderCopy(rend, texture, &clips[i], &postion);
 		SDL_RenderPresent(rend);
-		
-		SDL_Delay(20);
 	}
-	SDL_DestroyWindow(window);
-	SDL_Quit();
-	return 0;
+		SDL_DestroyWindow(window);
+		SDL_Quit();
+		return 0;
 
 	
 	/*// windows title , pos_x, pos_y, windows_size,windows mod.
