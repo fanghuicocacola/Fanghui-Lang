@@ -36,8 +36,64 @@ void updatepostion() {
 }
 
 int main(int argc, char* argv[]) {
+	SDL_Init(SDL_INIT_EVERYTHING);
+	SDL_Window* window = SDL_CreateWindow("gula", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+		Window_width, Window_height,SDL_WINDOW_SHOWN);
+	SDL_Renderer* rend = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	SDL_Surface* surface = SDL_LoadBMP("sample.bmp");
+	SDL_Surface* black = SDL_LoadBMP("black.bmp");
+	SDL_Texture* image = SDL_CreateTextureFromSurface(rend, surface);
+	SDL_Texture* blackimage = SDL_CreateTextureFromSurface(rend,black);
+	SDL_SetTextureBlendMode(image, SDL_BLENDMODE_BLEND);
+	SDL_SetTextureBlendMode(blackimage, SDL_BLENDMODE_BLEND);
+	SDL_SetTextureAlphaMod(blackimage, 50);
+	rect.h = surface->h;
+	rect.w = surface->w;
+	rect.x = 0;
+	rect.y = 0;
+	SDL_Rect rectblack;
+	rectblack.x = 0;
+	rectblack.y = 0;
+	rectblack.w = Window_width;
+	rectblack.h = Window_height;
+	SDL_Event event;
+	bool desc = true;
+	int alpha = 255;
+	bool quit = false;
+	while (!quit) {
+		while (SDL_PollEvent(&event)) {
+			if (event.type == SDL_QUIT) {
+				quit = true;
+			}
+			else if (event.type == SDL_MOUSEMOTION) {
+				rect.x = event.motion.x - rect.w / 2;
+				rect.y = event.motion.y - rect.h / 2;
+			}
+		}
+		SDL_RenderClear(rend);
+		SDL_SetTextureAlphaMod(image, alpha);
+		SDL_RenderCopy(rend, image, NULL, &rect);
+		SDL_RenderPresent(rend);
+	/*	if (desc == true)
+		{
+			alpha--;
+			if (alpha == 0) {
+				desc = false;
+			}
+		}
+		else
+		{
+			alpha++;
+			if (alpha == 255) {
+				desc = true;
+			}
+		}*/
+		SDL_Delay(50);
+	}
+		SDL_DestroyWindow(window);
+		return 0;
 
-	SDL_Init(SDL_INIT_VIDEO);
+	/*SDL_Init(SDL_INIT_VIDEO);
 	SDL_Window* window = SDL_CreateWindow("never give up",
 		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 		Window_width, Window_height, SDL_WINDOW_SHOWN);
@@ -77,9 +133,7 @@ int main(int argc, char* argv[]) {
 	}
 		SDL_DestroyWindow(window);
 		SDL_Quit();
-		return 0;
-
-	
+		return 0;*/
 	/*// windows title , pos_x, pos_y, windows_size,windows mod.
 	SDL_Window* window = SDL_CreateWindow("ÄãºÃ·¿»Ô", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 		800, 600,
