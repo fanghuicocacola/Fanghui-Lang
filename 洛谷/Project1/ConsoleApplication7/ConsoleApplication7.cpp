@@ -1,35 +1,25 @@
-﻿#include<stdio.h>
-
-int main()
+﻿#include <stdio.h>
+int main(void)
 {
-    char a[14], c;
-    int h = 0, k = 0;
-    for (int i = 0; i < 11; i++)
+    char a[15], c[12] = "0123456789X"; 
+    gets_s(a); 
+    int i, j = 0, k = 0;
+    for (i = 0; i < 12; i++)
     {
-        a[i] = getchar();
-        if (a[i] != '-')
+        if (a[i] != '-') 
         {
-            k++;
-            h += k * (a[i] - '0');
+            j++;
+            k = k + (a[i] - '0') * j;
         }
     }
-    h %= 11;
-    if (h == 10) {
-        c = 'X';
-    }
-    else
+    if (c[k % 11] == a[12]) 
     {
-        c = h + '0';
+        printf("Right");
     }
-    if (c == a[12]) {
-        printf("right");
-    }
-    else
+    else 
     {
-        a[12] = c;
-    }
-    for (int i = 0; i < 12; i++) {
-        printf("%c",a[i]);
+        a[12] = c[k % 11];
+        puts(a);
     }
     return 0;
 }
