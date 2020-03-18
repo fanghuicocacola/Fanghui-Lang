@@ -13,7 +13,7 @@ int main()
 {
 	int i, num, n, t = 0, temp, Num;
 	scanf_s("%d%d", &Num, &num);
-	for (i = Num; i <= num; i++)
+	for (i = Num; i <= num && i <= 9989899; i++)
 	{
 		temp = i;
 		n = 0;
