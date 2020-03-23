@@ -1,5 +1,4 @@
-import math
-a, b, c = map(float, input().split())
-p = (a+b+c)/2
-s = math.sqrt(p*(p-a)*(p-b)*(p-c))
-print(p, s)
+import time
+for i in range(10, -1, -1):
+    print('\r', i, end=' ')
+    time.sleep(1)
