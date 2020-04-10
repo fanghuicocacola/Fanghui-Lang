@@ -1,0 +1,3 @@
+﻿  ConsoleApplication20.cpp
+C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication20\ConsoleApplication20\ConsoleApplication20.cpp(28): warning C4715: “f”: 不是所有的控件路径都返回值
+  ConsoleApplication20.vcxproj -> C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication20\Debug\ConsoleApplication20.exe
