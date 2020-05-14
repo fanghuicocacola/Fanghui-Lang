@@ -36,6 +36,9 @@
       <module name="Python Learner" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -99,6 +102,9 @@
       <module name="Python Learner" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -183,10 +189,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.study24" />
-        <item itemvalue="Python.study26" />
-        <item itemvalue="Python.27" />
-        <item itemvalue="Python.study25" />
         <item itemvalue="Python.excel xlwt1" />
+        <item itemvalue="Python.27" />
+        <item itemvalue="Python.study26" />
+        <item itemvalue="Python.study25" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +236,12 @@
       <workItem from="1589186484983" duration="2240000" />
       <workItem from="1589195605914" duration="555000" />
       <workItem from="1589273777737" duration="14115000" />
-      <workItem from="1589336911537" duration="36698000" />
+      <workItem from="1589336911537" duration="37538000" />
+      <workItem from="1589385521945" duration="13000" />
+      <workItem from="1589416604877" duration="24189000" />
+      <workItem from="1589451643359" duration="169000" />
+      <workItem from="1589452026624" duration="101000" />
+      <workItem from="1589452302738" duration="363000" />
     </task>
     <servers />
   </component>
@@ -246,22 +257,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="543" y="157" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589196070487" />
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1589384450735">
+    <state width="1493" height="224" key="GridCell.Tab.0.bottom" timestamp="1589452126659">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589384450735" />
-    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1589384450735">
+    <state width="1493" height="224" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589452126659" />
+    <state width="1493" height="224" key="GridCell.Tab.0.center" timestamp="1589452126659">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589384450735" />
-    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1589384450735">
+    <state width="1493" height="224" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589452126659" />
+    <state width="1493" height="224" key="GridCell.Tab.0.left" timestamp="1589452126659">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589384450735" />
-    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1589384450735">
+    <state width="1493" height="224" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589452126659" />
+    <state width="1493" height="224" key="GridCell.Tab.0.right" timestamp="1589452126659">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589384450735" />
+    <state width="1493" height="224" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589452126659" />
     <state width="1150" height="257" key="GridCell.Tab.1.bottom" timestamp="1586345331174">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -290,6 +301,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="371" y="95" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1588130811254" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589425428291">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589425428291" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Python_Learner$4_1_3.coverage" NAME="4.1.3 Coverage Results" MODIFIED="1585798621721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -303,7 +318,7 @@
     <SUITE FILE_PATH="coverage/Python_Learner$study18.coverage" NAME="study18 Coverage Results" MODIFIED="1588127885542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Learner$4_8_2.coverage" NAME="4.8.2 Coverage Results" MODIFIED="1586417046267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Learner$4_203__1_.coverage" NAME="4.203 (1) Coverage Results" MODIFIED="1587522316788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Python_Learner$study24.coverage" NAME="study24 Coverage Results" MODIFIED="1589384450719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_Learner$study24.coverage" NAME="study24 Coverage Results" MODIFIED="1589452034409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Learner$stduy12.coverage" NAME="stduy12 Coverage Results" MODIFIED="1587373822409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Learner$study15.coverage" NAME="study15 Coverage Results" MODIFIED="1587525450455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Learner$3_23_3.coverage" NAME="3.23.3 Coverage Results" MODIFIED="1584956035323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
