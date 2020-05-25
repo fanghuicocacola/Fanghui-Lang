@@ -2,6 +2,8 @@ str1 = '春天在哪里，在春风里'
 str2 = '春天在那里，春意盎然的地方'
 num = 0
 j = 0
+
+
 for i in str2:
     if i.isalnum():
         j += 1
