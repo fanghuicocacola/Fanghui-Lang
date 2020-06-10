@@ -1,0 +1,22 @@
+program main
+{
+    // only execute one of branch.
+    int i=std.input_int();
+    if(i==1)
+    {
+        std.cout('hey');
+    }
+    elif (i==2)
+    {
+        std.cout('2');
+    }
+    elif(i==3)
+    {
+        std.cout('2344');
+    }
+    else
+    {
+        std.cout('woshi shadiao');
+    }
+    std.sleep(100000);
+}

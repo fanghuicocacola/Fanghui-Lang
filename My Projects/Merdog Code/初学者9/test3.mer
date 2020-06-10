@@ -1,0 +1,16 @@
+program main 
+{
+    real a=std.input_real(),b=std.input_real(),c=std.input_real();
+    real delta=b*b-4*a*c;
+    if(delta<0)
+    {
+      std.cout('equation has no result');
+    }
+    else
+    {
+       real x1=(-b+sqrt(delta))/(2*a);
+	   real x2=(-b-sqrt(delta))/(2*a);
+	   std.cout(x1,'    ',x2);
+    }
+    std.sleep(10000000);
+}

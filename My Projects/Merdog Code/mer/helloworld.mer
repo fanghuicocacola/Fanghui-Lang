@@ -1,0 +1,11 @@
+program main
+{
+    // step 1 var statement symbol.
+    // step 2 var name
+    // step 3 assign a value to a var.
+    //
+        input_int();
+    */
+    int a=std.input_int(),b=std.input_int();
+    std.cout(a+b);
+}.

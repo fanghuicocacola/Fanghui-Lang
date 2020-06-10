@@ -1,0 +1,41 @@
+// if  
+/*
+    if(expr)
+    {
+        ...
+    }
+    expression
+    if will judge the result of the expr 
+    if expr is true;
+    then run ...
+    if (expr)
+    {
+        block1
+    }
+    else{
+        block2
+    }
+
+    while (expr)
+    {
+        ins;
+    }
+
+*/
+program main
+{
+    std.cout('hi');
+}.
+program fanghui
+{
+    // C
+    // get the sum from 1-100
+    int sum=0;
+    int i=0;
+    while (i<=100)
+    {
+        sum+=i;
+        i+=1;
+    }
+    std.cout(sum);
+}.

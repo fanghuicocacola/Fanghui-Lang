@@ -1,0 +1,20 @@
+program main
+{
+    // fanghui 1,huyuantao 2, liutianshu 3, no found
+    string name=std.input_string();
+    string a='lalla';
+    switch(name)
+    {
+        case 'fanghui':
+            std.cout('1');
+            break;
+        case 'huyuantao':
+            std.cout('2');
+            break;
+        case 'liutianshu':
+            std.cout('3');
+            break;
+        default:
+            std.cout('no found');
+    }
+}

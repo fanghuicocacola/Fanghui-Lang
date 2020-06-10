@@ -1,0 +1,3 @@
+﻿  main.c
+D:\My Projects\Merdog Code\Caculator\main.c(17,7): warning C4013: “input”未定义；假设外部返回 int
+  Caculator.vcxproj -> D:\My Projects\Merdog Code\Caculator\Debug\Caculator.exe

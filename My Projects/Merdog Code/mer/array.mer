@@ -1,0 +1,12 @@
+// 5000  
+// 方便的定义一大堆同类型的变量
+// type name[size]; 
+program main
+{
+    int a=std.input_int();
+    int b=std.input_int();
+    int tmp=a;
+    a=b;
+    b=tmp;
+    std.cout(a,b);
+}

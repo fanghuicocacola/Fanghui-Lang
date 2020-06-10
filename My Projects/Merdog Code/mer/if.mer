@@ -1,0 +1,15 @@
+program main
+{
+    int v1=std.input_int();
+    if(v1<999)
+    {
+        std.cout('no problem');
+    }
+    elif(v1==222)
+    {
+        
+    }
+    else{
+        std.cout('yes');
+    }
+}
