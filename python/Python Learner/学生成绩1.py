@@ -1,7 +1,7 @@
 import xlrd
 import xlwt
-import matplotlib.pyplot as plt
-import numpy as np
+import matplotlib.pyplot as plt  # 将 matplotlib缩写为plt
+import numpy as np  # 同上
 # 正常显示中文
 plt.rcParams['font.sans-serif'] = ['SimHei']
 # 读取
@@ -12,13 +12,15 @@ nol = table.ncols
 # 写入（如果利用xlutils可以实现写入到已有文件）
 wb = xlwt.Workbook()
 ws = wb.add_sheet('sheet1')
-dict1 = {}
-list1 = []
-list2 = []
-list3 = []
-gks1 = [0, 0, 0, 0]
-gks2 = {'英语': 0, '高数': 0, '大学物理': 0}
-level = {'优秀': 0, '良好': 0, '及格': 0, '不及格': 0}
+dict1 = {}  # 全部信息（字典
+list1 = []  # 全部信息（列表
+list2 = []  # 某学生的成绩信息
+list3 = []  # 另一学生的成绩信息
+gks1 = [0, 0, 0, 0]  # 定义并初始化挂科的数量的列表
+gks2 = {'英语': 0, '高数': 0, '大学物理': 0}  # 各科挂科
+level = {'优秀': 0, '良好': 0, '及格': 0, '不及格': 0}  # 各个等第的人数
+
+# 函数create用来遍历读取的文件
 
 
 def create(x, y):
@@ -27,6 +29,7 @@ def create(x, y):
     dict1[title] = value
 
 
+# 遍历读取，并添加键值对
 for i in range(1, now):
     for j in range(0, nol):
         create(i, j)
@@ -75,7 +78,7 @@ for k, v in list1[0].items():
     ws.write(0, a, k)
     ws.write(1, a, v)
     a += 1
-for i in range(2,now,1):
+for i in range(2, now, 1):
     a = 0
     for k in list1[i-1].items():
         ws.write(i, a, k[1])
@@ -93,9 +96,9 @@ width = total_width/2
 plt.bar(range(len(num_list)), num_list, color='rgb', tick_label=name_list)
 for xx, yy in zip(range(len(num_list)),num_list):
     plt.text(xx, yy+0.1, str(yy), ha='center')
-plt.show()
+plt.show()  # 显示图表
 # 并列显示任意两位学生成绩对比图
-plt.figure()
+plt.figure()  # 擦除，生成新画板便于下一次图表
 name_list2 = ['英语', '高数', '大学物理']
 stu1 = str(input('请输入学生姓名'))
 stu2 = str(input('请输入学生姓名'))
@@ -109,7 +112,6 @@ x = list(range(len(name_list2)))
 plt.bar(x, list2, width=0.3, label=stu2, fc='y')
 for i in range(len(x)):
     x[i] = x[i] + 0.2
-    # 这里name_list2，写成了name_list,找了两小时的bug
 plt.bar(x, list3, width=0.3, label=stu1, tick_label=name_list2, fc='r')
 plt.ylabel('分数')
 plt.title('对比图')
