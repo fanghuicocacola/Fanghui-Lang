@@ -1,6 +1,6 @@
 from tkinter import *
 import time
-
+import sys
 
 class Clock(Frame):
     def __init__(self):
@@ -11,6 +11,9 @@ class Clock(Frame):
         self.timestr = StringVar()     # 时间字符串
         self.layout()                  # 图形界面布局
 
+
+    def quit(self):
+        sys.exit()
 
     def layout(self):
         lab = Label(self, textvariable=self.timestr, font=100)

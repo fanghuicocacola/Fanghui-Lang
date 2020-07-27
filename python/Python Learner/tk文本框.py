@@ -15,7 +15,7 @@ def show():
 
 
 Button(root, text='获取', width=10, command=show)\
-    .grid(row=3, column=0, sticky=W, padx=10,pady=5)
+    .grid(row=3, column=0, sticky=W, padx=10, pady=5)
 Button(root, text='退出', width=10, command=root.quit)\
     .grid(row=3, column=1, sticky=E, padx=10, pady=5)
 mainloop()
