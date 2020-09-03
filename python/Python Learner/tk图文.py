@@ -1,6 +1,7 @@
 from tkinter import *
 
 root = Tk()
+root.title('腊八节')
 
 photo = PhotoImage(file='girl.png')
 theLabel = Label(root,

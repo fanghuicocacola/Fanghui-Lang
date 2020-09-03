@@ -5,7 +5,7 @@ root.title("计算器")
 root.geometry("340x740")
 menu = Menu(root)
 fmenu = Menu(menu)
-fmenu.add_command(label='退出',command=root.quit)
+fmenu.add_command(label='退出', command=root.quit)
 
 result = StringVar()
 result.set('')
