@@ -14,10 +14,12 @@ def click(event):
         show['text'] = show['text'] + event.widget['text']
     elif event.widget['text'] == '=' and show['text'] is not None:
         show['text'] = str(eval(show['text']))
-    elif event.widget['text'] == '清零':
+    elif event.widget['text'] == '清空':
         show['text'] = ''
+    elif event.widget['text'] == '退位':
+        show['text'] = show['text'][0:-1]
     elif event.widget['text'] == 'sqrt':
-        show['text'] = str(math.sqrt(int(show['text'])))
+        show['text'] = str(math.sqrt(float(show['text'])))
 
 
 name = ['清空','=','Null','Null2','.','退位','0','/','1','2','3','*','4','5','6','-','7','8','9','+','sqrt']
