@@ -43,7 +43,6 @@ But9 = Button(frame, text='9',width=5).grid(row=4,column=2)
 But_add = Button(frame, text='+',width=5).grid(row=4,column=3)
 
 
-
 Flag = 0
 
 
