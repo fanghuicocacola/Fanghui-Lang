@@ -52,7 +52,8 @@ class A(object):
         self.cv.create_oval((zx+1)*30-12,(zy+1)*30-12,(zx+1)*30+12,(zy+1)*30+12,fill='BLACK')
         win = self.is_win(zx,zy)
         if win == TRUE:
-            showinfo('BLACK WIN')
+            showinfo('BLACK WIN', 'win')
+            self.start(event)
 
     def callback2(self, event):
         u, v = event.x, event.y
@@ -69,7 +70,8 @@ class A(object):
                             fill='WHITE')
         win = self.is_win(zx,zy)
         if win == FALSE:
-            showinfo('WHITE WIN','win!')
+            showinfo('WHITE WIN', 'win!')
+            self.start(event)
 
     def is_win(self, x, y):
         def direction(i, j, di, dj, row, column, matrix):
@@ -99,7 +101,6 @@ class A(object):
                     count2 += 1
                     if count2 == 5:
                         return FALSE
-        return False
 
 
 if __name__ == "__main__":
