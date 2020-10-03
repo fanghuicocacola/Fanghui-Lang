@@ -1,0 +1,56 @@
+define('wiki-lemma:widget/lemma_content/configModule/hotspotmining/hotspotmining', function(require, exports, module) {
+
+  var $ = require("wiki-common:widget/lib/jquery/jquery");
+  var nslog = require('wiki-common:widget/component/nslog/nslog');
+  var logger = require('wiki-common:widget/component/superLogger/superLogger.es');
+  
+  // 统计PV
+  nslog(10070101);
+  
+  var lemmaTitle;
+  var lemmaId;
+  
+  function log(elem) {
+      logger.sendClk('lemma_page_hot_spot_click', {
+          lemmaTitle: lemmaTitle,
+          lemmaId: lemmaId,
+          tab: $(elem).closest('.hotspotminingContent').data('tab')
+      });
+  }
+  
+  // 统计click(标题)
+  $('.hotspotminingContent_cnt_tit_tit a').on('click', function () {
+      log(this);
+      nslog(10070102);
+  });
+  // 统计click(详情)
+  $('.hotspotminingContent_cnt_cnt a').on('click', function () {
+      log(this);
+      nslog(10070102);
+  });
+  
+  $('.hotspotminingContent_pic a').on('click', function () {
+      log(this);
+  });
+  
+  $('#hotspotmining_s .hotspotminingNavbar li').on('mouseover', function () {
+      if (!$(this).hasClass('active')) {
+          var id = $(this).attr('data-id');
+  
+          $('#hotspotmining_s .hotspotminingNavbar li').removeClass('active');
+          $(this).addClass('active');
+  
+          $('#hotspotmining_s .hotspotminingContent').hide();
+          $('#hotspotmining_s #hotspotminingContent-' + id).show();
+      }
+  });
+  
+  module.exports = {
+      init(title, id) {
+          lemmaTitle = title;
+          lemmaId = id;
+      }
+  };
+  
+
+});
