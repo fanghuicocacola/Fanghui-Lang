@@ -1,0 +1,5 @@
+﻿  中位数.cpp
+C:\Users\黑白灰\source\repos\中位数\中位数\中位数.cpp(22,35): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+C:\Users\黑白灰\source\repos\中位数\中位数\中位数.cpp(26,26): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+C:\Users\黑白灰\source\repos\中位数\中位数\中位数.cpp(11,12): warning C4101: “j，n”: 未引用的局部变量
+  中位数.vcxproj -> C:\Users\黑白灰\source\repos\中位数\Debug\中位数.exe
