@@ -1,0 +1,8 @@
+﻿  进制转换.cpp
+C:\Users\黑白灰\source\repos\进制转换\进制转换\进制转换.cpp(29,17): warning C4305: “初始化”: 从“int”到“char”截断
+C:\Users\黑白灰\source\repos\进制转换\进制转换\进制转换.cpp(29,11): warning C4309: “初始化”: 截断常量值
+C:\Users\黑白灰\source\repos\进制转换\进制转换\进制转换.cpp(30,14): error C2664: “size_t strlen(const char *)”: 无法将参数 1 从“char”转换为“const char *”
+C:\Users\黑白灰\source\repos\进制转换\进制转换\进制转换.cpp(30,13): message : 从整型强制转换为指针类型要求 reinterpret_cast、C 样式强制转换或函数样式强制转换
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(219,16): message : 参见“strlen”的声明
+C:\Users\黑白灰\source\repos\进制转换\进制转换\进制转换.cpp(34,14): warning C4244: “参数”: 从“__int64”转换到“const unsigned int”，可能丢失数据
+C:\Users\黑白灰\source\repos\进制转换\进制转换\进制转换.cpp(39,15): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
