@@ -1,0 +1,42 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test1",
+            "request": "launch",
+            "mainClass": "Test1",
+            "projectName": ".vscode_41beeb5c"
+        },
+        {
+            "type": "java",
+            "name": "Launch basic1",
+            "request": "launch",
+            "mainClass": "basic1",
+            "projectName": ".vscode_41beeb5c"
+        },
+        {
+            "type": "java",
+            "name": "Launch java1",
+            "request": "launch",
+            "mainClass": "java1",
+            "projectName": ".vscode_41beeb5c"
+        },
+        {
+            "type": "java",
+            "name": "Launch x9",
+            "request": "launch",
+            "mainClass": "x9",
+            "projectName": ".vscode_41beeb5c"
+        }
+    ]
+}
