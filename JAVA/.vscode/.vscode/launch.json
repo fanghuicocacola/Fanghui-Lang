@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TestInit",
+            "request": "launch",
+            "mainClass": "TestInit",
+            "projectName": ".vscode_41beeb5c"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestThis",
+            "request": "launch",
+            "mainClass": "TestThis",
+            "projectName": ".vscode_41beeb5c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test4",
+            "request": "launch",
+            "mainClass": "Test4",
+            "projectName": ".vscode_41beeb5c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test3",
+            "request": "launch",
+            "mainClass": "Test3",
+            "projectName": ".vscode_41beeb5c"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestClassTwo",
+            "request": "launch",
+            "mainClass": "TestClassTwo",
+            "projectName": ".vscode_41beeb5c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test_class2",
+            "request": "launch",
+            "mainClass": "Test_class2",
+            "projectName": ".vscode_41beeb5c"
+        },
+        {
+            "type": "java",
             "name": "Launch Test_class1",
             "request": "launch",
             "mainClass": "Test_class1",

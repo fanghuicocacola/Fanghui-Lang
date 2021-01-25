@@ -1,8 +1,11 @@
 class Person {
     private String name;
     private int age;
-    void Talk(){
-        System.out.println("名字是"+name+"年龄"+age);
+    private void Talk(){
+        System.out.println("我的名字是"+name+"年龄"+age);
+    }
+    public void Say(){
+        Talk();
     }
     public void setname(String str){
         name = str;
@@ -16,6 +19,9 @@ class Person {
     public int getage(){
         return age;
     }
+    public Person(){
+        System.out.println("大家好！");
+    }
 }
 
 public class Test_class1 
@@ -24,10 +30,10 @@ public class Test_class1
         Person p1 = new Person();
         p1.setname("张三"); ;
         p1.setage(18);
-        p1.Talk(); 
-        Person p2 = new Person();
+        p1.Say(); 
+        Person p2 = p1;
         p2.setname("李四");
         p2.setage(28);
-        p2.Talk();
+        p2.Say();
     }
 }
