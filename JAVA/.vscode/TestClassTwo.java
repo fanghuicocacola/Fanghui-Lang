@@ -1,4 +1,4 @@
-//这是测试类TestClassTwo
+
 public class TestClassTwo extends TestClass {
 	public TestClassTwo() {
 		System.out.println("来自TestClassTwo 空参构造方法");
