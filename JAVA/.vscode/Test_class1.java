@@ -20,7 +20,7 @@ class Person {
         return age;
     }
     public Person(){
-        System.out.println("大家好！");
+        System.out.println("大家好 ！");
     }
 }
 
