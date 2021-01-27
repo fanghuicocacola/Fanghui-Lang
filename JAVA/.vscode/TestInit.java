@@ -1,6 +1,4 @@
-import java.util.jar.Attributes.Name;
 
-import javax.print.attribute.standard.PrinterInfo;
 
 class Person1{
     Person1(String name,int age){
