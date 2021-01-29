@@ -1,6 +1,10 @@
 class Person {
     private String name;
     private int age;
+    final public int ok()
+    {
+        return 0;
+    }
     private void Talk(){
         System.out.println("我的名字是"+name+"年龄"+age);
     }
