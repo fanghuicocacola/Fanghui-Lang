@@ -7,7 +7,6 @@ public class TestThis {
     TestThis(int a, int b) {
         // TestThis(); //这样是无法调用构造方法的！
         this(); // 调用无参的构造方法，并且必须位于第一行！
-        a = a;// 这里都是指的局部变量而不是成员变量
 // 这样就区分了成员变量和局部变量. 这种情况占了this使用情况大多数！
         this.a = a;
         this.b = b;

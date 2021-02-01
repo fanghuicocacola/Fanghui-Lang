@@ -1,4 +1,9 @@
 class DefaultException extends Exception {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public DefaultException(String msg) {
         // 调用 Exception 类的构造方法，存入异常信息
         super(msg);
