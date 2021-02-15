@@ -48,7 +48,10 @@ int main()
     }
     for (int i = k1 - 1; i >= 0; i--)
     {
-        
+        if (k1 == 1)
+        {
+            cout << s1[0];
+        }
         if (s1[i] != '0')
         {
             pp1 = 1;
@@ -61,6 +64,10 @@ int main()
     cout << c;
     for (int i = k2 - 1; i >= 0; i--)
     {
+        if (k2 == 1)
+        {
+            cout << s2[0];
+        }
         if (pp3 == 0) {
             if (s2[k2 - 1 - i] == '0')
             {
