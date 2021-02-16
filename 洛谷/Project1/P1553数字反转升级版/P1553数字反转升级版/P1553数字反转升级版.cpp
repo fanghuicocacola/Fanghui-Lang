@@ -2,8 +2,8 @@
 //
 
 #include <iostream>
-#include<cstdio>
-#include<cstring>
+#include<stdio.h>
+#include<string.h>
 using namespace std;
 int pp3 = 1;
 int main()
@@ -51,6 +51,7 @@ int main()
         if (k1 == 1)
         {
             cout << s1[0];
+            break;
         }
         if (s1[i] != '0')
         {
@@ -67,6 +68,7 @@ int main()
         if (k2 == 1)
         {
             cout << s2[0];
+            break;
         }
         if (pp3 == 0) {
             if (s2[k2 - 1 - i] == '0')
