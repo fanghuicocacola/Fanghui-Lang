@@ -29,11 +29,30 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/First/src" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.student (1)">
+  <component name="RunManager" selected="Application.Room1">
+    <configuration name="Room1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Room.Room1" />
+      <module name="First" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Room.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="student (1)" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Threaddemo.student" />
       <module name="First" />
@@ -56,6 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Room1" />
         <item itemvalue="Application.student" />
       </list>
     </recent_temporary>
@@ -70,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614223720032</updated>
-      <workItem from="1614223725102" duration="1060000" />
+      <workItem from="1614223725102" duration="6361000" />
     </task>
     <servers />
   </component>
@@ -82,26 +102,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1614224528943" />
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1614226960218">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1614226960218" />
     <state x="548" y="271" width="439" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1614224785866">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="271" width="439" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1614224785866" />
-    <state width="1342" height="195" key="GridCell.Tab.0.bottom" timestamp="1614224745527">
+    <state width="1342" height="195" key="GridCell.Tab.0.bottom" timestamp="1614247688664">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614224745527" />
-    <state width="1342" height="195" key="GridCell.Tab.0.center" timestamp="1614224745527">
+    <state width="1342" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614247688664" />
+    <state width="1342" height="195" key="GridCell.Tab.0.center" timestamp="1614247688664">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614224745527" />
-    <state width="1342" height="195" key="GridCell.Tab.0.left" timestamp="1614224745527">
+    <state width="1342" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614247688664" />
+    <state width="1342" height="195" key="GridCell.Tab.0.left" timestamp="1614247688664">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614224745527" />
-    <state width="1342" height="195" key="GridCell.Tab.0.right" timestamp="1614224745527">
+    <state width="1342" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614247688664" />
+    <state width="1342" height="195" key="GridCell.Tab.0.right" timestamp="1614247688664">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1342" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614224745527" />
+    <state width="1342" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614247688664" />
+    <state x="490" y="157" width="540" height="524" key="StructurePopup" timestamp="1614228408895">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="490" y="157" width="540" height="524" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1614228408895" />
     <state x="565" y="190" key="chooseDestDirectoryDialog" timestamp="1614224662539">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
