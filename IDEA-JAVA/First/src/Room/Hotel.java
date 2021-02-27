@@ -19,6 +19,20 @@ public class Hotel {
         }
     }
     public void print(){
-        
+        for (int i = 0;i<room1s.length;i++){
+            for(int j = 0;j<room1s[i].length;j++) {
+                Room1 room1 = room1s[i][j];
+                System.out.println(room1);
+            }
+            System.out.println();
+        }
+    }
+    public void order(int roomNo){
+        Room1 room1 = room1s[roomNo/100-1][roomNo%100-1];
+        room1.setStatus(false);
+    }
+    public void  exit(int roomNo){
+        Room1 room1 = room1s[roomNo/100-1][roomNo%100-1];
+        room1.setStatus(true);
     }
 }
