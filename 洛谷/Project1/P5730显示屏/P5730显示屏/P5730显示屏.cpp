@@ -1,98 +1,16 @@
-﻿#include<iostream>
-#include<cstdio>
-#include<algorithm>
-#include<cmath>
-#include<cstring>
-using namespace std;
-char W[10][5][3] =
-{
-	{
-		'X','X','X',
-		'X','.','X',
-		'X','.','X',
-		'X','.','X',
-		'X','X','X',
-	},
-	{
-		'.','.','X',
-		'.','.','X',
-		'.','.','X',
-		'.','.','X',
-		'.','.','X',
-	},
-	{
-		'X','X','X',
-		'.','.','X',
-		'X','X','X',
-		'X','.','.',
-		'X','X','X',
-	},
-	{
-		'X','X','X',
-		'.','.','X',
-		'X','X','X',
-		'.','.','X',
-		'X','X','X',
-	},
-	{
-		'X','.','X',
-		'X','.','X',
-		'X','X','X',
-		'.','.','X',
-		'.','.','X',
-	},
-	{
-		'X','X','X',
-		'X','.','.',
-		'X','X','X',
-		'.','.','X',
-		'X','X','X',
-	},
-	{
-		'X','X','X',
-		'X','.','.',
-		'X','X','X',
-		'X','.','X',
-		'X','X','X',
-	},
-	{
-		'X','X','X',
-		'.','.','X',
-		'.','.','X',
-		'.','.','X',
-		'.','.','X',
-	},
-	{
-		'X','X','X',
-		'X','.','X',
-		'X','X','X',
-		'X','.','X',
-		'X','X','X',
-	},
-	{
-		'X','X','X',
-		'X','.','X',
-		'X','X','X',
-		'.','.','X',
-		'X','X','X',
-	}
-};
-int n;
-char s[110];
+﻿#include <stdio.h>
+#include <iostream>
 int main() {
-	cin >> n;
-	for (int i = 0; i < n; i++) {
-		cin >> s[i];
+	int i, j, n, k = 1;
+	double s = 0;
+	scanf_s("%d", &n);
+	for (i = 1; i <= n; i++)
+	{
+		for (j = 1; j <= i; j++)
+			k *= j;
+		s += 1.0 / k;
+		k = 1;
 	}
-	for (int i = 0; i < 5; i++) {
-		for (int j = 0; j < n; j++) {
-			for (int k = 0; k < 3; k++) {
-				cout << W[s[j] - '0'][i][k];
-			}
-			if (j != n - 1) cout << '.';
-		}
-		cout << endl;
-	}
+	printf("S=%lf", s);
 	return 0;
 }
-

@@ -38,7 +38,59 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.级数">
+    <configuration name="回文数" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Package1.回文数" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Package1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="随机数" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Package1.随机数" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Package1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="成绩分类" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Package1.成绩分类" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Package1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="级数" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Package1.级数" />
+      <module name="HelloWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Package1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Package1.Hello" />
       <module name="HelloWorld" />
@@ -54,6 +106,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.级数" />
+        <item itemvalue="Application.成绩分类" />
+        <item itemvalue="Application.随机数" />
+        <item itemvalue="Application.回文数" />
         <item itemvalue="Application.Hello" />
       </list>
     </recent_temporary>
@@ -70,6 +126,7 @@
       <updated>1615774591875</updated>
       <workItem from="1615774596339" duration="5008000" />
       <workItem from="1616222077719" duration="3065000" />
+      <workItem from="1616378473881" duration="5421000" />
     </task>
     <servers />
   </component>
@@ -81,21 +138,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1615774610397" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1616225385845">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1616384399696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616225385845" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1616225385845">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616384399696" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1616384399696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616225385845" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1616225385845">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616384399696" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1616384399696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616225385845" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1616225385845">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616384399696" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1616384399696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616225385845" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616384399696" />
   </component>
 </project>
