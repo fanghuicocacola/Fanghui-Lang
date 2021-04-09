@@ -20,7 +20,7 @@ public class Hello {
         System.out.println("请输入年");
         Scanner reader = new Scanner(System.in);
         int n = reader.nextInt();
-        if(Panduan(n)){
+        if(Pandu1an(n)){
             mouth[1] = 29;
         }
         System.out.println(n);
@@ -35,7 +35,7 @@ public class Hello {
         int ss = Sum(mouth,m,d);
         System.out.println("截至今日"+n+"已经过去了"+ss+"天");
     }
-    public  static boolean Panduan(int n){
+    public  static boolean Pandu1an(int n){
         if(n%4!=0) {
             System.out.println(n + "年不是闰年");
             return false;
