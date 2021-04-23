@@ -82,8 +82,8 @@ class Consumer implements Runnable {
 
 public class ThreadDemo4 {
     public static void main(String[] args) {
-        P q = new P();
+        p q = new p();
         new Thread(new Producer(q)).start();//set()
-        new Thread(new Consumer(q)).start();//get()
+        new Thread(new Consumer(q)).start();//get(1)
     }
 }

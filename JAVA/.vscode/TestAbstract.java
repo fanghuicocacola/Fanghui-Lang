@@ -8,8 +8,8 @@ abstract class Animal {
     public abstract void cry(); 
 }
 
-// 抽象类可以被继承
-// 当继承的父类是抽象类时，需要将抽象类中的所有抽象方法全部实现。
+// 抽象类可以被继承，抽象方法只有声明没有实现
+// 当继承的父类是抽象类，且子类是非抽象类，需要将抽象类中的所有抽象方法全部实现，子类是抽象类可以重写也可以继承。
 // 当继承的父类是抽象类时，父类若有构造方法，构造方法必须被调用。
 class dog extends Animal {
     public dog(String name, int age) {
