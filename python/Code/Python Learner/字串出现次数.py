@@ -10,6 +10,7 @@ for i in s:
         i = ' '
         s1 = s1 + i
 print(s1)
+
 s2 = s1.split()
 for i in s2:
     if 'boys' in i:
