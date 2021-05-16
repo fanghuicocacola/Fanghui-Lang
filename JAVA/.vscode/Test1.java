@@ -2,7 +2,6 @@ import java.util.Arrays;
 
 public class Test1 {
     private static final String S = "\n";
-
     public static void main(String[] args) {
         int a1[] = { 3, 7, 6, 8, 10, 5 }, a2[];
         a2 = new int[4];

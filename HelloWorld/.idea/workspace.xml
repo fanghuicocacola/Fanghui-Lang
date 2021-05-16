@@ -38,7 +38,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.TestException">
+  <component name="RunManager" selected="Application.Hello">
     <configuration name="回文数" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Package1.回文数" />
       <module name="HelloWorld" />
@@ -132,8 +132,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestException" />
         <item itemvalue="Application.Hello" />
+        <item itemvalue="Application.TestException" />
         <item itemvalue="Application.ClassExample" />
         <item itemvalue="Application.回文数" />
       </list>
@@ -158,6 +158,7 @@
       <workItem from="1619402017855" duration="1597000" />
       <workItem from="1620265956584" duration="2220000" />
       <workItem from="1620612309167" duration="2022000" />
+      <workItem from="1620739901758" duration="1043000" />
     </task>
     <servers />
   </component>
@@ -173,22 +174,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1616986822622" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1620272297386">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1620740951408">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620272297386" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1620272297386">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620740951408" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1620740951408">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1620272297386" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1620272297386">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1620740951408" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1620740951408">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1620272297386" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1620272297386">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1620740951408" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1620740951408">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620272297386" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620740951408" />
     <state x="178" y="22" key="new project wizard" timestamp="1620612347907">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
