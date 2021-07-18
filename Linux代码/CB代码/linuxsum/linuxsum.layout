@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="375" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="test.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="30175" topLine="36" />
+		</Cursor>
+		<Folding>
+			<Collapse line="10" />
+			<Collapse line="19" />
+			<Collapse line="29" />
+			<Collapse line="41" />
+			<Collapse line="50" />
+			<Collapse line="64" />
+			<Collapse line="80" />
+			<Collapse line="97" />
+			<Collapse line="123" />
+			<Collapse line="143" />
+			<Collapse line="161" />
+			<Collapse line="184" />
+			<Collapse line="208" />
+			<Collapse line="231" />
+			<Collapse line="263" />
+			<Collapse line="279" />
+			<Collapse line="301" />
+			<Collapse line="336" />
+			<Collapse line="366" />
+			<Collapse line="402" />
+			<Collapse line="437" />
+			<Collapse line="484" />
+			<Collapse line="489" />
+			<Collapse line="501" />
+			<Collapse line="513" />
+			<Collapse line="539" />
+			<Collapse line="561" />
+			<Collapse line="580" />
+			<Collapse line="598" />
+			<Collapse line="627" />
+			<Collapse line="679" />
+			<Collapse line="690" />
+			<Collapse line="710" />
+			<Collapse line="727" />
+			<Collapse line="770" />
+			<Collapse line="825" />
+			<Collapse line="839" />
+			<Collapse line="866" />
+			<Collapse line="895" />
+			<Collapse line="919" />
+			<Collapse line="923" />
+			<Collapse line="939" />
+			<Collapse line="951" />
+			<Collapse line="959" />
+			<Collapse line="986" />
+			<Collapse line="999" />
+			<Collapse line="1022" />
+			<Collapse line="1035" />
+			<Collapse line="1060" />
+			<Collapse line="1073" />
+			<Collapse line="1083" />
+			<Collapse line="1108" />
+			<Collapse line="1114" />
+			<Collapse line="1127" />
+			<Collapse line="1136" />
+			<Collapse line="1150" />
+			<Collapse line="1184" />
+			<Collapse line="1195" />
+			<Collapse line="1225" />
+			<Collapse line="1231" />
+			<Collapse line="1247" />
+			<Collapse line="1258" />
+			<Collapse line="1267" />
+			<Collapse line="1276" />
+			<Collapse line="1307" />
+			<Collapse line="1322" />
+			<Collapse line="1355" />
+			<Collapse line="1380" />
+			<Collapse line="1398" />
+			<Collapse line="1412" />
+			<Collapse line="1515" />
+			<Collapse line="1541" />
+			<Collapse line="1554" />
+			<Collapse line="1561" />
+			<Collapse line="1581" />
+			<Collapse line="1606" />
+			<Collapse line="1612" />
+			<Collapse line="1616" />
+			<Collapse line="1634" />
+			<Collapse line="1649" />
+			<Collapse line="1670" />
+			<Collapse line="1685" />
+			<Collapse line="1715" />
+			<Collapse line="1731" />
+			<Collapse line="1778" />
+			<Collapse line="1801" />
+			<Collapse line="1805" />
+			<Collapse line="1815" />
+			<Collapse line="1821" />
+			<Collapse line="1830" />
+			<Collapse line="1842" />
+			<Collapse line="1853" />
+			<Collapse line="1867" />
+			<Collapse line="1880" />
+			<Collapse line="1891" />
+			<Collapse line="1901" />
+			<Collapse line="1916" />
+			<Collapse line="1922" />
+			<Collapse line="1933" />
+			<Collapse line="1974" />
+			<Collapse line="2011" />
+			<Collapse line="2021" />
+			<Collapse line="2038" />
+			<Collapse line="2042" />
+			<Collapse line="2052" />
+			<Collapse line="2059" />
+			<Collapse line="2066" />
+			<Collapse line="2070" />
+			<Collapse line="2077" />
+			<Collapse line="2084" />
+			<Collapse line="2091" />
+			<Collapse line="2130" />
+			<Collapse line="2243" />
+			<Collapse line="2278" />
+			<Collapse line="2394" />
+			<Collapse line="2437" />
+			<Collapse line="2527" />
+		</Folding>
+	</File>
+	<File name="test.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="308" topLine="0" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>

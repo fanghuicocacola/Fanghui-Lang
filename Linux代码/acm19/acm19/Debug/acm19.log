@@ -1,0 +1,4 @@
+﻿  acm19.cpp
+D:\黑白灰\Documents\GitHub\Fanghui-Lang\Linux代码\acm19\acm19\acm19.cpp(11,7): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\黑白灰\Documents\GitHub\Fanghui-Lang\Linux代码\acm19\acm19\acm19.cpp(14,20): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+  acm19.vcxproj -> D:\黑白灰\Documents\GitHub\Fanghui-Lang\Linux代码\acm19\Debug\acm19.exe

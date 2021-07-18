@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1626160556 source:d:\ºÚ°×»Ò\documents\github\fanghui-lang\linux´úÂë\cb´úÂë\linuxsum\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"test.h"
+
+1626161842 d:\ºÚ°×»Ò\documents\github\fanghui-lang\linux´úÂë\cb´úÂë\linuxsum\test.h
+	<stdio.h>
+
+1626163217 source:d:\ºÚ°×»Ò\documents\github\fanghui-lang\linux´úÂë\cb´úÂë\linuxsum\test.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<ctype.h>
+	"test.h"
+	<time.h>
+	<assert.h>
+	<malloc.h>
+
