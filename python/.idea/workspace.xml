@@ -62,6 +62,9 @@
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Code/Python Learner" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -166,6 +169,7 @@
       <workItem from="1603418875162" duration="5802000" />
       <workItem from="1603896431779" duration="867000" />
       <workItem from="1624276174446" duration="206000" />
+      <workItem from="1632639031755" duration="65000" />
     </task>
     <servers />
   </component>
