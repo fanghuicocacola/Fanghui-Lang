@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #text-white-space{
+            margin: 20px;
+            width: 200px;
+            background-color: bisque;
+            height: 200px;
+            white-space: pre-wrap; /* normal nowrap  pre  pre-wrap  pre-line */
+        }
+        #text-word-wrap{
+            margin: 20px;
+            width: 200px;
+            background-color: bisque;
+            height: 200px;
+            word-wrap: break-word; /* normal break-word break-spaces*/
+        }
+        #text-word-break{
+            margin: 20px;
+            width: 200px;
+            background-color: bisque;
+            height: 200px;
+            word-break:keep-all;/* normal break-all break-word  keep-all*/
+        }
+        /*
+        white-space
+            normal:空白会被浏览器忽略。
+            nowrap:文本不会换行，直到遇到 br 标签为止。
+            pre：空白会被浏览器保留。类似 HTML 中的 pre标签。
+            pre-wrap：保留空白符序列，但是正常地进行换行。
+            pre-line：合并空白符序列，但是保留换行符。
+        word-wrap(overflow-wrap)
+            normal：只在允许的断字点换行。当浏览器发现第一行的剩余空间已经容不下内容时，会让它换行。
+                    如果实在是太长了，第二行也没能容下它，此时会超出边界。
+            break-word：内部进行换行,长单词是在第一行容不下，换行后，在第二行中也容不下了才对单词换行处理
+        word-break
+            normal：类似word-wrap:normal
+            break-all：是在第一行中就直接换行。区别于word-wrap:break-word
+            break-word：类似于word-wrap:break-word
+            keep-all：只能在半角空格或连字符处换行。如果前半部分单词不长，以至于能够在第一行
+                      剩余空间中存在，则前半部分在第一行中显示，然后后半部分换行显示；
+                      如果前半部分比较长，则前半部分单词换行显示，后半部分单词再换一行显示,第二部分也长，
+                      会超出边界。
+
+        */
+    </style>
+</head>
+<body>
+<div id="text-white-space">
+    床前明月光，          疑是地上霜。<br>
+    举头望明月，          低头思故乡。
+</div>
+<div id="text-word-wrap">
+   This is a aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa string.
+</div>
+<div id="text-word-break">
+   This is a aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa string.<br><br>
+    This is a bbbbbbbbbbbbbbbbb-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb string.
+</div>
+</body>
+</html>
