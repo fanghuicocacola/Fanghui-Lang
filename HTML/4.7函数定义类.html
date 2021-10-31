@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Studfent() {
+
+            // var init = function () {
+            //     // 构造函数
+            //     console.log("构造方法");
+            // };
+            // init();
+
+            var name = "aa";  //private
+            this.pwd = "123"; //public
+
+            this.study = function () {
+                console.log("学习中");
+            }
+
+            var sayPwd = function () {
+                console.log("密码是123");
+            }
+        }
+
+        var student = new Studfent();
+        console.log(student.name);
+        console.log(student.pwd);
+        console.log(student.study());
+        console.log(student.sayPwd());
+
+    </script>
+</body>
+
+</html>
