@@ -1,4 +1,5 @@
 let dataTable = document.getElementById("table-wrapper").children[1];
+// 用let声明的变量具有块作用域
 // console.log(dataTable);
 let tBody = dataTable.querySelector("#table-wrapper tbody");
 
