@@ -15,7 +15,7 @@
 	</div>
 	<div class="container">
 		<div id="login-root-div">
-			<img id="img-login-icon" alt="" src="imgs/login-icon.png">
+			<img id="img-login-icon" alt="" src="imgs/student.jpg">
 			<!-- 提示文字 -->
 			<div id="tip-text-root-div">
 				<p class="text-large">欢迎回来</p>
@@ -25,16 +25,17 @@
 			<!-- 输入内容 -->
 			<div id="input-root-div">
 				<!-- 用户名 -->
-				<p>用户名：<input type="text" id = "1" placeholder="6-16位小写字母或数字"></p>
+				<p>用户名：<input type="text" id="1" placeholder="6-16位小写字母或数字"></p>
 				<!-- Password -->
-				<p>输入密码：<input type="password" id = "2" placeholder="6-16位字母或数字"></p>
+				<p>输入密码：<input type="password" id="2" placeholder="6-16位字母或数字"></p>
 				<!-- 验证码 -->
 				<p id="checkCode" class="code" onclick="createCode(4)"></p>
-        		<p>验证码：
+				<p>验证码：
 					<input type="text" id="inputCode" />
 				</p>
 			</div>
 			<button id="login-btn" type="submit">登录</button>
+			<a href="https://www.baidu.com/"><button>点我跳转到度娘！</button></a>
 			<!-- login result -->
 			<div id="login-result-div">
 				<span></span>
