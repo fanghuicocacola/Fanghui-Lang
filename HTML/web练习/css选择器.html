@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签，类, id选择器</title>
+    <style>
+        div {
+            color: orange;
+        }
+        /*样式点定义，结构类调用*/
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+        .red {
+            color: red;
+        }
+        .green {
+            color: green;
+        }
+        .black {
+            background-color: black;
+        }
+        .white {
+            background-color: white;
+        }
+        /*样式#定义，结构id调用，只能调用一次，别人不能调用*/
+        #pink {
+            color:   pink;
+        }
+        * {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <p>男生</p>
+    <p id="pink">女生</p>
+    <p>大人</p>
+    <p>小孩</p>
+    <p>中年</p>
+    <p>青年</p>
+    <div>朋友</div>
+    <p>家人</p>
+    <li class="red">告白气球</li>
+    <li class="green">晴天</li>
+    <li>夜曲</li>
+    <li class="red">以父之名</li>
+    <li class="green">止战之殇</li>
+    <div class="box black">black</div>
+    <div class="box white">white</div>
+    <div class=" box black">black</div>
+    <div id="pink">pink老师</div>
+</body>
+</html>

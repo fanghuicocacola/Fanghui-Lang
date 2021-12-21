@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+html,body{
+    height: 100%;
+    margin: 0px;
+    font-size: 16px;
+    overflow: auto;
+    background-color:#edf1f5;
+}
+
+/* 侧边 */
+#slide{
+    min-height: 100%;
+    position: fixed;  
+    left:0px;
+    width: 200px;
+    background-color: #2b2f3a;
+    z-index:1000; /*防止水平拉动被覆盖*/
+}
+
+#slide > div:first-of-type{
+    background-color: #1e2129;
+    height: 120px;
+    width: auto;
+}
+
+#slide > div:first-of-type img{
+    height: 120px;
+    width: 100%;
+}
+
+#slide-links{
+    height: calc(100% - 120px);
+    width: auto;
+}
+
+#slide-links > div{
+    height: max-content;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: auto;
+    color: #868ea6;
+}
+
+#slide-links span:first-child{
+    font-size: 16px;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 5px;
+}
+
+#slide-links span:last-child{
+    font-size: 16px;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    float: right;
+    margin-right: 20px;
+}
+
+#slide-links > div:hover{
+    color: #e8e9ea;
+}
+
+
+.slide-links-div-clicked{
+    color: #e8e9ea;
+    background-color: #22262e;
+}
+
+
+
+/* 主体 
+*  使用绝对定位，width:auto不能显示宽度，可以使用left和right确定。
+ */
+#container{
+    min-height: 100%;
+    position: absolute;
+    left: 200px;
+    right: 0px;
+    background-color: #edf1f5;
+    min-width: 1000px;
+}
+
+/* 标题 */
+#title{
+    box-sizing: border-box;
+    height: 80px;
+    left: 200px;
+    right: 0px;
+    text-align: center;
+    position: fixed;
+    background-color: #ffffff;
+    padding: 20px;
+    /* width:100%; 整个屏幕*/
+}
+
+#title span{
+    font-size: 30px;
+    font-weight: 600;
+    color: #23262e;
+    letter-spacing: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#title img{
+    position: absolute;
+    right: 50px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+/* 加载页 */
+#page{
+    width: 100%;
+    min-height: 500px;
+    margin-top: 80px;
+}
+
+#page iframe{
+    border-width: 0px;
+    min-height: 500px;
+    min-width: 100%;
+}
