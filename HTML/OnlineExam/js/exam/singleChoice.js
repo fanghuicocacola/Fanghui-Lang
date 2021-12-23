@@ -115,12 +115,17 @@ function createTable(arrPager) {
         trEle.appendChild(tdQuestion);
 
         //第2列
-        var tdAnswer = document.createElement("td");
-        tdAnswer.setAttribute("class", "td-answer");
-        var inputEle = document.createElement("input");
-        tdAnswer.appendChild(inputEle);
-        trEle.appendChild(tdAnswer);
-
+        var mySelect = document.createElement("select");
+        mySelect.id = "mySelect"+i;
+        document.body.appendChild(mySelect);
+        var obj = document.getElementById('mySelect'+i);
+        //添加一个选项
+        obj.add(new Option(" ", " ")); 
+        obj.add(new Option("A", "A"));
+        obj.add(new Option("B", "B"));
+        obj.add(new Option("C", "C"));
+        obj.add(new Option("D", "D"));
+        trEle.appendChild(mySelect);
         bodyEle.appendChild(trEle);
     }
 }

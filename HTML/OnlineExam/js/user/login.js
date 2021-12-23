@@ -51,7 +51,7 @@ function createCode(length) {
 // 登录校验
 loging_btn.onclick = function (event) {
 
-    userName = document.getElementById("1").value;
+    userName = document.getElementById("username").value;
     if (!regMatch(userName, REG_USER_NAME)) {
         loginResult_span.parentNode.style.display = "block";
         loginResult_span.innerText = "用户名格式错误";
@@ -60,7 +60,7 @@ loging_btn.onclick = function (event) {
         loginResult_span.parentNode.style.display = "none";
     }
 
-    password = document.getElementById("2").value;
+    password = document.getElementById("password").value;
     if (!regMatch(password, REG_PASSWORD)) {
         loginResult_span.parentNode.style.display = "block";
         loginResult_span.innerText = "密码格式错误";
@@ -85,12 +85,12 @@ loging_btn.onclick = function (event) {
     var data = '{"userName":"' + userName + '", "password":' + '"' + password + '"}';
     console.log(data);
 
-    ajax("POST", 
-        url, 
+    ajax("POST",
+        url,
         true,
-        false, 
-        data, 
-        null, 
+        false,
+        data,
+        null,
         null,
         function (xmlhttprequest) {
             var rs = xmlhttprequest.responseText;
@@ -99,7 +99,7 @@ loging_btn.onclick = function (event) {
             var resJson = JSON.parse(rs);
             console.log(resJson.resMsg);
 
-            if(resJson.resCode == 1){
+            if (resJson.resCode == 1) {
                 window.location.href = "pages/main/main.html";
             }
         },

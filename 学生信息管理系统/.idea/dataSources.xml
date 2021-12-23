@@ -1,35 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="atm@localhost" uuid="cab919a8-8f99-4f19-931b-2710cfe5dae8">
-      <driver-ref>mysql</driver-ref>
+    <data-source source="LOCAL" name="mysql@localhost" uuid="5bf63abe-9388-4ddb-bd4f-57e9b2c3c950">
+      <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/atm</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="english@localhost" uuid="28deb75a-2fcb-4a84-b419-2b1556d7fe87">
-      <driver-ref>mysql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/english</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="xxx@localhost" uuid="603d53ad-cf1d-46fc-8975-bb0d0308fd6c">
-      <driver-ref>mysql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/xxx</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="zhangshuai@localhost" uuid="dd305188-a7c8-419d-8c8f-cc196b99db42">
-      <driver-ref>mysql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/zhangshuai</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="user@localhost" uuid="a257f64c-909e-409c-b0f1-1f444ea3798a">
-      <driver-ref>mysql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/user</jdbc-url>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/mysql</jdbc-url>
+      <driver-properties>
+        <property name="serverTimezone" value="CST" />
+      </driver-properties>
     </data-source>
   </component>
 </project>

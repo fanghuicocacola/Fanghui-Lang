@@ -1,45 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>用户注册</title>
+  <title>select.html</title>
 </head>
 
 <body>
-  <input class="myinput" type="password">
-  <div style="background-color: #b92c28;" class="plex" hidden>弱</div>
-  <div style="background-color: #28a4c9;" class="plex" hidden>中</div>
-  <div style="background-color: #4cae4c;" class="plex" hidden>强</div>
   <script>
-    /*移出时正确绿字or错误红字*/
-    (function () {
-      var myinput = document.getElementsByClassName("myinput")[0];
-      myinput.addEventListener("mouseout", function () {
-        //单独处理 - 使用正则表达式
-        var tar = document.getElementsByClassName("plex");
-        var len = tar.length;
-        for (let i = 0; i < len; i++) {
-          tar[i].hidden = true; //再次初始化：全部隐藏
-          console.log("1");
-        }
-        var reg2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{6,16}$/;
-        var reg1 = /^.{6,16}$/;
-        if (reg2.test(myinput.value)) { //强，6-16位，必须有大小写字母和数字
-          tar[2].hidden = false;
-          console.log("2");
-        }
-        else if (reg1.test(myinput.value)) { //中，6-16位
-          tar[1].hidden = false;
-          console.log("3");
-        }
-        else { //弱
-          tar[0].hidden = false;
-          console.log("4");
-        }
-      }
-      )
-    })();
+    var mySelect = document.createElement("select"); 
+    mySelect.id = "mySelect"; 
+    document.body.appendChild(mySelect); 
+    var obj=document.getElementById('mySelect'); 
+    //添加一个选项 
+    obj.add(new Option("A","A")); 
+    obj.add(new Option("B","B")); 
+    obj.add(new Option("C","C")); 
+    obj.add(new Option("D","D"));
   </script>
 </body>
 
