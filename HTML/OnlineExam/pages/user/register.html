@@ -11,6 +11,7 @@
 <body background="imgs/accountcover.jpg">
     <div id="register_right">
         <p>已有账号？<a href="pages/user/login.html">立即登录</a></p>
+		<p>忘记密码？<a href="pages/user/forget.html">立即找回</a></p>
     </div>
 	<div class="container">
 		<div id="register-root-div">
@@ -22,20 +23,22 @@
 			</div>
 			<!-- 输入内容 -->
 			<div id="input-root-div">
+				<form id= "postForm" method="POST">
 				<!-- 用户名 -->
-				<p>用户名：<input type="text" id = "1" placeholder="6-16位小写字母或数字"></p>
+				<p>用户名：<input type="text" id = "1" name = "username" placeholder="6-16位小写字母或数字"></p>
 				<!-- Password -->
-				<p>输入密码：<input type="password" id = "2" placeholder="6-16位数字或字母"></p>
+				<p>输入密码：<input type="password" id = "2" name = "password" placeholder="6-16位数字或字母"></p>
 				<div style="background-color: #b92c28;" class="plex" hidden>弱密码，长度不够</div>
 				<div style="background-color: #28a4c9;" class="plex" hidden>再复杂一点！字母和数字的组合</div>
 				<div style="background-color: #4cae4c;" class="plex" hidden>强密码！安全性高</div>
                 <p>再次输入：<input type="password" id = "3" placeholder="6-16位数字或字母"></p>
                 <!-- Email -->
-                <p>输入邮箱：<input type="email" id = "4" placeholder="someone@example.com"></p>
+                <p>输入邮箱：<input type="email" id = "4" name = "email" placeholder="someone@example.com"></p>
                 <!-- Address -->
-                <p>输入地址：<input type="address" id = "5" placeholder="xx省xx市xx村/小区..."></p>
+                <p>输入地址：<input type="address" id = "5" name = "address" placeholder="xx省xx市xx村/小区..."></p>
 			</div>
-			<button id="register-btn" type="submit">注册</button>
+			<input id="register-btn" type="submit" value = "注册">
+		</form>
 			<!-- login result -->
 			<div id="register-result-div">
 				<span></span>

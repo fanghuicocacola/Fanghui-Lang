@@ -5,35 +5,17 @@ const questionsArr = (function () {
     let obj1 = new Object();
     obj1.id = 1;
     obj1.stem = "HTML5 之前的 HTML 版本是？";
-    var choicesArr1 = new Array();
-    choicesArr1[0] = "HTML 4.01";
-    choicesArr1[1] = "HTML 4";
-    choicesArr1[2] = "HTML 4.1";
-    choicesArr1[3] = "HTML 4.9";
-    obj1.choices = choicesArr1
-    obj1.answer = 1;
+    obj1.answer = "HTML 4.01";
 
     let obj2 = new Object();
     obj2.id = 2;
     obj2.stem = "HTML5 的正确 doctype 是？";
-    var choicesArr2 = new Array();
-    choicesArr2[0] = "<!DOCTYPE html>";
-    choicesArr2[1] = "<!DOCTYPE HTML5>";
-    choicesArr2[2] = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 5.0//EN\" \"http://www.w3.org/TR/html5/strict.dtd\">";
-    choicesArr2[3] = "<DOCTYPE HTML5>";
-    obj2.choices = choicesArr2
-    obj2.answer = 2;
+    obj2.answer = "<!DOCTYPE HTML5>";
 
     let obj3 = new Object();
     obj3.id = 2;
     obj3.stem = "在 HTML5 中，哪个元素用于组合标题元素？";
-    var choicesArr3 = new Array();
-    choicesArr3[0] = "<group>";
-    choicesArr3[1] = "<header>";
-    choicesArr3[2] = "<headings>";
-    choicesArr3[3] = "<hgroup>";
-    obj3.choices = choicesArr3
-    obj3.answer = 3;
+    obj3.answer = "<headings>";
 
     for (var i = 0; i < 30; i = i + 3) {
         objArr[i] = obj1;
@@ -47,7 +29,7 @@ const questionsArr = (function () {
 })();
 
 //选择器
-let question_table_selector = "#singleChoice-questions-table";
+let question_table_selector = "#shortanswer-questions-table";
 let footer_span_indicator_selector = "#footer span:first-child";
 let footer_span_pre_selector = "#footer>div span:first-of-type";
 let footer_span_next_selector = "#footer>div span:last-of-type";
@@ -92,40 +74,22 @@ function createTable(arrPager) {
         spanStem.innerText = i + 1 + ". " + arrPager[i].stem;
         tdQuestion.appendChild(spanStem);
         tdQuestion.appendChild(document.createElement("br"));  //换行
-        //选项A
-        var spanChoiceA = document.createElement("span");
-        spanChoiceA.innerText = "A. " + arrPager[i].choices[0];
-        tdQuestion.appendChild(spanChoiceA);
-        tdQuestion.appendChild(document.createElement("br")); //换行
-        //选项B
-        var spanChoiceB = document.createElement("span");
-        spanChoiceB.innerText = "B. " + arrPager[i].choices[1];
-        tdQuestion.appendChild(spanChoiceB);
-        tdQuestion.appendChild(document.createElement("br")); //换行
-        //选项C
-        var spanChoiceC = document.createElement("span");
-        spanChoiceC.innerText = "C. " + arrPager[i].choices[2];
-        tdQuestion.appendChild(spanChoiceC);
-        tdQuestion.appendChild(document.createElement("br"));  //换行
-        //选项D
-        var spanChoiceD = document.createElement("span");
-        spanChoiceD.innerText = "D. " + arrPager[i].choices[3];
-        tdQuestion.appendChild(spanChoiceD);
+        
 
         trEle.appendChild(tdQuestion);
 
         //第2列
-        var mySelect = document.createElement("select");
-        mySelect.id = "mySelect" + i;
-        document.body.appendChild(mySelect);
-        var obj = document.getElementById('mySelect' + i);
-        //添加一个选项
-        obj.add(new Option(" ", " "));
-        obj.add(new Option("A", "A"));
-        obj.add(new Option("B", "B"));
-        obj.add(new Option("C", "C"));
-        obj.add(new Option("D", "D"));
-        trEle.appendChild(mySelect);
+        
+        var myText = document.createElement("TEXTAREA");
+        myText.style.minWidth = "100%";
+        myText.style.maxWidth = "100%";
+        myText.style.minHeight = "100px";
+        myText.style.maxHeight = "100px";
+        myText.style.fontSize = "20px";
+        myText.style.overflow = "auto";
+        myText.id = "myText"+i;
+        document.body.appendChild(myText);
+        tdQuestion.appendChild(myText);
         bodyEle.appendChild(trEle);
     }
 }
@@ -170,37 +134,11 @@ createTable(arrPager);
 spanIndicator.innerText = "共" + pageCount + "页，当前是第 " + (curPage + 1) + " 页";
 
 
-//地址
-var url = base_url + singleChoice_url;
-//保存答案的数组
-var selection = new Array();
-var j, x;
-//将答案实时存入数组
-for (var i = 0; i < 30; i++) {
-    //题号
-    j = i + 1;
-    x = document.getElementById("mySelect" + i);
-    selection.push({ "testid": j, "input": x });
-}
-$.ajax({
-    url: "",	//上传URL
-    type: "POST", //请求方式
-    data: {
-        "test": "SingleChoices",
-        "selection": JSON.stringify(arryA),//将数组转化成json字符串
-        dataType: "JSON", //设置接受到的响应数据的格式
-    },
-    function(xmlhttprequest) {
-        var resJson = JSON.parse(rs);
-        console.log(resJson.resMsg);
-
-        if (resJson.resCode == 1) {
-            
-        }
-    },
-    function(xmlhttprequest) {
+//倒计时
+let timeCount = 90 * 60;
+setInterval(function () {
+    timeDown_span.innerText = "距离考试结束，还有" + (--timeCount) + "秒";
+    if (timeCount == 0) {
+        //交卷
     }
-})
-
-
-
+}, 1000);

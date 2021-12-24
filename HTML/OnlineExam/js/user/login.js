@@ -1,17 +1,6 @@
-// 选择器
-/*
-let userName_input_selector = "#input-root-div input:first-of-type";
-let password_input_selector = "#input-root-div input:last-of-type";
-*/
 
 let loginResult_span_selector = "#login-result-div span";
 let loginBtn_selector = "#login-btn";
-
-// 标签
-/*
-let userName_input = document.querySelector(userName_input_selector);
-let password_input = document.querySelector(password_input_selector);
-*/
 
 let loginResult_span = document.querySelector(loginResult_span_selector);
 let loging_btn = document.querySelector(loginBtn_selector);
@@ -27,7 +16,9 @@ window.onload = function () {
 function createCode(length) {
     var code = "";
     var codeLength = parseInt(length); //验证码的长度
+    //获取验证码输入内容
     var checkCode = document.getElementById("checkCode");
+    //创建一个数组，存储要用到的随机数
     var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
         'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
@@ -48,15 +39,17 @@ function createCode(length) {
 
 
 
-// 登录校验
+// 登录校验创建一个点击事件
 loging_btn.onclick = function (event) {
-
+    //获取所需要输入框的数据
     userName = document.getElementById("username").value;
     if (!regMatch(userName, REG_USER_NAME)) {
+        // 当格式错误时，显示一个块元素，元素内容为"用户名格式错误"
         loginResult_span.parentNode.style.display = "block";
         loginResult_span.innerText = "用户名格式错误";
-        return;
+        return false;
     } else {
+        // 不显示块元素
         loginResult_span.parentNode.style.display = "none";
     }
 
@@ -64,7 +57,7 @@ loging_btn.onclick = function (event) {
     if (!regMatch(password, REG_PASSWORD)) {
         loginResult_span.parentNode.style.display = "block";
         loginResult_span.innerText = "密码格式错误";
-        return;
+        return false;
     } else {
         loginResult_span.parentNode.style.display = "none";
     }
@@ -76,34 +69,37 @@ loging_btn.onclick = function (event) {
     if (checkCode != inputCode) {
         loginResult_span.parentNode.style.display = "block";
         loginResult_span.innerText = "验证码错误";
-        return;
+        return false;
     } else {
         loginResult_span.parentNode.style.display = "none";
     }
-
-    var url = base_url + login_url;
-    var data = '{"userName":"' + userName + '", "password":' + '"' + password + '"}';
-    console.log(data);
-
-    ajax("POST",
-        url,
-        true,
-        false,
-        data,
-        null,
-        null,
-        function (xmlhttprequest) {
-            var rs = xmlhttprequest.responseText;
-            // JSON.parse(jsonstr); //可以将json字符串转换成json对象 
-            // JSON.stringify(jsonobj); //可以将json对象转换成json对符串 
-            var resJson = JSON.parse(rs);
-            console.log(resJson.resMsg);
-
-            if (resJson.resCode == 1) {
-                window.location.href = "pages/main/main.html";
+    
+    var data = 'userName='
+        + userName
+        + '&password='
+        + password;
+    //侦听来自id为postForm的提交事件，如果检测到，则执行postForm()函数
+    document.getElementById("postForm").addEventListener("submit", postForm);
+    function postForm(e) {
+        e.preventDefault();
+        // 一个异步请求
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "/OnlineExam/php/mysqlconnect.php", true);
+        //设置请求头
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
+        xhr.onload = function () {
+            console.log(this.responseText);
+            if (this.responseText == "1登陆成功!") {
+                loginResult_span.parentNode.style.display = "block";
+                loginResult_span.innerText = "登录成功";
+                window.location.href = "/OnlineExam/pages/main/main.html";
             }
-        },
-        function (xmlhttprequest) {
+            else {
+                loginResult_span.parentNode.style.display = "block";
+                loginResult_span.innerText = "账号或密码错误";
+                return false;
+            }
         }
-    );
+        xhr.send(data);
+    }
 }
