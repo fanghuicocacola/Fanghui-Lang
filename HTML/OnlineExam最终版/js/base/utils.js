@@ -2,6 +2,7 @@
 /**
  * 正则表达式
  * */
+
 function regMatch(param, strRegex) {
     var re = new RegExp(strRegex);
     if (re.test(param)) {

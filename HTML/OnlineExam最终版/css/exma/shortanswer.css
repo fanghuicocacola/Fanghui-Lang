@@ -11,7 +11,7 @@ html, body {
 
 
 /* 单选题容器 */
-#short-answer-page-container {
+#shortanswer-page-container {
     min-height: 600px;
     padding: 20px;
 }

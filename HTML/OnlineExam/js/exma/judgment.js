@@ -106,21 +106,6 @@ function createTable(arrPager) {
         trEle.appendChild(mySelect);
         bodyEle.appendChild(trEle);
     }
-    //function doSave() {
-       // var val=$('#v'+testId+' textarea').val();
-        //$.ajax({
-         // type: "POST",
-         // url: "/saveAnswer",
-         // contentType: "application/json",
-         // data: JSON.stringify({
-           // 'testId': testId,
-           // 'answer': '<pre>'+val+'</pre>'
-         // }),
-         // success: function (data) {
-           //  console.log("save success");
-           //  setTimeout(doSave,60*1000);
-         // }
-        //});
       
 }
 
@@ -164,26 +149,3 @@ createTable(arrPager);
 spanIndicator.innerText = "共" + pageCount + "页，当前是第 " + (curPage + 1) + " 页";
 
 
-//倒计时
-//let timeCount = 90 * 60;
-//setInterval(function () {
-  // timeDown_span.innerText = "距离考试结束，还有" + (--timeCount) + "秒";
-   // if (timeCount == 0) {
-       // 交卷
-   // }
-//}, 1000);
-//let times = 60 * 60;//剩余时间,单位秒
-    //let timeDiv = document.getElementById("time");
-  // let timeObj = null;
-//function timer(){
-       // if(times == 0){
-            //倒计时结束，提交表单
-           //document.getElementById("frm").submit();
-           // window.clearInterval(timeObj);
-//return;
-       // }
-       // let t = Math.floor(times/60) +"分"+times%60+"秒"
-       // timeDiv.innerHTML = t;
-       // times --;
-    //}
-   // timeObj = window.setInterval(timer,1000);

@@ -1,4 +1,3 @@
-
 let forgetResult_span_selector = "#forget-result-div span";
 let forgetBtn_selector = "#forget-btn";
 
@@ -13,12 +12,13 @@ forget_btn.onclick = function (event) {
     //获取输入的账号和邮箱
     userName = document.getElementById("username").value;
     email = document.getElementById("email").value;
-    var data = 'userName='
-        + userName
-        + '&email='
-        + email;
+    var data = 'userName=' +
+        userName +
+        '&email=' +
+        email;
     //侦听来自id = "postForm"的提交事件，如果发生，则执行postForm（）函数
     document.getElementById("postForm").addEventListener("submit", postForm);
+
     function postForm(e) {
         e.preventDefault();
         let xhr = new XMLHttpRequest();
@@ -35,8 +35,7 @@ forget_btn.onclick = function (event) {
                 alert(this.responseText);
                 //跳转到登录界面
                 window.location.href = "/OnlineExam/pages/user/login.html";
-            }
-            else{
+            } else {
                 forgetResult_span.parentNode.style.display = "block";
                 forgetResult_span.innerText = "找回失败";
                 return false

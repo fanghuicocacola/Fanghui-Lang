@@ -6,7 +6,7 @@ html, body {
     margin: 0px;
     font-size: 16px;
     overflow: hidden;
-    background-color: #edf1f5;
+    background-color: #f0f3f5;
 }
 
 
@@ -22,8 +22,12 @@ h2 {
     display: inline-block;
 }
 
+#timeDown-span{
+    float: right;
+}
+
 /* 题目内容 */
-#judgment-questions-div {
+#judgment-qustions-div {
     background-color: white;
     width: auto;
     min-height: 400px;

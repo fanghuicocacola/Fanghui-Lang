@@ -1,44 +1,33 @@
-
 <!DOCTYPE html>
 <html>
-
-<head>
+<head> 
 	<meta charset="utf-8">
 	<title>登录</title>
 	<base href="/OnlineExam/" />
-	<link rel="stylesheet" href="css/user/login.css" />
-	<link rel="stylesheet" href="css/user/img.css" />
+	<link rel="stylesheet"  href="css/user/login.css" />
 </head>
 
-<body background="imgs/accountcover.jpg">
-	<div id="login_right">
-		<p>没有账号？<a href="pages/user/register.html">立即注册</a></p>
-		<p>忘记密码？<a href="pages/user/forget.html">立即找回</a></p>
-	</div>
+<body>
 	<div class="container">
 		<div id="login-root-div">
-			<img id="img-login-icon" alt="" src="imgs/student.jpg">
+			<img id="img-login-icon" alt="" src="imgs/login-icon.png">
+
 			<!-- 提示文字 -->
 			<div id="tip-text-root-div">
-				<p class="text-large">欢迎回来</p>
-				<p>请填入你的账号密码</p>
+				<p class="text-large">Welcome back!</p>
+				<p>Please Sign-in to your account.</p>
 			</div>
 
 			<!-- 输入内容 -->
-			<form method="post" id="postForm">
-				<div id="input-root-div">
-					<!-- 用户名 -->
-					<p>用户名：<input type="text" id="username" name="user" placeholder="6-16位小写字母或数字"></p>
-					<!-- Password -->
-					<p>输入密码：<input type="password" id="password" name="pass" placeholder="6-16位字母或数字"></p>
-					<!-- 验证码 -->
-					<p id="checkCode" class="code" onclick="createCode(4)"></p>
-					<p>验证码：
-						<input type="text" id="inputCode" />
-					</p>
-				</div>
-				<input id="login-btn" type="submit" value="登录">
-			</form>
+			<div id="input-root-div">
+				<!-- User Name -->
+				<input type="text" placeholder="6-10位小写字母">
+				<!-- Password -->
+				<input type="password" placeholder="6-10位数字">
+			</div>
+
+			<button id="login-btn" type="submit">Sign In</button>
+
 			<!-- login result -->
 			<div id="login-result-div">
 				<span></span>

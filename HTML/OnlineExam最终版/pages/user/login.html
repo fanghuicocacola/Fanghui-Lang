@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>登录</title>
+	<base href="/OnlineExam/" />
+	<link rel="stylesheet" href="css/user/login.css" />
+	<link rel="stylesheet" href="css/user/img.css" />
+</head>
+
+<body background="imgs/accountcover.jpg">
+	<div id="login_right">
+		<p>没有账号？<a href="pages/user/register.html">立即注册</a></p>
+		<p>忘记密码？<a href="pages/user/forget.html">立即找回</a></p>
+	</div>
+	<div class="container">
+		<div id="login-root-div">
+			<img id="img-login-icon" alt="" src="imgs/student.jpg">
+			<!-- 提示文字 -->
+			<div id="tip-text-root-div">
+				<p class="text-large">欢迎回来</p>
+				<p>请填入你的账号密码</p>
+			</div>
+
+			<!-- 输入内容 -->
+			<form method="post" id="postForm">
+				<div id="input-root-div">
+					<!-- 用户名 -->
+					<p>用户名：<input type="text" id="username" name="user" placeholder="6-16位小写字母或数字"></p>
+					<!-- Password -->
+					<p>输入密码：<input type="password" id="password" name="pass" placeholder="6-16位字母或数字"></p>
+					<!-- 验证码 -->
+					<p id="checkCode" class="code" onclick="createCode(4)"></p>
+					<p>验证码：
+						<input type="text" id="inputCode" />
+					</p>
+				</div>
+				<input id="login-btn" type="submit" value="登录">
+			</form>
+			<!-- login result -->
+			<div id="login-result-div">
+				<span></span>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/base/finals.js"></script>
+	<script type="text/javascript" src="js/base/utils.js"></script>
+	<script type="text/javascript" src="js/user/login.js"></script>
+</body>
+
+</html>

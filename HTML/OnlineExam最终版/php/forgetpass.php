@@ -21,4 +21,3 @@ if ($row == true) {
 } else {
     echo "不存在该用户！";
 }
-?>
