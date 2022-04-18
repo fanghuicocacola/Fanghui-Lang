@@ -14,6 +14,7 @@
     if(a!=null){
         num = Integer.parseInt(a); }
 %>
+<html>
 <body>
 <p>请输入一个正整数N:</p>
 <form action="#" method="post" name="form">
