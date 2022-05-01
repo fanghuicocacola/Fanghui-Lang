@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="一web简介">一、Web简介</h2>
+    <h3 id="1-简介">1、 简介</h3>
+    <ol>
+        <li>早期的web应用主要是静态页面的浏览&#xff0c;这些静态页面使用HTML语言编写&#xff0c;放在服务器上&#xff0c;用户使用浏览器通过HTTP协议请求服务器上的web页面&#xff0c;服务器上的web服务器软件接受到用户发送的请求后&#xff0c;读取请求URI所标识的资源&#xff0c;加上消息包头发送给客户端的浏览器&#xff0c;浏览器解析响应中的HTML数据&#xff0c;向用户呈现多姿多彩的HTML页面。
+        </li>
+        <li>但是随着网络的发展&#xff0c;很多线下业务开始向网上发展&#xff0c;基于Internet的web应用也变得越来越复杂用户所访问的资源已不仅仅局限于服务器硬盘上存放的静态网页&#xff0c;更多的应用需要根据用户的请求动态生成网页信息&#xff0c;复杂的还需要从数据库中提取信息&#xff0c;经过一定的运算&#xff0c;生成一个页面返回给客户
+        </li>
+        <li>如何才能实现?
+            利用已经实现HTTP协议的服务器端软件&#xff0c;这些软件预先给我们留出了扩展的接口&#xff0c;我们只需要按照一定的规则提供相应的扩展功能&#xff0c;当这类web服务器接受到客户端请求后&#xff0c;判断请求是否是访问我们提供的扩展功能&#xff0c;如果是&#xff0c;将请求交由我们编写的程序去处理&#xff0c;处理完成后&#xff0c;程序将处理结果交回web服务器软件&#xff0c;web服务器软件拿到结果后&#xff0c;再将结果作为相应信息返回给客户端。
+        </li>
+        <li>早起使用的web服务器扩展机制是CGI&#xff0c;它允许用户调用web服务器上的CGI程序&#xff0c;CGI全称 Common Gateway Interface
+            公共网关接口&#xff0c;大多数的CGI程序使用Perl来编写&#xff0c;也有通过C,Python或PHP编写&#xff0c;用户通过单击某个连接或者直接在浏览器的地址栏输入URL来访问CGI程序&#xff0c;web服务器接受到请求后&#xff0c;发现这个请求是给CGI程序的&#xff0c;于是就启动并运行这个CGI程序&#xff0c;对用于请求进行处理。CGI程序解析请求中的CGI数据&#xff0c;处理数据&#xff0c;并且产生一个响应&#xff0c;这个响应被返回给web服务器&#xff0c;web服务器包装这个响应&#xff0c;以HTTP响应的形式发送给Web浏览器。但是CGI编写困难&#xff0c;对用户请求的响应时间较长以进程方式运行导致性能受限制。
+        </li>
+    </ol>
+    <h3 id="2web应用历史">2、Web应用历史</h3>
+    <h4 id="21单机程序">2.1、单机程序</h4>
+    <blockquote>
+        <p>软件从附着于电脑硬件之日起&#xff0c;就在不断的进行着自我完善和演变。从其使用模式的角度出发&#xff0c;可以简单分为单机程序和网络程序。发展到今时今日仍有大量的不依赖网络的单机程序被我们使用&#xff0c;如记事本、Excel、PPT、ZIP压缩等软件都是大家熟知的装机必备软件
+        </p>
+    </blockquote>
+    <h4 id="22网络程序">2.2、网络程序</h4>
+    <blockquote>
+        <p>当电脑越来越多的参与到日常生产生活中&#xff0c;单机程序已经不能满足企业的需要。企业级应用要求能够最大程度的让更多的客户端参与到协同办公之中&#xff0c;所以依赖于网络的程序开始大力发展起来。</p>
+    </blockquote>
+</body>
+
+</html>
