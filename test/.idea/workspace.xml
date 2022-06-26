@@ -74,14 +74,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.page1.jsp">
+  <component name="RunManager" selected="JavaScript Debug.一元二次方程.jsp">
+    <configuration name="一元二次方程.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8088/test1_war_exploded/期末/一元二次方程.jsp">
+      <method v="2" />
+    </configuration>
     <configuration name="input.jsp (1)" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:8088/test1_war_exploded/input.jsp">
       <method v="2" />
     </configuration>
     <configuration name="input.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8091/test1_war_exploded/calculate/input.jsp">
-      <method v="2" />
-    </configuration>
-    <configuration name="login.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8091/test1_war_exploded/session/login.jsp">
       <method v="2" />
     </configuration>
     <configuration name="page1.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8091/test1_war_exploded/session2/page1.jsp">
@@ -90,8 +90,78 @@
     <configuration name="page2.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8091/test1_war_exploded/session2/page2.jsp">
       <method v="2" />
     </configuration>
-    <configuration name="welcome.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8091/test1_war_exploded/session/welcome.jsp">
-      <method v="2" />
+    <configuration name="一元二次方程.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.37" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8088/期末/一元二次方程.jsp" />
+      <option name="BROWSER_ID" value="b2a9dca7-9d0b-4e1e-98a8-afb19c1328d2" />
+      <deployment>
+        <artifact name="test1:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/test1_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_test1" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51223" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="test1:war exploded" />
+        </option>
+      </method>
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.37" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8088/test1_war_exploded/" />
@@ -244,20 +314,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.input.jsp (1)" />
-      <item itemvalue="Tomcat Server.index.jsp" />
-      <item itemvalue="JavaScript Debug.welcome.jsp" />
-      <item itemvalue="JavaScript Debug.login.jsp" />
       <item itemvalue="JavaScript Debug.input.jsp" />
       <item itemvalue="JavaScript Debug.page1.jsp" />
       <item itemvalue="JavaScript Debug.page2.jsp" />
+      <item itemvalue="Tomcat Server.index.jsp" />
+      <item itemvalue="Tomcat Server.一元二次方程.jsp" />
+      <item itemvalue="JavaScript Debug.一元二次方程.jsp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.一元二次方程.jsp" />
+        <item itemvalue="Tomcat Server.一元二次方程.jsp" />
         <item itemvalue="JavaScript Debug.page1.jsp" />
         <item itemvalue="JavaScript Debug.page2.jsp" />
         <item itemvalue="JavaScript Debug.input.jsp" />
-        <item itemvalue="JavaScript Debug.login.jsp" />
-        <item itemvalue="JavaScript Debug.welcome.jsp" />
       </list>
     </recent_temporary>
   </component>
@@ -293,6 +363,9 @@
       <workItem from="1650870510712" duration="1871000" />
       <workItem from="1651374389335" duration="14106000" />
       <workItem from="1651389005664" duration="20184000" />
+      <workItem from="1654649972219" duration="3883000" />
+      <workItem from="1655260088817" duration="1542000" />
+      <workItem from="1655281502102" duration="3085000" />
     </task>
     <servers />
   </component>
@@ -333,10 +406,10 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="354" y="61" width="1089" height="755" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.816@0.0.1536.816" timestamp="1651389192079" />
-    <state x="519" y="211" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1650263247612">
+    <state x="519" y="211" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1655281562560">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="519" y="211" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.816@0.0.1536.816" timestamp="1650263247612" />
+    <state x="519" y="211" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.816@0.0.1536.816" timestamp="1655281562560" />
     <state x="498" y="192" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1651392011727">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
