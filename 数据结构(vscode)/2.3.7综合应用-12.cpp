@@ -3,10 +3,10 @@
 #include<stdio.h>
 
 typedef int ElemType;
-typedef struct LNOde
+typedef struct LNode
 {
     ElemType data;
-    LNOde *next;
+    LNode *next;
 }LNode,*LinkList;
 
 void Del_Same(LinkList &L){
