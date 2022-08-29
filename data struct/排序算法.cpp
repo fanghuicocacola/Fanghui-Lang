@@ -71,23 +71,71 @@ void BubbleSort(int A[],int n){
 //用第一个元素将待排序序列划分成左右两个部分
 int Partition(int A[],int low,int high){
     int pivot = A[low];
-    while (low<high)
+    while (low<high)                     //第一个元素作为枢纽
     {
-        while(low<high&&A[high]>=pivot)
+        while(low<high&&A[high]>=pivot)  //用low，high搜索枢纽的最终位置
             high--;
-        A[low] = A[high];
+        A[low] = A[high];   //比枢纽小的移动到左端
         while (low<high&&A[low]<=pivot)
             low++;
-        A[high] = A[low];
+        A[high] = A[low];  //比枢纽大的移动到右端
     }
-    A[low] = pivot;
-    return low;
+    A[low] = pivot;    //枢纽存放到最终位置
+    return low;        //返回存放枢纽的位置
 }
 //快速排序
 void QuickSort(int A[],int low,int high){
-    if(low<high){
-        int pivotPos = Partition(A,low,high);
-        QuickSort(A,low,pivotPos-1);
-        QuickSort(A,pivotPos+1,high);
+    if(low<high){             //递归跳出的条件
+        int pivotPos = Partition(A,low,high);    //划分
+        QuickSort(A,low,pivotPos-1);    //划分左子表
+        QuickSort(A,pivotPos+1,high);   //划分右子表
+    }
+}
+
+//简单选择排序
+void SelectSort(int A[],int n){
+    for(int i=0;i<n-1;i++){           //一共进行n-1趟
+        int min=i;                    //记录最小元素的位置
+        for(int j=i+1;j<n;j++)        //在A[i...n-1]中选择最小的元素
+            if(A[j]<A[min]) 
+                min=j;                //更新最小元素位置
+        if(min!=i)swap(A[i],A[min]);  //封装的swap函数共移动元素3次
+    }
+}
+void swap(int &a,int &b){
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+//建立大根堆
+void BuildMaxHeap(int A[],int len){
+    for(int i=len/2;i>0;i--)       //从后往前调整所有非终端结点
+        HeapAdjust(A,i,len);
+}
+
+//将以k为根的子树调整为大根堆
+void HeapAdjust(int A[],int k,int len){
+    A[0]=A[k];         //A[0]暂存子树的根结点
+    for(int i=2*k;i<=len;i*=2){  //沿key较大的子结点向下筛选
+        if(i<len&&A[i]<A[i+1])
+            i++;                 //沿key较大的子结点的下标
+        if(A[0]>=A[i])
+            break;               //筛选结束
+        else{
+            A[k]=A[i];           //将A[i]调整到双亲结点上
+            k = i;               //修改k值，以便继续向下筛选
+        }
+    }
+    A[k]=A[0];
+}
+
+//堆排序的完整逻辑
+void HeapSort(int A[],int len){
+    int i;
+    BuildMaxHeap(A,len);     //初始建堆
+    for(i=len;i>1;i--);{ //n-1趟的交换和建堆过程
+        swap(A[i],A[1]);     //堆顶元素和堆底元素交换
+        HeapAdjust(A,1,i-1); //把剩余的待排序元素整理成堆
     }
 }
