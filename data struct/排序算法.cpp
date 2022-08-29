@@ -67,3 +67,27 @@ void BubbleSort(int A[],int n){
             return;                   //本趟遍历后没有发生交换，说明表已经有序
     }
 }
+
+//用第一个元素将待排序序列划分成左右两个部分
+int Partition(int A[],int low,int high){
+    int pivot = A[low];
+    while (low<high)
+    {
+        while(low<high&&A[high]>=pivot)
+            high--;
+        A[low] = A[high];
+        while (low<high&&A[low]<=pivot)
+            low++;
+        A[high] = A[low];
+    }
+    A[low] = pivot;
+    return low;
+}
+//快速排序
+void QuickSort(int A[],int low,int high){
+    if(low<high){
+        int pivotPos = Partition(A,low,high);
+        QuickSort(A,low,pivotPos-1);
+        QuickSort(A,pivotPos+1,high);
+    }
+}
