@@ -139,3 +139,34 @@ void HeapSort(int A[],int len){
         HeapAdjust(A,1,i-1); //把剩余的待排序元素整理成堆
     }
 }
+
+//归并排序
+#define maxsize 999
+int *B=(int *)malloc(maxsize*sizeof(int));
+
+//A[low...mid]和A[mid+1...high]各自有序，将两个部分归并
+void Merge(int A[],int low,int mid,int high){
+    int i,j,k;
+    for(k=low;k<=high;k++)
+        B[k] = A[k];   //复制A中所有值到B中
+    for(i=low,j=mid+1,k=i;i<=mid&&j<=high;k++){
+        if(B[i]<=B[j])//两个元素相同时，优先选择靠前的，保证了稳定性
+            A[k] = B[i++];  //复制较小值
+        else
+            A[k] = B[j++];
+    }
+    while(i<=mid)
+        A[k++]=B[i++];
+    while(j<=high)
+        A[k++]=B[j++];
+}
+
+void MergeSort(int A[],int low,int high){
+    if(low<high){
+        int mid=(low+high)/2;     //从中间划分
+        MergeSort(A,low,mid);     //对左半部分归并排序
+        MergeSort(A,mid+1,high);  //对右半部分归并排序
+        Merge(A,low,mid,high);    //归并
+    }
+}
+
