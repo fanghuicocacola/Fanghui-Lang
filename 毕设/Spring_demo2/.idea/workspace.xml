@@ -13,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="spring-beans.schema" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -54,36 +54,48 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TestEmp.test_demo">
-    <configuration name="TestBean" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestBean" />
+  <component name="RunManager" selected="JUnit.TestDemo.testCollection">
+    <configuration name="TestStu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestStu" />
       <module name="spring_demo" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestBook" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestBook" />
-      <module name="spring_demo" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestBean.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestDemo.testCollection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring_demo" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestBean" />
-      <option name="METHOD_NAME" value="testAdd" />
+      <option name="MAIN_CLASS_NAME" value="TestDemo" />
+      <option name="METHOD_NAME" value="testCollection" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestEmp.test_demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestStu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring_demo" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestEmp" />
-      <option name="METHOD_NAME" value="test_demo" />
+      <option name="MAIN_CLASS_NAME" value="TestStu" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestStu.testCollection1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring_demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestStu" />
+      <option name="METHOD_NAME" value="testCollection1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestStu.testCollection2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring_demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestStu" />
+      <option name="METHOD_NAME" value="testCollection2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,10 +103,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestEmp.test_demo" />
-        <item itemvalue="JUnit.TestBean.testAdd" />
-        <item itemvalue="Application.TestBean" />
-        <item itemvalue="Application.TestBook" />
+        <item itemvalue="JUnit.TestDemo.testCollection" />
+        <item itemvalue="JUnit.TestStu.testCollection2" />
+        <item itemvalue="JUnit.TestStu.testCollection1" />
+        <item itemvalue="Application.TestStu" />
+        <item itemvalue="JUnit.TestStu" />
       </list>
     </recent_temporary>
   </component>
@@ -109,30 +122,19 @@
       <workItem from="1672746683503" duration="5104000" />
       <workItem from="1672798796961" duration="2163000" />
       <workItem from="1672801648143" duration="191000" />
-      <workItem from="1672801849514" duration="9483000" />
+      <workItem from="1672801849514" duration="8972000" />
+      <workItem from="1672818711945" duration="9235000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/TestBean.java</url>
-          <line>10</line>
-          <properties class="TestBean" method="testAdd">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Spring_demo2$TestStu.ic" NAME="TestStu Coverage Results" MODIFIED="1672824154166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
