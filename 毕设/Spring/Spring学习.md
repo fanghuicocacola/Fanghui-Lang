@@ -129,34 +129,34 @@
    4. 注入属性-级联赋值
       在spring配置文件中进行配置
 
-```123
-<!--     级联赋值-->
-   <bean id="emp" class="bean.Emp">
-<!--        设置两个普通属性-->
-        <property name="ename" value="David"></property>
-        <property name="gender" value="男"></property>
-<!--    级联赋值-->
-        <property name="dept" ref="dept"></property>
-<!--        <property name="dept.dname" value="技术部"></property>-->
-    </bean>
-    <bean id="dept" class="bean.Dept">
-        <property name="dname" value="财务部"></property>
-    </bean>
-```
+        ```123
+        <!--     级联赋值-->
+        <bean id="emp" class="bean.Emp">
+        <!--        设置两个普通属性-->
+                <property name="ename" value="David"></property>
+                <property name="gender" value="男"></property>
+        <!--    级联赋值-->
+                <property name="dept" ref="dept"></property>
+        <!--        <property name="dept.dname" value="技术部"></property>-->
+            </bean>
+            <bean id="dept" class="bean.Dept">
+                <property name="dname" value="财务部"></property>
+            </bean>
+        ```
 
-   作为对比，这是外部bean  
+        作为对比，这是外部bean  
 
-```123
-<!--    1.service和dao对象创建-->
-    <bean id="userService" class="service.UserService">
-<!--        注入userDao对象
-            name属性值：类里面属性名称
-            ref属性：创建userDao对象bean标签id值
--->
-        <property name="userDao" ref="userDao"></property>
-    </bean>
-    <bean id="userDao" class="dao.UserDaoImpl"></bean>
-```
+        ```123
+            <!--    1.service和dao对象创建-->
+                <bean id="userService" class="service.UserService">
+            <!--        注入userDao对象
+                        name属性值：类里面属性名称
+                        ref属性：创建userDao对象bean标签id值
+            -->
+                    <property name="userDao" ref="userDao"></property>
+                </bean>
+                <bean id="userDao" class="dao.UserDaoImpl"></bean>
+        ```
 
 + IOC操作Bean管理(xml注入集合属性)
 
@@ -169,127 +169,127 @@
    4. 在集合类型里面设置对象类型值
    5. 把集合注入部分提取出来
 
-```123
-public class Stu {
-    //1 数组类型属性
-    private String[] course;
-    //2 list集合类型属性
-    private List<String> list;
-    //3 map集合类型属性
-    private Map<String,String>maps;
-    //4 set集合类型属性
-    private Set<String>sets;
+        ```123
+        public class Stu {
+            //1 数组类型属性
+            private String[] course;
+            //2 list集合类型属性
+            private List<String> list;
+            //3 map集合类型属性
+            private Map<String,String>maps;
+            //4 set集合类型属性
+            private Set<String>sets;
 
-    //学生所学多门课程
-    private List<Course>courseList;
+            //学生所学多门课程
+            private List<Course>courseList;
 
-    public void setCourseList(List<Course> courseList) {
-        this.courseList = courseList;
-    }
+            public void setCourseList(List<Course> courseList) {
+                this.courseList = courseList;
+            }
 
-    public void setCourse(String[] course) {
-        this.course = course;
-    }
+            public void setCourse(String[] course) {
+                this.course = course;
+            }
 
-    public void setList(List<String> list) {
-        this.list = list;
-    }
+            public void setList(List<String> list) {
+                this.list = list;
+            }
 
-    public void setMaps(Map<String, String> maps) {
-        this.maps = maps;
-    }
+            public void setMaps(Map<String, String> maps) {
+                this.maps = maps;
+            }
 
-    public void setSets(Set<String> sets) {
-        this.sets = sets;
-    }
+            public void setSets(Set<String> sets) {
+            this.sets = sets;
+            }
 
-    public void test(){
-        System.out.println(Arrays.toString(course));
-        System.out.println(list);
-        System.out.println(maps);
-        System.out.println(sets);
-        System.out.println(courseList);
-    }
-}
-```
+            public void test(){
+                System.out.println(Arrays.toString(course));
+                System.out.println(list);
+                System.out.println(maps);
+                System.out.println(sets);
+                System.out.println(courseList);
+            }
+        }
+        ```
 
-```123
-<bean id="stu" class="com.example.Stu">
-    <!--数组类型属性注入-->
-            <property name="course">
-                <array>
-                    <value>Java课程</value>
-                    <value>数据库课程</value>
-                </array>
-            </property>
-    <!--list类型注入-->
-            <property name="list">
-                <list>
-                    <value>张三</value>
-                    <value>张饼子</value>
-                </list>
-            </property>
-    <!--map类型注入-->
-            <property name="maps">
-                <map>
-                    <entry key="JAVA" value="java"></entry>
-                    <entry key="PHP" value="php"></entry>
-                </map>
-            </property>
-    <!--set类型注入-->
-        <property name="sets">
-            <set>
-                <value>MySQL</value>
-                <value>Redis</value>
-            </set>
-        </property>
-   ```
+        ```123
+        <bean id="stu" class="com.example.Stu">
+            <!--数组类型属性注入-->
+                    <property name="course">
+                        <array>
+                            <value>Java课程</value>
+                            <value>数据库课程</value>
+                        </array>
+                    </property>
+            <!--list类型注入-->
+                    <property name="list">
+                        <list>
+                            <value>张三</value>
+                            <value>张饼子</value>
+                        </list>
+                    </property>
+            <!--map类型注入-->
+                    <property name="maps">
+                        <map>
+                            <entry key="JAVA" value="java"></entry>
+                            <entry key="PHP" value="php"></entry>
+                        </map>
+                    </property>
+            <!--set类型注入-->
+                <property name="sets">
+                    <set>
+                        <value>MySQL</value>
+                        <value>Redis</value>
+                    </set>
+                </property>
+        ```
 
-```4
-public class Course {
-    private String cname;  //课程名称
+        ```4
+        public class Course {
+            private String cname;  //课程名称
 
-    public void setCname(String cname) {
-        this.cname = cname;
-    }
+            public void setCname(String cname) {
+                this.cname = cname;
+            }
 
-    @Override
-    public String toString() {
-        return "Course{cname="+cname+"}";
-    }
-}
-```
+            @Override
+            public String toString() {
+                return "Course{cname="+cname+"}";
+            }
+        }
+        ```
 
-```4
-<!--注入list集合类型，值是对象-->
-        <property name="courseList">
-            <list>
-                <ref bean="course1"></ref>
-                <ref bean="course2"></ref>
-            </list>
-        </property>
-    </bean>
-    <bean id="course1" class="com.example.Course">
-        <property name="cname" value="Spring框架"></property>
-    </bean>
-    <bean id="course2" class="com.example.Course">
-        <property name="cname" value="MyBatis框架"></property>
-    </bean>
-```
+        ```4
+        <!--注入list集合类型，值是对象-->
+                <property name="courseList">
+                    <list>
+                        <ref bean="course1"></ref>
+                        <ref bean="course2"></ref>
+                    </list>
+                </property>
+            </bean>
+            <bean id="course1" class="com.example.Course">
+                <property name="cname" value="Spring框架"></property>
+            </bean>
+            <bean id="course2" class="com.example.Course">
+                <property name="cname" value="MyBatis框架"></property>
+            </bean>
+        ```
 
-```5
-<!--1 提取list集合类型属性注入-->
-    <util:list id="booklist">
-        <value>猫和老鼠</value>
-        <value>翡冷翠的一夜</value>
-        <value>哈利波特</value>
-    </util:list>
+        ```5
+        <!--1 提取list集合类型属性注入-->
+            <util:list id="booklist">
+                <value>猫和老鼠</value>
+                <value>翡冷翠的一夜</value>
+                <value>哈利波特</value>
+            </util:list>
 
-    <!--2 提取list集合类型属性注入使用-->
-    <bean id="book" class="com.example.Book">
-        <property name="list" ref="booklist"></property>
-    </bean>
-```
+            <!--2 提取list集合类型属性注入使用-->
+            <bean id="book" class="com.example.Book">
+                <property name="list" ref="booklist"></property>
+            </bean>
+        ```
 
 + IOC操作Bean管理(FactoryBean)
    1. Spring有两2.种类型bean，一种是普通bean，另外一种工厂bean(FactoryBean)
@@ -335,3 +335,242 @@ public class Course {
    (5)把bean实例传递bean后置处理器的方法
    (6)bean可以使用了(获取创建bean实例对象)
    (7)当容器关闭时候，调用bean的销毁方法(需要进行配置销毁的方法)
+
++ IOC操作自动装配
+    1. 什么是自动装配
+        (1)根据指定装配规则(属性名称或者属性类型)，Spring自动将匹配的属性值进行注入
+    2. 演示自动装配
+        (1)根据属性名称自动注入
+            实现自动装配
+            bean标签属性autowire，配置自动装配
+            autowire属性常用两个值：
+            byName根据属性名称注入，注入值bean的id值和类属性名称一样
+            byType根据属性类型注入
+            `<bean id="emp" class="com.example.autowire.Emp" autowire="byName"></bean>`
+            `<bean id="dept" class="com.example.autowire.Dept"></bean>`
+
++ IOC操作Bean管理(外部属性文件)
+  1. 直接配置数据库信息
+   (1)配置德鲁伊连接池
+
+        ```添加依赖
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.15</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.19</version>
+        </dependency>
+        ```
+
+  2. 引入外部属性文件配置数据库连接池
+   (1)创建外部属性文件，properties格式文件，写数据库信息
+   ![这是图片](截图32.png)
+  3. 把外部properties属性引入到spring配置文件中
+     (1) 引入context名称空间
+
+        ```名称空间
+            xmlns="http://www.springframework.org/schema/beans"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:context="http://www.springframework.org/schema/context"
+            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                                http://www.springframework.org/schema/util http://www.springframework.org/schema/beans/spring-util.xsd
+                                http://www.springframework.org/schema/context http://www.springframework.org/schema/beans/spring-context.xsd">
+        ```
+
+      (2) 在spring配置文件中使用标签引入外部属性文件
+
+     ```引入
+            <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
+            <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+                <property name="driverClassName" value="${prop.driverClass}"></property>
+                <property name="url" value="${prop.url}"></property>
+                <property name="username" value="${prop.userName}"></property>
+                <property name="password" value="${prop.password}"></property>
+            </bean>
+     ```
+
++ IOC操作Bean管理(基于注解方式)
+  1. 什么是注解
+   (1) 注解是代码特殊标记，格式：@注解名称(属性名称=属性值，属性名称=属性值...)
+   (2) 使用注解：注解作用在类上面，方法上面，属性上面
+   (3) 使用注解目的：简化xml配置
+  2. Spring针对Bean管理中创建对象提供注解
+   (1)@Component
+   (2)@Service
+   (3)@Controller
+   (4)@Respository
+   上面四个注解功能是一样的，都可以用来创建bean实例
+  3. 基于注解方式实现对象创建
+     (1)引入依赖
+
+        ```引入依赖
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.9.19</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>6.0.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>6.0.3</version>
+            </dependency>
+        ```
+
+     (2) 开启组件扫描
+
+        ```开启
+            xmlns="http://www.springframework.org/schema/beans"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:context="http://www.springframework.org/schema/context"
+            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                                http://www.springframework.org/schema/context
+                                http://www.springframework.org/schema/context/spring-context.xsd">
+                                ...................
+                                ...................
+            <!--    开启组件扫描
+                1 如果扫描多个包，多个包使用逗号隔开
+                1 扫描包上层目录-->
+            <!--    示例1-->
+            <!--    <context:component-scan base-package="com.example.service,com.example.dao"></context:component-scan>-->
+            <!--    示例2-->
+            <!--    <context:component-scan base-package="com.example"></context:component-scan>-->
+            <!--    示例3-->
+            <!--    <context:component-scan base-package="com.example" use-default-filters="false">-->
+            <!--        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+            <!--    </context:component-scan>-->
+            <!--    示例4-->
+            <!--<context:component-scan base-package="com.example">-->
+            <!--    <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+            <!--</context:component-scan>-->
+        ```
+
+     (3) 创建类，在类上面添加创建对象的注解
+
+        ```注解
+            //在注解里面value属性值可以省略不写，默认值是类名称首字母小写
+            @Component(value = "userService") // <bean id="userService" class="UserService"></bean>
+            public class UserService {
+                public void add(){
+                    System.out.println("Service add...");
+                }
+            }
+        ```
+
+  4. 基于注解方式实现属性注入
+    [链接-注解方式](https://blog.csdn.net/qq_44543508/article/details/103695784)
+     (1) @AutoWired:根据属性类型进行自动装配
+        第一步：把service和dao对象创建，在service和dao
+        第二步：在service注入dao对象，在service类添加dao类型属性，在属性上面使用注解
+
+        ```代码
+            @Service
+            public class UserService {
+                //定义dao类型属性
+                //添加注入属性注解
+                @Autowired  //根据类型进行注入
+                private UserDao userDao;
+                //不需要添加set方法
+                public void add(){
+                    System.out.println("Service add...");
+                    userDao.add();
+                }
+            }
+            ...
+            @Repository(value = "userDaolmpl")
+            public class UserDaoImpl implements UserDao {
+                @Override
+                public void add() {
+                    System.out.println("Dao add......");
+                }
+            }
+            ...
+            public interface UserDao {
+                public void add();
+            }
+            ...
+            public class TestDemo {
+                @Test
+                public void testService(){
+                    ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+                    UserService userService = context.getBean("userService", UserService.class);
+                    userService.add();
+                    System.out.println(userService);
+                }
+            }
+        ```
+     (2) @Qualifier:根据属性名称进行注入
+
+        ```代码
+            @Service
+            public class UserService {
+                //定义dao类型属性
+                //添加注入属性注解
+                @Autowired  //根据类型进行注入
+                @Qualifier(value = "userDaolmpl")
+                private UserDao userDao;
+                //不需要添加set方法
+                public void add(){
+                    System.out.println("Service add...");
+                    userDao.add();
+                }
+            }
+            ...
+            @Repository(value = "userDaolmpl")
+            public class UserDaoImpl implements UserDao {
+                @Override
+                public void add() {
+                    System.out.println("Dao add......");
+                }
+            }
+        ```
+
+     (3) @Resource:可以根据类型注入，也可以根据名称注入
+     (4) @Value:注入普通类型属性
+
+  5. 完全注解开发
+     (1)创建配置类,替换xml配置文件
+
+        ```代码
+            @Configuration  //作为配置类，替换xml配置文件
+            @ComponentScan(basePackages = {"com.example"})
+
+            ···
+
+            @Test
+            public void test_1(){
+                ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+                UserService userService = context.getBean("userService", UserService.class);
+                userService.test();
+                System.out.println(userService);
+            }
+            //对比
+            @Test
+            public void test_2(){
+                ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+                UserService userService = context.getBean("userService", UserService.class);
+                userService.test();
+                System.out.println(userService);
+            }
+            ```
+
+## AOP原理
+
+1. AOP底层原理
+2. AOP操作
+
+### AOP概念和原理
+
+1. 什么是AOP
+   (1) 面向切面编程(方面)，利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间耦合度降低，提高程序的可用性，同时提高了开发的效率
+   (2) 通俗描述：不通过修改源代码方式，在主干功能里面添加功能
+   (3)例子说明
+   ![这是图片](截图33.png)
