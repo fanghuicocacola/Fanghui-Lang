@@ -53,7 +53,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "spring.configuration.checksum": "f4773a7e3fe0e315f671481d29ae8f32",
+    "spring.configuration.checksum": "1a05b6f2af840d32ee2e3e3a838f9ba9",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -67,20 +67,27 @@
       <recent name="com.example.autowire" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestDemo.test_2">
-    <configuration name="TestDemo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestDemo">
+    <configuration name="JDKProxy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.service.JDKProxy" />
       <module name="spring_demo" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestDemo" />
-      <option name="TEST_OBJECT" value="class" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDemo_EMP" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestDemo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring_demo" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestDemo_EMP" />
+      <option name="MAIN_CLASS_NAME" value="TestDemo" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,6 +98,18 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="TestDemo_EMP" />
       <option name="METHOD_NAME" value="Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDemo.test" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="spring_demo" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDemo" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestDemo.test_2" />
         <item itemvalue="JUnit.TestDemo" />
+        <item itemvalue="Application.JDKProxy" />
+        <item itemvalue="JUnit.TestDemo.test_2" />
         <item itemvalue="JUnit.TestDemo.testService" />
         <item itemvalue="JUnit.TestDemo_EMP.Test" />
-        <item itemvalue="JUnit.TestDemo_EMP" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +160,7 @@
       <workItem from="1672818711945" duration="9235000" />
       <workItem from="1672991763772" duration="8768000" />
       <workItem from="1673001982033" duration="11347000" />
-      <workItem from="1673081339457" duration="218000" />
+      <workItem from="1673081558735" duration="11828000" />
     </task>
     <servers />
   </component>
