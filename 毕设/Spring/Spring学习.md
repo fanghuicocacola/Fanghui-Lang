@@ -21,7 +21,54 @@
 ## 创建一个spring案例
 
 1. 修改pom.xml文件
-   ![这是图片](截图1.png)
+
+   ```pom.xml
+      <?xml version="1.0" encoding="UTF-8"?>
+        <project xmlns="http://maven.apache.org/POM/4.0.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+            <modelVersion>4.0.0</modelVersion>
+
+            <groupId>org.example</groupId>
+            <artifactId>spring_demo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+
+            <dependencies>
+                <dependency>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                    <version>4.13.2</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-context</artifactId>
+                    <version>6.0.3</version>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+                <dependency>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-core</artifactId>
+                    <version>2.19.0</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-test</artifactId>
+                    <version>6.0.3</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok</artifactId>
+                    <version>1.18.24</version>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
+            <properties>
+                <maven.compiler.source>19</maven.compiler.source>
+                <maven.compiler.target>19</maven.compiler.target>
+            </properties>
+        </project>
+   ```
+
 2. 编写main包里的代码
    ![这是图片](截图2.png)
 3. 在resource包里编写spring配置文件
@@ -507,6 +554,7 @@
                 }
             }
         ```
+
      (2) @Qualifier:根据属性名称进行注入
 
         ```代码
@@ -825,3 +873,287 @@
 ![这是图片](截图37.png)
 注：完全注解AspectJ(不需要xml配置文件)
 ![这是图片](截图38.png)
+
++ JdbcTemplate(概念和准备)
+    1. 什么是JdbcTemplate
+      (1)Spring框架对JDBC进行封装，使用JdbcTemplate方便实现对数据库操作
+    2. 准备工作
+       (1)引入相关依赖
+
+       ```代码
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>6.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>6.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>6.0.3</version>
+        </dependency>
+       ```
+
+       (2)配置数据库连接池
+
+       ```代码
+        <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+            <property name="url" value="jdbc:mysql:///user_db"></property>
+            <property name="username" value="root"></property>
+            <property name="password" value="root"></property>
+            <property name="driverClassName" value="com.mysql.jdbc.jc.Driver"></property>
+        </bean>
+       ```
+
+        注意：问题所在：在查阅相关资料之后，得知是由于jdbc驱动包名引发的问题
+        5.x版本的驱动文件jar包对应的是：
+        Class.forName("com.mysql.jdbc.Driver");
+        语句来加载数据库驱动
+
+        而我使用的是8.0x版本的数据库驱动文件，对此，需要将加载数据库驱动的语句更改为：
+        Class.forName("com.mysql.cj.jdbc.Driver");
+       (3)配置JdbcTempla对象，注入DataSource
+
+       ```代码
+        <!--JdbcTemplate对象-->
+        <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+                <!--注入dataSource-->
+                <property name="dataSource" ref="dataSource"></property>
+        </bean>
+       ```
+
+       (4)创建service类，创建dao类，在dao注入jdbcTemplate对象
+
+       ```配置文件
+            <!--组件扫描-->
+            <context:component-scan base-package="com.example"></context:component-scan>
+       ```
+
+       ```service
+        @Service
+        public class BookService {
+            //注入dao
+            @Autowired
+            private BookDao bookDao;
+        }
+       ```
+
+       ```dao
+        @Repository
+        public class BookDaoImpl implements BookDao{
+            //注入jdbcTemplate
+            @Autowired
+            private JdbcTemplate jdbcTemplate;
+        }
+       ```
+
++ JdbcTemplate操作数据库(添加)
+    1. 对应数据库创建实体类
+
+       ```代码
+        private String userID;
+        private String userName;
+        private String uStatus;
+
+        public void setUserID(String userID) {
+            this.userID = userID;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        public void setUStatus(String uStatus) {
+            this.uStatus = uStatus;
+        }
+
+        public String getUserID() {
+            return userID;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public String getUStatus() {
+            return uStatus;
+        }
+       ```
+
+    2. 编写service和dao
+     (1)在dao进行数据库添加操作
+       > update(String sql,Object...args)
+       >有两个参数，第一个:sql语句，第二个:可变参数，设置sql语句值
+
+        ```代码
+            @Repository
+            public class BookDaoImpl implements BookDao {
+                //注入jdbcTemplate
+                @Autowired
+                private JdbcTemplate jdbcTemplate;
+
+                @Override
+                public void add(Book book) {
+                    System.out.println("添加书本");
+                    //1 创建sql语句
+                    String sql = "insert into t_book values(?,?,?)";
+                    //2 调用方法实现
+                    Object[] args = {book.getUserID(),book.getUserName(),book.getUStatus()};
+                    int update = jdbcTemplate.update(sql,args);
+                    System.out.println(update);
+                }
+
+            }
+       ```
+
+    3. 测试类
+
+        ```代码
+            public class TestDemo {
+            @Test
+            public void test(){
+                ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+                BookService bookService = context.getBean("bookService", BookService.class);
+                Book book = new Book();
+                book.setUserID("1");
+                book.setUserName("JAVA基础");
+                book.setUStatus("A");
+                bookService.addBook(book);
+            }
+
+        }
+        ```
+
++ JdbcTemplate操作数据库(修改，删除)
+
+    ```代码
+        //修改
+        @Override
+        public void updateBook(Book book) {
+            String sql = "update t_book set name=?,status=? where id=?";
+            Object[] args = {book.getUserName(),book.getUStatus(),book.getUserID()};
+            int update = jdbcTemplate.update(sql,args);
+            System.out.println(update);
+        }
+        //删除
+        @Overrideee
+        public void delete(String bookID) {
+            String sql = "delete from t_book  where id=?";
+            Object[] args = {bookID};
+            int update = jdbcTemplate.update(sql,args);
+            System.out.println(update);
+        }
+
+        ...
+        @Test
+        public void testUpdate(){
+            ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+            BookService bookService = context.getBean("bookService", BookService.class);
+            Book book = new Book();
+            book.setUserID("1");
+            book.setUserName("Python基础");
+            book.setUStatus("P");
+            bookService.updateBook(book);
+        }
+        @Test
+        public void testDelate(){
+            ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+            BookService bookService = context.getBean("bookService", BookService.class);
+            Book book = new Book();
+            book.setUserID("1");
+            bookService.delateBook(book.getUserID());
+        }
+    ```
+
++ JdbcTemplate操作数据库(查询)
+    1. 查询表里面有多少条记录，返回是某个值
+       >select count(*) from t_book
+       > jdbcTemplate.queryForObject(...)
+    2. 使用JdbcTemplate实现查询返回某个值代码
+        ![这是图片](截图39.png)
+
+        ```代码
+            @Override
+            public int selectCount() {
+                String sql = "select count(*) from t_book";
+                int count = jdbcTemplate.queryForObject(sql,Integer.class);
+                return count;
+            }
+        ```
+
++ JdbcTemplate操作数据库(查询返回对象)
+    1. 场景:查询图书的详情
+    2. JdbcTemplate实现查询返回对象
+        ![这是图片](截图40.png)
+        第一个参数:sql语句
+        第二个参数:RowMapper，是接口，返回不同类型的数据，使用这个接口里面实现类完成数据封装
+        第三个参数:sql语句值
+
+        ```代码
+            @Override
+            public Book findBookInfo(String bookID) {
+                String sql = "select * from t_book where id=?";
+                Book book = jdbcTemplate.queryForObject(sql,new BeanPropertyRowMapper<Book>(Book.class),bookID);
+                return book;
+            }
+        ```
+
++ JdbcTemplate操作数据库(查询返回集合)
+    1. 场景:查询图书列表分页
+    2. 调用JdbcTemplate方法实现查询返回集合
+        ![这是图片](截图40.png)
+        第一个参数:sql语句
+        第二个参数:RowMapper，是接口，返回不同类型的数据，使用这个接口里面实现类完成数据封装
+        第三个参数:sql语句值
+
+        ```代码
+            String sql = "select * from t_book";
+            //调用方法
+            List<Book> bookList = jdbcTemplate.query(sql,new BeanPropertyRowMapper<Book>(Book.class));
+            return bookList;
+        ```
+
++ JdbcTemplate操作数据库(批量添加)
+    1. 批量操作：操作表里面多条操作
+    2. JdbcTemplate实现批量操作
+        ![这是图片](截图41.png)
+
+        ```代码
+            @Override
+            public void bacthAddBook(List<Object[]> batchArgs) {
+                String sql = "insert into t_book values(?,?,?)";
+                int[] ints = jdbcTemplate.batchUpdate(sql,batchArgs);
+                System.out.println(Arrays.toString(ints));
+            }
+
+            ...
+            @Test
+            public void testBatchAdd(){
+                ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+                BookService bookService = context.getBean("bookService", BookService.class);
+                List<Object[]> batchArgs = new ArrayList<>();
+                Object[] o1 = {"4","MySQL基础","A"};
+                Object[] o2 = {"5","JavaScript基础","A"};
+                Object[] o3 = {"6","Linux基础","A+"};
+                batchArgs.add(o1);
+                batchArgs.add(o2);
+                batchArgs.add(o3);
+                bookService.batchAdd(batchArgs);
+            }
+        ```
+
++ JdbcTemplate操作数据库(批量修改删除)
+    1. 批量操作：操作表里面多条操作
+    2. JdbcTemplate实现批量操作
+        代码类似批量添加
+
+注意：如果null的，检查表里的字段名和Book类里的变量名是否保持一致(不能一个是ID，一个是userID)

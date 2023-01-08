@@ -44,7 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/黑白灰/Documents/GitHub/Fanghui-Lang/毕设/Spring_AOPdemo1",
+    "last_opened_file_path": "D:/黑白灰/Documents/GitHub/Fanghui-Lang/毕设/Spring_JDBCdemo1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -161,6 +161,7 @@
       <workItem from="1672991763772" duration="8768000" />
       <workItem from="1673001982033" duration="11347000" />
       <workItem from="1673081558735" duration="11828000" />
+      <workItem from="1673141616503" duration="69000" />
     </task>
     <servers />
   </component>
