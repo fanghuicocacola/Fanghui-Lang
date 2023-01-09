@@ -1,42 +1,64 @@
-/*
- * ESP32使用PWM实现呼吸灯程序
- */
-#include <BluetoothSerial.h>
-#include <cstring>
-#include <string>
- 
-/* 设置led输出引脚号 */
-uint8_t led_pin = 2;
-uint8_t led_ch = 1;
+#include "SSD1306.h"
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <Wire.h>
 
-void setup() 
-{            
-  Serial.begin(115200);
-  delay(10); 
+SSD1306  display(0x3c, 21, 22);
 
-  /* 1. 使用ledc通道1，设置频率为1kHz，分辨率为10位 */
-  double f = ledcSetup(led_ch, 1000, 10);  
-  Serial.print("F=");Serial.println(f); /* 打印实际设置的频率*/
+const char *ntpServer = "pool.ntp.org";
+const long gmtOffset_sec = 8 * 3600;
+const int daylightOffset_sec = 0;
 
-  /* 2. 将LED引脚绑定到ledc通道1 */
-  ledcAttachPin(led_pin, led_ch);
-
-  /* 3. 设置ledc通道占空比为512/1024=50% */
-  ledcWrite(led_ch, 511);
+void printLocalTime()
+{
+  struct tm timeinfo;
+  if (!getLocalTime(&timeinfo))
+  {
+    display.println("Failed to obtain time");
+    return;
+  }
+  String time = "BJT   "+String(timeinfo.tm_hour)+":"+String(timeinfo.tm_min);
+  display.drawString(0, 0, "Time");
+  display.display();
+  display.clear();
+  delay(1000);
+  display.drawString(0, 0, time);
+//   display.println(&timeinfo, "%F"); 
+//   display.println(&timeinfo, "%T"); 
+//   display.println(&timeinfo, "%A"); 
+  display.display();
 }
 
-void loop() 
-{
-  uint8_t dir = 0;
-  uint32_t pwmval = 255;
-  while(1)
-  {
-    if(dir) pwmval++;                 // dir==1  pwmval递增
-    else pwmval--;                    // dir==0  pwmval递减
-    if( pwmval == 0 ) dir=1;          // pwmval降低至0后，方向为递增
-    if( pwmval >= 500) dir=0;         // pwmval递增到500后，方向改为递减
-    ledcWrite(led_ch, pwmval);           // 修改占空比
-    if( pwmval==0 ) delay(100);    // 在LED熄灭时等待300ms
-    delay(5);
-  }
+void setup() {
+    Serial.begin(115200);
+    WiFi.begin("forESP32","1357924680");
+    while(WiFi.status() != WL_CONNECTED){
+        delay(500);
+    }
+    Serial.print("IP地址：");
+    Serial.println(WiFi.localIP());
+    display.init();
+    display.drawString(0, 0, "Connected");
+    display.display();
+    /*  显示字母 */
+    // display.setFont(ArialMT_Plain_16);       // 设置字体
+    // display.drawString(0,0, "Temp:" +String("1")+"C"); // 将要显示的字母写入缓存
+    // display.drawString(0,20, "Humidity:"+String("2")+"%"); // 将要显示的字母写入缓存
+    // display.display();                       // 将缓存里的文字在屏幕上显示
+    // delay(3000);		//3秒
+    // display.clear(); 
+    // display.display();         // 清除屏幕
+    configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
+    printLocalTime();
+
+}
+
+
+
+void loop() {
+    delay(1000);
+    //清除屏幕
+    display.clear();
+    //设置光标位置
+    printLocalTime();
 }
