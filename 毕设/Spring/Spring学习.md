@@ -874,6 +874,8 @@
 注：完全注解AspectJ(不需要xml配置文件)
 ![这是图片](截图38.png)
 
+## JdbcTemplate
+
 + JdbcTemplate(概念和准备)
     1. 什么是JdbcTemplate
       (1)Spring框架对JDBC进行封装，使用JdbcTemplate方便实现对数据库操作
@@ -1157,3 +1159,139 @@
         代码类似批量添加
 
 注意：如果null的，检查表里的字段名和Book类里的变量名是否保持一致(不能一个是ID，一个是userID)
+
+## 事务操作
+
++ 事务概念
+    1. 什么是事务
+      (1) 事务是数据库操作最基本单元，逻辑上的一组操作，要么都成功，如果有一个失败所有操作都失败
+      (2) 典项场景:银行转账
+          A转账100元给B，A少一百，B就要多一百，少一百和多一百必须都成功实现
+    2. 事务四大特性(ACID)
+        (1) 原子性:
+        一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被恢复（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
+        (2) 一致性:
+        在事务开始之前和事务结束以后，数据库的完整性没有被破坏。这表示写入的资料必须完全符合所有的预设规则，这包含资料的精确度、串联性以及后续数据库可以自发性地完成预定的工作。
+        (3) 隔离性:
+        数据库允许多个并发事务同时对其数据进行读写和修改的能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。
+        (4) 持久性:
+        事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。
+
++ 事务操作(搭建事务操作环境)
+  > 拓展:MVC框架
+    MVC是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，是一种软件设计典范。它是用一种业务逻辑、数据与界面显示分离的方法来组织代码，将众多的业务逻辑聚集到一个部件里面，在需要改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑，达到减少编码的时间。
+    它强制性地使应用程序的输入、处理和输出分开。使用MVC应用程序被分成三个核心部件：模型、视图、控制器。它们各自处理自己的任务。最典型的MVC就是JSP + servlet + javabean的模式。
+    ![这是图片](截图41.png)
+
+    1. 创建数据库表，添加记录
+        ![这是图片](截图42.png)
+    2. 创建service，搭建dao，完成对象创建和注入关系
+        (1)在service注入dao，在dao注入JdbcTemplate，在JdbcTemplate注入DataSource
+
+        ```代码
+            @Repository
+            public class UserDaoImpl implements UserDao{
+                @Autowired
+                private JdbcTemplate jdbcTemplate;
+
+            }
+            ...
+            @Service
+            public class UserService {
+                //注入dao
+                @Autowired
+                private UserDao userDao;
+            }
+        ```
+
+    3. 在dao创建两个方法，多钱和少钱的方法，在service创建方法(转账的方法)
+
+    ```代码
+        @Override
+        public void addMoney() {
+            String sql = "update t_account set money=money+? where username=?";
+            jdbcTemplate.update(sql,100,"mary");
+        }
+        //多钱
+        @Override
+        public void reduceMoney() {
+            String sql = "update t_account set money=money-? where username=?";
+            jdbcTemplate.update(sql,100,"lucy");
+        }
+        ...
+        @Autowired
+        private UserDao userDao;
+
+        public void accountMoney(){
+            //lucy少一百
+            userDao.reduceMoney();
+            //mary多一百
+            userDao.addMoney();
+        }
+    ```
+
+   > 上面代码，如果正常执行没用问题，但是如果代码在执行过程种出现异常，有问题。
+    解决方案：使用事务
+    (1)事务操作过程:
+
+    ```代码
+        public void accountMoney(){
+            try{
+                //第一步：开启事务操作
+                //第二步：进行业务操作
+                //lucy少一百
+                userDao.reduceMoney();
+                //模拟异常
+                int i = 10/0;
+                //mary多一百
+                userDao.addMoney();
+            }catch (Exception e){
+                //第四步 出现异常，事务回滚
+            }
+        }
+    ```
+
++ 事务操作(Spring事务管理介绍)
+    1. 事务添加到JaveEE三次结构里面Service层(业务逻辑)
+    2. 在Spring进行事务管理操作
+        (1)有两种方式:编程式事务管理和声明式事务管理(更推荐)
+    3. 声明式事务管理
+        (1)基于注解方式(使用)
+        (2)基于xml配置文件方式
+    4. 在Spring进行声明式事务管理,底层使用AOP原理
+    5. Spring事务管理API
+        (1)提供一个接口，代表事务管理器，这个接口针对不同的框架提供不同的实现类
+        > PlatformTransactionManager
+
++ 事务操作(注解声明式事务管理)
+  1. 在spring配置文件配置事务管理器
+
+        ```代码
+            <!--创建事务管理器-->
+                <bean id="transactionManger" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+                <!--注入数据源-->
+                        <property name="dataSource" ref="dataSource"></property>
+                </bean>
+        ```
+
+  2. 在spring配置文件，开启事务注解
+        (1)在spring引入名称空间
+
+        ```代码
+            <beans xmlns="http://www.springframework.org/schema/beans"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:tx="http://www.springframework.org/schema/tx"
+                xmlns:context="http://www.springframework.org/schema/context"
+                xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/aop/spring-tx.xsd">
+        ```
+
+        (2)开启事务注解
+
+        ``` 代码
+            <!--开启事务注解-->
+            <tx:annotation-driven transaction-manager="transactionManger"></tx:annotation-driven>
+        ```
+
+  3. 在service类上面(获取service类里面方法上面)添加事务注解
