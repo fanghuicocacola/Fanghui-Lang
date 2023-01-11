@@ -1295,3 +1295,164 @@
         ```
 
   3. 在service类上面(获取service类里面方法上面)添加事务注解
+    (1) @Transactional,这个注解添加到类上面，也可以添加到方法上面
+    (2)如果把这个注解添加到类上面，这个类里面所有的方法都添加事务
+    (3)如果把这个注解添加方法上面，为这个方法添加事务
+
+        ```代码
+            @Service
+            @Transactional
+            public class UserService {
+        ```
+
+  4. 事务操作(声明式事务管理参数配置)
+     (1) propagation:事务传播行为
+     当一个是事务方法被另外一个事务方法调用时候，这个事务方法如何进行
+     ![这是图片](截图45.webp)
+     (2) ioslation:事务隔离级别
+        事务有特性成为隔离性，多事务操作之间不会产生影响
+        有三个读问题:脏读，不可重复读，虚读(幻读)
+        脏读:脏读又称无效数据的读出，是指在数据库访问中，事务T1将某一值修改，然后事务T2读取该值，此后T1因为某种原因撤销对该值的修改，这就导致了T2所读取到的数据是无效的，值得注意的是，脏读一般是针对于update操作的
+        不可重复读:在一个事务内，多次读同一个数据。在这个事务还没有结束时，另一个事务也访问该同一数据并修改数据。那么，在第一个事务的两次读数据之间。由于另一个事务的修改，那么第一个事务两次读到的数据可能不一样，这样就发生了在一个事务内两次读到的数据是不一样的，因此称为不可重复读，即原始读取不可重复。
+        虚读(幻读):如果符合搜索条件的一行数据在后面的读取操作中出现，但该行数据却不属于最初的数据，就会发生这种事件。
+        解决:通过设置事务隔离性，解决读问题
+        >READ UNCOMMITTED,READ COMMITED,REPEATABLE READ,SERIALIZABLE
+        >@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.REPEATABLE_READ)(默认的)
+      (3) timeout:超时时间
+        事务需要在一定的时间内进行提交，如果不提交就会进行回滚
+        默认值是-1(不超时)，设置值默认单位为秒
+      (4) readOnly:是否只读
+        读：查询操作，写：添加修改删除操作
+        readOnly默认值false，表示可以查询，可以添加修改删除操作
+        设置readOnly值是true，设置成true之后，只能查询
+      (5) readOnly:是否只读
+        读:查询操作，写：添加修改删除操作
+        readOnly默认值false，表示可以查询，可以添加修改删除操作
+        设置readOnly值是true，设置成true之后，只能查询
+      (6) rollbackFor:回滚
+        设置哪些异常进行事务回滚
+      (7)noRollbackFor:不回滚
+        设置出现哪些异常不进行事务回滚
+
+
+  5. 事务操作(xml声明式事务管理)
+   (1) 在spring配置文件中进行配置
+   第一步:配置事务管理器
+   第二步:配置切入点
+   第三步:配置切入点和切面
+
+    ```代码
+        UserService.java
+        @Transactional(value = "transactionManager",readOnly = false,propagation = Propagation.REQUIRED,isolation = Isolation.REPEATABLE_READ)
+        ...
+        spring2.xml
+        <?xml version="1.0" encoding="UTF-8"?>
+        <beans xmlns="http://www.springframework.org/schema/beans"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:tx="http://www.springframework.org/schema/tx"
+            xmlns:context="http://www.springframework.org/schema/context"
+            xmlns:aop="http://www.springframework.org/schema/aop"
+            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+            <!--组件扫描-->
+            <context:component-scan base-package="com.example"></context:component-scan>
+            <!--数据库连接池-->
+            <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+                <property name="url" value="jdbc:mysql://localhost:3306/user_db"></property>
+                <property name="username" value="root"></property>
+                <property name="password" value="123456"></property>
+                <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+            </bean>
+            <!--JdbcTemplate对象-->
+            <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+                <!--注入dataSource-->
+                <property name="dataSource" ref="dataSource"></property>
+            </bean>
+            <!--1 创建事务管理器-->
+            <bean id="transactionManger" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+                <!--注入数据源-->
+                <property name="dataSource" ref="dataSource"></property>
+            </bean>
+            <!--2 配置通知-->
+            <tx:advice id="txadvice">
+                <!--配置事务参数-->
+                <tx:attributes>
+                    <!--指定哪种方法的规则的方法上面添加事务-->
+                    <tx:method name="accountMoney" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
+                </tx:attributes>
+            </tx:advice>
+            <!--3 配置切入点和切面-->
+            <aop:config>
+            <!--配置切入点-->
+                <aop:pointcut id="pt" expression="execution(* com.example.Service.UserService.*(..))"/>
+            <!--配置切面-->
+                <aop:advisor advice-ref="txadvice" pointcut-ref="pt"></aop:advisor>
+            </aop:config>
+        </beans>
+
+    ```
+
+    事务操作(完全注解声明式事务管理)
+    1. 创建配置类，使用配置类替代xml配置文件
+
+        ```代码
+            UserService.java
+            @Transactional(value = "transactionManager",readOnly = false,propagation = Propagation.REQUIRED,isolation = Isolation.REPEATABLE_READ)
+            ...
+            TxConfig.java
+            package com.example.Config;
+            import com.alibaba.druid.pool.DruidDataSource;
+            import org.springframework.context.annotation.Bean;
+            import org.springframework.context.annotation.ComponentScan;
+            import org.springframework.context.annotation.Configuration;
+            import org.springframework.jdbc.core.JdbcTemplate;
+            import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+            import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+            import javax.sql.DataSource;
+
+            @Configuration//配置类
+            @ComponentScan(basePackages = "com.example")
+            @EnableTransactionManagement//开启事务
+            public class TxConfig {
+                //创建数据库连接池
+                @Bean
+                public DruidDataSource getDruidDataSource(){
+                    DruidDataSource dataSource = new DruidDataSource();
+                    dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+                    dataSource.setUrl("jdbc:mysql://localhost:3306/user_db");
+                    dataSource.setUsername("root");
+                    dataSource.setPassword("123456");
+                    return dataSource;
+                }
+                // 创建JdbcTemplate对象
+                @Bean
+                public JdbcTemplate getJdbcTemplate(DataSource dataSource){
+                    //到ioc容器中根据类型找到dataSource
+                    JdbcTemplate jdbcTemplate = new JdbcTemplate();
+                    //注入dataSource
+                    jdbcTemplate.setDataSource(dataSource);
+                    return jdbcTemplate;
+                }
+
+                // 创建事务管理器
+                @Bean(name = "transactionManager")
+                public DataSourceTransactionManager getDataSourceTransactionManager(DataSource dataSource){
+                    DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
+                    transactionManager.setDataSource(dataSource);
+                    return transactionManager;
+                }
+            }
+            ...
+            TestDemo.java
+            @Test
+            public void testAccount_3(){
+                ApplicationContext context = new AnnotationConfigApplicationContext(TxConfig.class);
+                UserService userService = context.getBean("userService",UserService.class);
+                userService.accountMoney();
+            }
+        ```
+
+    2. 

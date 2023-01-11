@@ -3,10 +3,12 @@ package com.example.Service;
 import com.example.Dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional
+@Transactional(value = "transactionManager",readOnly = false,propagation = Propagation.REQUIRED,isolation = Isolation.REPEATABLE_READ)
 public class UserService {
     //注入dao
     @Autowired
@@ -19,7 +21,7 @@ public class UserService {
         //lucy少一百
         userDao.reduceMoney();
         //模拟异常
-        int i = 10 / 0;
+        //int i = 10 / 0;
         //mary多一百
         userDao.addMoney();
         //}catch (Exception e){
