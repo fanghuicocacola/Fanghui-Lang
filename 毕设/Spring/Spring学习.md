@@ -864,7 +864,7 @@
         @Before(value = "pointdemo()")
         ```
 
-![这是图片](截图36.png)
+  ![这是图片](截图36.png)
 
 + AOP操作(AspectJ配置文件)
     1. 创建两个类，增强类和被增强类，创建方法
@@ -1334,67 +1334,66 @@
       (7)noRollbackFor:不回滚
         设置出现哪些异常不进行事务回滚
 
-
   5. 事务操作(xml声明式事务管理)
    (1) 在spring配置文件中进行配置
    第一步:配置事务管理器
    第二步:配置切入点
    第三步:配置切入点和切面
 
-    ```代码
-        UserService.java
-        @Transactional(value = "transactionManager",readOnly = false,propagation = Propagation.REQUIRED,isolation = Isolation.REPEATABLE_READ)
-        ...
-        spring2.xml
-        <?xml version="1.0" encoding="UTF-8"?>
-        <beans xmlns="http://www.springframework.org/schema/beans"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xmlns:tx="http://www.springframework.org/schema/tx"
-            xmlns:context="http://www.springframework.org/schema/context"
-            xmlns:aop="http://www.springframework.org/schema/aop"
-            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+        ```代码
+            UserService.java
+            @Transactional(value = "transactionManager",readOnly = false,propagation = Propagation.REQUIRED,isolation = Isolation.REPEATABLE_READ)
+            ...
+            spring2.xml
+            <?xml version="1.0" encoding="UTF-8"?>
+            <beans xmlns="http://www.springframework.org/schema/beans"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:tx="http://www.springframework.org/schema/tx"
+                xmlns:context="http://www.springframework.org/schema/context"
+                xmlns:aop="http://www.springframework.org/schema/aop"
+                xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-            <!--组件扫描-->
-            <context:component-scan base-package="com.example"></context:component-scan>
-            <!--数据库连接池-->
-            <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
-                <property name="url" value="jdbc:mysql://localhost:3306/user_db"></property>
-                <property name="username" value="root"></property>
-                <property name="password" value="123456"></property>
-                <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-            </bean>
-            <!--JdbcTemplate对象-->
-            <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-                <!--注入dataSource-->
-                <property name="dataSource" ref="dataSource"></property>
-            </bean>
-            <!--1 创建事务管理器-->
-            <bean id="transactionManger" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-                <!--注入数据源-->
-                <property name="dataSource" ref="dataSource"></property>
-            </bean>
-            <!--2 配置通知-->
-            <tx:advice id="txadvice">
-                <!--配置事务参数-->
-                <tx:attributes>
-                    <!--指定哪种方法的规则的方法上面添加事务-->
-                    <tx:method name="accountMoney" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
-                </tx:attributes>
-            </tx:advice>
-            <!--3 配置切入点和切面-->
-            <aop:config>
-            <!--配置切入点-->
-                <aop:pointcut id="pt" expression="execution(* com.example.Service.UserService.*(..))"/>
-            <!--配置切面-->
-                <aop:advisor advice-ref="txadvice" pointcut-ref="pt"></aop:advisor>
-            </aop:config>
-        </beans>
+                <!--组件扫描-->
+                <context:component-scan base-package="com.example"></context:component-scan>
+                <!--数据库连接池-->
+                <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+                    <property name="url" value="jdbc:mysql://localhost:3306/user_db"></property>
+                    <property name="username" value="root"></property>
+                    <property name="password" value="123456"></property>
+                    <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+                </bean>
+                <!--JdbcTemplate对象-->
+                <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+                    <!--注入dataSource-->
+                    <property name="dataSource" ref="dataSource"></property>
+                </bean>
+                <!--1 创建事务管理器-->
+                <bean id="transactionManger" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+                    <!--注入数据源-->
+                    <property name="dataSource" ref="dataSource"></property>
+                </bean>
+                <!--2 配置通知-->
+                <tx:advice id="txadvice">
+                    <!--配置事务参数-->
+                    <tx:attributes>
+                        <!--指定哪种方法的规则的方法上面添加事务-->
+                        <tx:method name="accountMoney" propagation="REQUIRED" isolation="REPEATABLE_READ"/>
+                    </tx:attributes>
+                </tx:advice>
+                <!--3 配置切入点和切面-->
+                <aop:config>
+                <!--配置切入点-->
+                    <aop:pointcut id="pt" expression="execution(* com.example.Service.UserService.*(..))"/>
+                <!--配置切面-->
+                    <aop:advisor advice-ref="txadvice" pointcut-ref="pt"></aop:advisor>
+                </aop:config>
+            </beans>
 
-    ```
+        ```
 
-    事务操作(完全注解声明式事务管理)
++ 事务操作(完全注解声明式事务管理)
     1. 创建配置类，使用配置类替代xml配置文件
 
         ```代码
@@ -1455,4 +1454,210 @@
             }
         ```
 
-    2. 
+## Spring5
+
++ Spring5新功能
+
+    1. 整个Spring5框架的代码基于Java8.运行时兼容JDK9.许多不建议的类和方法从方法库中删除
+    2. Springe5框架自带了通用的日志封装
+       (1) Spring5已经移除了Log4jConfigListener，官方建议使用Log4j2
+       (2) Spring5框架整合Log4j2
+        第一步
+        引入log4j依赖
+        第二步
+        创建log4j2.properties
+
+        ```代码
+            log4j.rootLogger=debug, stdout, R
+
+            log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+            log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+
+            # Pattern to output the caller's file name and line number.
+            log4j.appender.stdout.layout.ConversionPattern=%5p [%t] (%F:%L) - %m%n
+
+            log4j.appender.R=org.apache.log4j.RollingFileAppender
+            log4j.appender.R.File=example.log
+
+            log4j.appender.R.MaxFileSize=100KB
+            # Keep one backup file
+            log4j.appender.R.MaxBackupIndex=5
+
+            log4j.appender.R.layout=org.apache.log4j.PatternLayout
+            log4j.appender.R.layout.ConversionPattern=%p %t %c - %m%n
+        ```
+
+        第三步
+        测试
+
+        ```代码
+            import org.slf4j.Logger;
+            import org.slf4j.LoggerFactory;
+
+            public class UserLog {
+                private static final Logger log = LoggerFactory.getLogger(UserLog.class);
+
+                public  static void main(String[] args){
+                    log.info("Hello log4j2");
+                    log.warn("Hello log4j2");
+                }
+            }
+        ```
+
+    3. Spring5框架核心容器支持@Nullable注解
+        (1) @Nullable注解可以使用在方法上面，属性上面，参数上面，表示方法返回可以为空，属性值可以为空，参数值可以为空
+        (2) 注解用在方法上面，方法返回值可以为空
+        > @Nullable  
+        > String getId();
+
+        (3) 注解使用在方法的参数里面，方法参数可以为空
+        > public\<T> void registerBean(@Nullable String beanName,this.readerBean(beanClass,beanName,
+
+        (4) 注解使用在属性上面，属性值可以为空
+        > @Nullable  
+        > private String bookName
+
+    4. Spring5核心容器支持函数式风格GenericApplicationContext
+
+       ```代码
+       //函数式风格创建对象，交给spring进行管理
+        @Test
+        public void testGenericApplicationContext(){
+            //1 创建GenericApplicationContext对象
+            GenericApplicationContext context = new GenericApplicationContext();
+            //2 调用context的方法对象注册
+            context.refresh();
+            context.registerBean("user1",User.class,()->new User());
+            //3 获取在spring注册的对象
+            User user = (User) context.getBean("user1");
+
+            System.out.println(user);
+        }
+        ```
+
+    5. Spring5支持整合JUnit5
+        (1)整合JUnit4
+        第一步 引入Spring相关针对测试依赖
+        >\<dependency>  
+        >    \<groupId>org.springframework\</groupId>  
+        >    \<artifactId>spring-test\</artifactId>  
+        >    \<version>6.0.3\</version>  
+        >\</dependency>
+        第二步 创建测试类 
+
+        ```代码
+            import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+            @RunWith(SpringJUnit4ClassRunner.class)  //单元测试框架
+            @ContextConfiguration("classpath:spring.xml")  //加载配置文件
+            public class JTest4 {
+                @Autowired
+                private UserService userService;
+
+                @Test
+                public void test(){
+                    userService.accountMoney();
+                }
+            }
+        ```
+
+        (2)整合JUnit5
+        第一步
+        >\<dependency>  
+        >        \<groupId>org.junit.jupiter\</groupId>  
+        >        \<artifactId>junit-jupiter\</artifactId>  
+        >        \<version>5.9.2\</version>
+        >        \<scope>test\</scope>  
+        >    \</dependency>
+
+        第二步
+        > @ExtendWith(SpringExtension.class)  
+        > @ContextConfiguration("classpath:spring.xml")  
+        > @SpringJUnitConfig(locations = "classpath:spring.xml")
+
+## SpringWebflux
+
+1. 基本功能介绍
+   (1) 是Spring5添加的新的模块，用于web开发，功能和SpringMVC类似，Webflux是使用了当前的一种比较流行的响应式编程的框架
+   (2) 使用传统web框架，比如SpringMVC，这些基于Servlet容器，Webflux是一种异步非阻塞的框架，异步非阻塞的框架在Servlet3.1以后才支持，核心是基于Reactor的相关的API实现的
+   (3) 解释什么是异步非阻塞
+    > 同步与异步是对应于调用者与被调用者，它们是线程之间的关系，两个线程之间要么是同步的，要么是异步的。同步操作时，调用者需要等待被调用者返回结果，才会进行下一步操作。而异步则相反，调用者不需要等待被调用者返回调用，即可进行下一步操作，被调用者通常依靠事件、回调等机制来通知调用者结果
+    > 阻塞与非阻塞是对同一个线程来说的，在某个时刻，线程要么处于阻塞，要么处于非阻塞。阻塞和非阻塞关注的是程序在等待调用结果（消息，返回值）时的状态：阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。
+    (4) Webflux特点
+    第一 非阻塞式:在有限的资源下，提高系统的吞吐量和伸缩性，以Reactor为基础实现响应式编程
+    第二 函数式编程:Spring5框架基于java8，Webflux使用java8函数式编程方式实现路由请求
+    (5) 比较SpringMVC
+    ![这是图片](截图45.png)
+    第一 两个框架都可以使用注解方式，都运行在Tomcat等容器中
+    第二 SpringMVC采用命令式编程，Webflux采用异步响应式编程
+2. 响应式编程
+   (1)什么是响应式编程
+    总的来说，Reactive Programming 就是编写关于怎么响应事件的编程模式，这些事件包括：用户输入，数据流，系统状态的变化等等。
+    总结一下，响应式编程通常会用在一个事件流相关的场景中，在一个事件流中，一旦触发第一个事件，后续的事件会被依次触发，就像一个 Pipeline 系统，不断有输入和输出。
+    (2) Java8及其之前版本
+    提供的观察者模式有两个类Ovserver和Observable
+
+    ```代码
+        package com.example.reactor_demo.reactor8;
+
+        import java.util.Observable;
+
+        public class ObserverDemo8 extends Observable {
+            public static void main(String[] args) {
+                ObserverDemo8 observer = new ObserverDemo8();
+                //添加观察者
+                observer.addObserver((o,arg)->{
+                    System.out.println("发生了变化");
+                });
+                observer.addObserver((o,arg)->{
+                    System.out.println("收到了被观察者的通知，准备改变");
+                });
+                observer.setChanged();//数据变化
+                observer.notifyObservers();//通知
+            }
+
+
+        }
+    ```
+
+3. 响应式编程(Reactor实现)
+   (1) 响应式编程操作中，Reactor是满足Reative的规范框架
+   (2) Reactor有两个核心类，Mono和Flux，这两个类实现接口Publisher,提供丰富的操作符。Flux对象实现发布者，返回N个元素；Mono实现发布者，返回0或1个元素
+   (3) Flux和Mono都是数据流的发布者，使用Flux和Mono都可以发出三种数据信号，元素值，错误信号，完成信号，都代表终止信号，终止信号用于告诉订阅者数据流结束，错误信号终止数据流同时把错误信息传递给订阅者
+   ![这是图片](截图46.png)
+   (4)代码演示
+
+   ```代码
+       public static void main(String[] args) {
+            //just方法直接声明
+            Flux.just(1,2,3,4).subscribe(System.out::print);
+            Mono.just(1).subscribe(System.out::print);
+
+            //其他方法
+            Integer[] array = {1,2,3,4};
+            Flux.fromArray(array);
+
+            List<Integer> list = Arrays.asList(array);
+            Flux.fromIterable(list);
+
+            Stream<Integer> stream = list.stream();
+            Flux.fromStream(stream);
+        }
+   ```
+
+    (5) 三种信号特点
+        错误信号和完成信号都是终止信号，不能共存
+        如果没有发送任何元素值，而是直接发送错误或者完成信号，表示是空数据流
+        如果没有错误信号，没有完成信号，表示是无限数据流
+    (6) 调用just或者其他方法只是声明数据流，数据流并没有发出，只有进行订阅之后才会触发数据流，不订阅什么都不会发生
+    (7) 操作符
+    对数据流进行一道道操作，成为操作符，比如工厂流水线
+    第一 map元素映射为新元素
+    ![这是图片](截图47.png)
+    第二 flatMap元素映射为流
+    ![这是图片](截图48.png)
+    map 适用于对每个元素进行简单的转换，flatMap 适用于对数组流进行平铺后合并，两个方法的应用场景不一样。
+4. Webflux执行流程和核心API
+5. SpringWebflux(基于注解编程模型)
+6. SpringWebflux(基于函数式编程模型)
+
+
