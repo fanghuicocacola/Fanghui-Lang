@@ -1657,7 +1657,200 @@
     ![这是图片](截图48.png)
     map 适用于对每个元素进行简单的转换，flatMap 适用于对数组流进行平铺后合并，两个方法的应用场景不一样。
 4. Webflux执行流程和核心API
+   SpringWebflux基于Reactor，默认容器是Netty，Netty是高性能的NIO框架，是异步异步非阻塞的框架
+   (1)Netty
+   ![这是图片](截图49.png)
+   ![这是图片](截图50.png)
+   (2) SpringWebflux执行过程和SpringMVC相似
+   SpringWebflux核心控制器DispatchHandler，实现接口WebHandler
+   接口WebHandler有一个方法
+   ![这是图片](截图52.png)
+   (3) SpringWebflux响应核心
+   DispatchHandler，处理服务器的请求
+   HanddlerMapping：查询到处理的方法
+   HandlerAdapter：调用具体的方法对用户发来的请求来进行处理
+   HandlerResultHandler：响应结果处理
+   (4) SpringWebflux实现函数式编程，两个接口：RouterFunction(路由的处理)和HandlerFunction(方法的处理)
 5. SpringWebflux(基于注解编程模型)
-6. SpringWebflux(基于函数式编程模型)
+   SpringWebflux实现方法有两种：注解编程模型和函数式编程模型
+   使用注解编程模型方式，和之前SpringMVC使用相似，只需要把相关依赖配置到项目主，SpringBoot自动配置相关运行容器，默认情况下使用Netty服务器
+   第一步 创建SpringBoot工程，引入Webflux依赖
+   >\<dependency>  
+            \<groupId>org.springframework.boot\</groupId>  
+            \<artifactId>spring-boot-starter-webflux\</artifactId>  
+            \<version>3.0.1\</version>
+        </dependency>
+    第二步 创建实体类
+    接口：
 
+    ```代码
+        public interface UserService {
+        //根据id查询用户
+        Mono<User> getUserById(int id);
+        //查询所有的用户
+        Flux<User>getAllUser();
+        //添加用户
+        Mono<Void>saveUserInfo(Mono<User> user);
+
+    }
+    ```
+
+    接口实现类：
+
+    ```代码
+        public class UserServiceImpl implements UserService{
+            //创建map集合存储数据
+            private final Map<Integer,User> users = new HashMap<>();
+            public UserServiceImpl(){
+                this.users.put(1,new User("lucy","man",20));
+                this.users.put(2,new User("marry","woman",22));
+                this.users.put(3,new User("jack","man",24));
+            }
+            //根据id查询
+            @Override
+            public Mono<User> getUserById(int id) {
+                return Mono.justOrEmpty(this.users.get(id));
+            }
+            //查询多个用户
+            @Override
+            public Flux<User> getAllUser() {
+                return Flux.fromIterable(this.users.values());
+            }
+            //添加用户
+            @Override
+            public Mono<Void> saveUserInfo(Mono<User> userMono) {
+                return userMono.doOnNext(person->{
+                    //向map集合里面放值
+                    int id = users.size();
+                    users.put(id,person);
+                }).thenEmpty(Mono.empty());
+            }
+        }
+    ```
+
+    创建controller
+
+    ```代码
+        @RestController
+        public class UserController {
+            //注入service
+            @Autowired
+            private UserService userService;
+
+            //id查询
+            @GetMapping("/user/{id}")
+            public Mono<User> getUserId(@PathVariable int id){
+                return userService.getUserById(id);
+            }
+
+            //查询所有
+            @GetMapping("/user")
+            public Flux<User> getUsers(){
+                return userService.getAllUser();
+            }
+            //添加
+            @PostMapping("/saver")
+            public Mono<Void> saveUser(@RequestBody User user){
+                Mono<User> userMono = Mono.just(user);
+                return userService.saveUserInfo(userMono);
+            }
+
+        }
+    ```
+    说明：SpringMVC方式的实现，是同步阻塞的方式，基于SpringMVC+Servlet和Tomcat的，SpringWebflux方式的实现，是异步非阻塞的方式，基于SpringWebflux+Reactor+Netty
+6. SpringWebflux(基于函数式编程模型)
+   (1)在使用函数式编程模型操作时，需要自己初始化服务器
+   (2)基于函数式编程模型操作时，又两个核心接口：RouterFunction(实现路由功能，请求转发给对应的handler)和HandlerFunction(处理请求生成响应的函数)。核心任务是定义两个函数式接口的实现并且启动需要的服务器
+   (3)SpringWebflux请求和响应不再是ServletRequest和ServletReponse，而是ServerRequest和ServerResponse
+   第一步 把注解编程模型工程复制一份
+   第二步 创建Handler(具体实现方法)
+
+    ```代码
+        public class UserHandler {
+        private final UserService userService;
+        public UserHandler(UserService userService, UserService userService1, UserService userService2){
+            this.userService = userService;
+        }
+
+        //根据id查询
+        public Mono<ServerResponse> getUserById(ServerRequest request){
+            //空值处理
+            Mono<ServerResponse> notFound = ServerResponse.notFound().build();
+            //获取id值
+            int userId = Integer.valueOf(request.pathVariable("id"));
+            //调用server方法得到数据
+            Mono<User> userMono = this.userService.getUserById(userId);
+            //把userMono进行转换返回
+            //使用Reactor操作符flatMap
+            return userMono.flatMap(person->ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(fromObject(person))).switchIfEmpty(notFound);
+        }
+        //查询所有
+        public Mono<ServerResponse> getAllUsers(){
+            //调用service得到结果
+            Flux<User> users = this.userService.getAllUser();
+            return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(users,User.class);
+        }
+        //添加
+        public  Mono<ServerResponse> serverUser(ServerRequest request){
+            //得到user对象
+            Mono<User> userMono = request.bodyToMono(User.class);
+            return ServerResponse.ok().build(this.userService.saveUserInfo(userMono));
+        }
+    }
+
+    ```
+
+    第三步 初始化服务器，编写Router和服务器
+
+    ```代码
+        public class Server {
+        public static void main(String[] args) throws IOException {
+            Server server = new Server();
+            server.createReactorServer();
+            System.out.println("enter to exit");
+            System.in.read();
+        }
+        //1 创建Router路由
+        public RouterFunction<ServerResponse> routerFunction(){
+            //创建handler对象
+            UserService userService = new UserServiceImpl();
+            UserHandler handler = new UserHandler(userService);
+            //设置路由
+            return RouterFunctions.route(GET("/users/{id}").and(accept(MediaType.APPLICATION_JSON)),handler::getUserById).andRoute(GET("/users").and(accept(MediaType.APPLICATION_JSON)),handler::getAllUsers);
+        }
+
+        //创建服务器完成适配
+        public  void createReactorServer(){
+            //路由和handler适配
+            RouterFunction<ServerResponse> route = routerFunction();
+            HttpHandler httpHandler = (HttpHandler) toHttpHandler(route);
+            ReactorHttpHandlerAdapter adapter = new ReactorHttpHandlerAdapter((org.springframework.http.server.reactive.HttpHandler) httpHandler);
+
+            //创建服务器
+            HttpServer httpServer = HttpServer.create();
+            httpServer.handle(adapter).bindNow();
+        }
+
+    }
+    ```
+   (4)使用WebClient调用
+
+   ```代码
+        public class Client {
+        public static void main(String[] args) {
+            //调用服务器地址
+            WebClient webClient = WebClient.create("http://127.0.0.1:5794");
+
+            //根据id查询
+            String id = "1";
+            User result = webClient.get().uri("/users/{id}",id).accept(MediaType.APPLICATION_JSON).retrieve().bodyToMono(User.class).block();
+            System.out.println(result.getName());
+
+            //查询所有
+            Flux<User> results = webClient.get().uri("/users").accept(MediaType.APPLICATION_JSON).retrieve().bodyToFlux(User.class);
+            results.map(stu->stu.getName());
+
+        }
+    }
+   ```
 
