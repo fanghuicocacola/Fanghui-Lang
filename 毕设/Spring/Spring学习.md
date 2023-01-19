@@ -1833,11 +1833,12 @@
 
     }
     ```
+
    (4)使用WebClient调用
 
    ```代码
         public class Client {
-        public static void main(String[] args) {
+        public static void main(String[  ] args) {
             //调用服务器地址
             WebClient webClient = WebClient.create("http://127.0.0.1:5794");
 
@@ -1853,4 +1854,3 @@
         }
     }
    ```
-

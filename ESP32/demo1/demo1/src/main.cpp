@@ -1,26 +1,96 @@
-#include<HardwareSerial.h>
-#define LEDC_CHANNEL_0 0
-// use 13 bit precission for LEDC timer
-#define LEDC_TIMER_13_BIT 13
-// 定义工具IO口
-#define LED_PIN 16
-// 创建音乐旋律列表，超级玛丽
-int melody[] = {330, 330, 330, 262, 330, 392, 196, 262, 196, 165, 220, 247, 233, 220, 196, 330, 392, 440, 349, 392, 330, 262, 294, 247, 262, 196, 165, 220, 247, 233, 220, 196, 330, 392, 440, 349, 392, 330, 262, 294, 247, 392, 370, 330, 311, 330, 208, 220, 262, 220, 262,
-                294, 392, 370, 330, 311, 330, 523, 523, 523, 392, 370, 330, 311, 330, 208, 220, 262, 220, 262, 294, 311, 294, 262, 262, 262, 262, 262, 294, 330, 262, 220, 196, 262, 262, 262, 262, 294, 330, 262, 262, 262, 262, 294, 330, 262, 220, 196};
-// 创建音调持续时间列表
-int noteDurations[] = {8, 4, 4, 8, 4, 2, 2, 3, 3, 3, 4, 4, 8, 4, 8, 8, 8, 4, 8, 4, 3, 8, 8, 3, 3, 3, 3, 4, 4, 8, 4, 8, 8, 8, 4, 8, 4, 3, 8, 8, 2, 8, 8, 8, 4, 4, 8, 8, 4, 8, 8, 3, 8, 8, 8, 4, 4, 4, 8, 2, 8, 8, 8, 4, 4, 8, 8, 4, 8, 8, 3, 3, 3, 1, 8, 4, 4, 8, 4, 8, 4, 8, 2, 8, 4, 4, 8, 4, 1, 8, 4, 4, 8, 4, 8, 4, 8, 2};
-void setup()
+#include <Arduino.h>
+#include <SPI.h>
+#include <BluetoothSerial.h>
+#include <set>
+//A轮 D16,D17
+//B轮 D19,D21
+//C轮 D2,D15
+//D轮 D22,D23
+#define A_Pin1 GPIO_NUM_16
+#define A_Pin2 GPIO_NUM_17
+#define B_Pin1 GPIO_NUM_19
+#define B_Pin2 GPIO_NUM_21
+#define C_Pin1 GPIO_NUM_2
+#define C_Pin2 GPIO_NUM_15
+#define D_Pin1 GPIO_NUM_22
+#define D_Pin2 GPIO_NUM_23
+BluetoothSerial SerialBT;
+
+void init_bluetooth()
 {
+    Serial.begin(115200);
+    SerialBT.begin("Car_Controller"); // Bluetooth device name
+    Serial.println("The device started, now you can pair it with bluetooth!");
+}
+const std::set<int> pin_set = {
+    A_Pin1, A_Pin2, B_Pin1, B_Pin2, C_Pin1, C_Pin2, D_Pin1, D_Pin2};
+void setup(void)
+{
+    init_bluetooth();
+
+    for (auto pin : pin_set)
+        pinMode(pin, OUTPUT);
+}
+
+// 1 正转, 0 反转
+void set_A(int state)
+{
+    digitalWrite(A_Pin1, state);
+    digitalWrite(A_Pin2, state ^ 1);
+}
+void set_B(int state)
+{
+    digitalWrite(B_Pin1, state);
+    digitalWrite(B_Pin2, state ^ 1);
+}
+void set_C(int state)
+{
+    digitalWrite(C_Pin1, state);
+    digitalWrite(C_Pin2, state ^ 1);
+}
+void set_D(int state)
+{
+    digitalWrite(D_Pin1, state);
+    digitalWrite(D_Pin2, state ^ 1);
+}
+void forward()
+{
+    set_A(1);
+    set_B(1);
+    set_C(1);
+    set_D(1);
+}
+void back()
+{
+    set_A(0);
+    set_B(0);
+    set_C(0);
+    set_D(0);
+}
+void stop()
+{
+    for (auto pin : pin_set)
+    {
+        digitalWrite(pin, 0);
+    }
+}
+String ble_read()
+{
+    return SerialBT.readString();
 }
 void loop()
 {
-  int noteDuration;
-  for (int i = 0; i < sizeof(noteDurations); ++i)
-  {
-    noteDuration = 800 / noteDurations[i];
-    ledcSetup(LEDC_CHANNEL_0, melody[i] * 2, LEDC_TIMER_13_BIT);
-    ledcAttachPin(LED_PIN, LEDC_CHANNEL_0);
-    ledcWrite(LEDC_CHANNEL_0, 50);
-    delay(noteDuration * 1.30);
-  }
+    if (SerialBT.available())
+    {
+        String s = ble_read();
+        Serial.write(s.c_str());
+        s.trim();
+        if (s == "forward")
+            forward();
+        else if (s == "back")
+            back();
+        else if (s == "stop")
+            stop();
+    }
+    delay(5);
 }
