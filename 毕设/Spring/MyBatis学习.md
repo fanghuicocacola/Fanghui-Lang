@@ -184,3 +184,43 @@
 
     * 注意：此时需要手动提交，如果自动提交事务，则在获取 sqlSession 对象时，使用 SqlSession sqlSession = sqlSessionFactory.openSession(true);，传入一个 Boolean 类型的参数，值为 true，这样就可以自动提交
 
+6. 加入 log4j 日志功能
+   1. 加入依赖
+
+        ```代码
+        <!-- log4j日志 -->
+        <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
+        </dependency>
+        ```
+
+   2. 加入log4j的配置文件
+
+        ```代码
+        <?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+        <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+            <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+                <param name="Encoding" value="UTF-8" />
+                <layout class="org.apache.log4j.PatternLayout">
+                    <param name="ConversionPattern" value="%-5p %d{MM-dd HH:mm:ss,SSS} %m (%F:%L) \n" />
+                </layout>
+            </appender>
+            <logger name="java.sql">
+                <level value="debug" />
+            </logger>
+            <logger name="org.apache.ibatis">
+                <level value="info" />
+            </logger>
+            <root>
+                <level value="debug" />
+                <appender-ref ref="STDOUT" />
+            </root>
+        </log4j:configuration>    
+        ```
+
+    >日志的级别  
+    >FATAL:致命;ERROR(错误);WARN(警告);INFO(信息);DEBUG(调试)(从左到右打印的信息越来越详细)
+

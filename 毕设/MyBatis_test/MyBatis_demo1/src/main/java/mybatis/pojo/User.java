@@ -1,4 +1,4 @@
-package mybatis.pojo;
+package main.java.mybatis.pojo;
 
 public class User {
     private String password;

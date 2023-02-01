@@ -1,4 +1,4 @@
-package mybatis.mapper;
+package main.java.mybatis.mapper;
 
 public interface UserMapper {
     /**
