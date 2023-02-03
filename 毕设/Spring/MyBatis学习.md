@@ -1,6 +1,6 @@
 # MyBatis学习
 
-## MyBatis简介
+## 1.MyBatis简介
 
 1. MyBatis历史
 
@@ -30,7 +30,7 @@
         * SQL 和 Java 编码分开，功能边界清晰。Java 代码专注业务、SQL 语句专注数据
         * 开发效率稍逊 HIbernate，但是完全能接受
 
-## 搭建 MyBatis
+## 2.搭建 MyBatis
 
 1. 引入依赖
 
@@ -224,3 +224,195 @@
     >日志的级别  
     >FATAL:致命;ERROR(错误);WARN(警告);INFO(信息);DEBUG(调试)(从左到右打印的信息越来越详细)
 
+## 3.核心配置文件详解
+
+> 核心配置文件中的标签必须按照固定的顺序 (有的标签可以不写，但顺序一定不能乱)：  
+> properties、settings、typeAliases、typeHandlers、objectFactory、objectWrapperFactory、reflectorFactory、plugins、environments、databaseIdProvider、mappers
+
+```代码
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <!DOCTYPE configuration
+            PUBLIC "-//MyBatis.org//DTD Config 3.0//EN"
+            "http://MyBatis.org/dtd/MyBatis-3-config.dtd">
+    <configuration>
+        <!--引入properties文件，此时就可以${属性名}的方式访问属性值-->
+        <properties resource="jdbc.properties"></properties>
+        <settings>
+            <!--将表中字段的下划线自动转换为驼峰-->
+            <setting name="mapUnderscoreToCamelCase" value="true"/>
+            <!--开启延迟加载-->
+            <setting name="lazyLoadingEnabled" value="true"/>
+        </settings>
+        <typeAliases>
+            <!--
+            typeAlias：设置某个具体的类型的别名
+            属性：
+            type：需要设置别名的类型的全类名
+            alias：设置此类型的别名，且别名不区分大小写。若不设置此属性，该类型拥有默认的别名，即类名
+            -->
+            <!--<typeAlias type="com.atguigu.mybatis.bean.User"></typeAlias>-->
+            <!--<typeAlias type="com.atguigu.mybatis.bean.User" alias="user">
+            </typeAlias>-->
+            <!--以包为单位，设置改包下所有的类型都拥有默认的别名，即类名且不区分大小写-->
+            <package name="com.atguigu.mybatis.bean"/>
+        </typeAliases>
+        <!--
+        environments：设置多个连接数据库的环境
+        属性：
+            default：设置默认使用的环境的id
+        -->
+        <environments default="mysql_test">
+            <!--
+            environment：设置具体的连接数据库的环境信息
+            属性：
+                id：设置环境的唯一标识，可通过environments标签中的default设置某一个环境的id，表示默认使用的环境
+            -->
+            <environment id="mysql_test">
+                <!--
+                transactionManager：设置事务管理方式
+                属性：
+                    type：设置事务管理方式，type="JDBC|MANAGED"
+                    type="JDBC"：设置当前环境的事务管理都必须手动处理
+                    type="MANAGED"：设置事务被管理，例如spring中的AOP
+                -->
+                <transactionManager type="JDBC"/>
+                <!--
+                dataSource：设置数据源
+                属性：
+                    type：设置数据源的类型，type="POOLED|UNPOOLED|JNDI"
+                    type="POOLED"：使用数据库连接池，即会将创建的连接进行缓存，下次使用可以从缓存中直接获取，不需要重新创建
+                    type="UNPOOLED"：不使用数据库连接池，即每次使用连接都需要重新创建
+                    type="JNDI"：调用上下文中的数据源
+                -->
+                <dataSource type="POOLED">
+                    <!--设置驱动类的全类名-->
+                    <property name="driver" value="${jdbc.driver}"/>
+                    <!--设置连接数据库的连接地址-->
+                    <property name="url" value="${jdbc.url}"/>
+                    <!--设置连接数据库的用户名-->
+                    <property name="username" value="${jdbc.username}"/>
+                    <!--设置连接数据库的密码-->
+                    <property name="password" value="${jdbc.password}"/>
+                </dataSource>
+            </environment>
+        </environments>
+        <!--引入映射文件-->
+        <mappers>
+            <!-- <mapper resource="UserMapper.xml"/> -->
+            <!--
+            以包为单位，将包下所有的映射文件引入核心配置文件
+            注意：
+                1. 此方式必须保证mapper接口和mapper映射文件必须在相同的包下
+                2. mapper接口要和mapper映射文件的名字一致
+            -->
+            <package name="com.atguigu.mybatis.mapper"/>
+        </mappers>
+    </configuration>
+```
+
+>注意：jdbc:mysql://localhost:3306/mybatis?
+serverTimezone=UTC&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8在properties文件中写为:url=jdbc:mysql://localhost:3306/mybatis
+?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=utf8
+
+## 4.用MyBatis进行CRUD测试
+
+```UserTest.java
+    import com.mapper.UserMapper;
+    import com.pojo.User;
+    import com.utils.SqlSessionFactoryUtil;
+    import org.apache.ibatis.session.SqlSession;
+    import org.junit.Test;
+
+    import java.util.List;
+
+    public class UserTest {
+        @Test
+        public void testInsert() {
+            //从工具方法中获取 SqlSession
+            SqlSession sqlSession = SqlSessionFactoryUtil.getSqlSession();
+            //获取接口对象
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            //测试功能
+            int result = userMapper.insertUser();
+            sqlSession.commit();
+            System.out.println("result:"+result);
+            sqlSession.close();
+        }
+        @Test
+        public void testUpdate(){
+            //从工具方法中获取 SqlSession
+            SqlSession sqlSession = SqlSessionFactoryUtil.getSqlSession();
+            //获取接口对象
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            //测试功能
+            userMapper.updateUser();
+            sqlSession.commit();
+            sqlSession.close();
+        }
+        @Test
+        public void testDelete(){
+            //从工具方法中获取 SqlSession
+            SqlSession sqlSession = SqlSessionFactoryUtil.getSqlSession();
+            //获取接口对象
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            //测试功能
+            userMapper.deleteUser();
+            sqlSession.commit();
+            sqlSession.close();
+        }
+        @Test
+        public void testSelect(){
+            //从工具方法中获取 SqlSession
+            SqlSession sqlSession = SqlSessionFactoryUtil.getSqlSession();
+            //获取接口对象
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            //测试功能
+            User user = userMapper.selectUserById();
+            System.out.println(user);
+            sqlSession.commit();
+            sqlSession.close();
+        }
+        @Test
+        public void testSelectAll(){
+            //从工具方法中获取 SqlSession
+            SqlSession sqlSession = SqlSessionFactoryUtil.getSqlSession();
+            //获取接口对象
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            //测试功能
+            List<User> users = userMapper.selectUserAll();
+            for (User user:users){
+                System.out.println(user);
+            }
+            sqlSession.commit();
+            sqlSession.close();
+        }
+    }
+
+```
+
+```UserMapper.xml
+    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.mapper.UserMapper">
+        <insert id="insertUser">
+            insert into t_user values (3,'admin3','123456',23,'男','12345@qq.com')
+        </insert>
+        <update id="updateUser">
+            update t_user set name = '张三' where id = '2'
+        </update>
+        <delete id="deleteUser">
+            delete from t_user where id = '3'
+        </delete>
+        <select id="selectUserById" resultType="User">
+            select * from t_user where id = '2'
+        </select>
+        <select id="selectUserAll" resultType="User">
+            select * from t_user
+        </select>
+    </mapper>
+
+```
+
+## 5.MyBatis获取参数值的两种方式(重点)
+
+> https://blog.csdn.net/baiqi123456/article/details/123750259
