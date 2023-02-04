@@ -52,6 +52,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "fileTemplates",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -139,10 +140,17 @@
       <workItem from="1675400281315" duration="6033000" />
       <workItem from="1675408390361" duration="12400000" />
       <workItem from="1675424635937" duration="1325000" />
+      <workItem from="1675503501176" duration="770000" />
+      <workItem from="1675506944197" duration="181000" />
+      <workItem from="1675507558088" duration="778000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

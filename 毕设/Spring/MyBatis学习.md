@@ -416,3 +416,22 @@ serverTimezone=UTC&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=ut
 ## 5.MyBatis获取参数值的两种方式(重点)
 
 > https://blog.csdn.net/baiqi123456/article/details/123750259
+
+* MyBatis获取参数值的两种方式：${}和#{}
+  ${}本质是字符串拼接
+  #{}本质是占位符赋值
+* MyBatis获取参数值的各种情况:
+    1. mapper接口方法的参数为单个的字面量案例
+        可以通过${}和#{}以任意的字符串获取参数值，但是需要注意${}的单引号问题
+    2. mapper接口方法的参数为多个时
+        此时MyBatis会将这些参数放在一个map集合中，以两种方式进行存储
+        a>以agr0，arg1...为键，以参数为值
+        b>以param1，param2...为键，以参数为值
+        c>两者混用
+        因此只需要通过#{}和${}以键的方式访问值即可，但是需要注意${}的单引号问题
+    3. 若mapper接口的方法的参数有多个时,可以手动将这些参数放在一个map中存储
+    4. 若mapper接口的方法的参数是实体类类型的参数时
+    5.使用@Param注解命名参数
+        此时MyBatis会将这些参数放在一个map集合中，以两种方式进行存储
+        a>以@Param为键,以参数为值
+        b>以param1，param2...为键，以参数为值

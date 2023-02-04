@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <prperties resource="jdbc.properties" />
+    <properties resource="jdbc.properties" />
 
     <typeAliases>
         <package name="com.example.pojo"/>
