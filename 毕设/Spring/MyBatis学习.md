@@ -417,21 +417,311 @@ serverTimezone=UTC&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=ut
 
 > https://blog.csdn.net/baiqi123456/article/details/123750259
 
-* MyBatis获取参数值的两种方式：${}和#{}
-  ${}本质是字符串拼接
+* MyBatis获取参数值的两种方式：\${}和#{}  
+  ${}本质是字符串拼接  
   #{}本质是占位符赋值
 * MyBatis获取参数值的各种情况:
     1. mapper接口方法的参数为单个的字面量案例
-        可以通过${}和#{}以任意的字符串获取参数值，但是需要注意${}的单引号问题
+        可以通过\${}和#{}以任意的字符串获取参数值，但是需要注意${}的单引号问题
+  
+        ```代码
+            <!--User getUserByUsername(String username);-->
+            <select id="getUserByUsername" resultType="User">
+            <!--两种方式-->
+            <!--select * from t_user where username = #{username}-->
+                select * from t_user where username = '${username}'
+            </select>
+        ```
+
     2. mapper接口方法的参数为多个时
-        此时MyBatis会将这些参数放在一个map集合中，以两种方式进行存储
-        a>以agr0，arg1...为键，以参数为值
-        b>以param1，param2...为键，以参数为值
-        c>两者混用
-        因此只需要通过#{}和${}以键的方式访问值即可，但是需要注意${}的单引号问题
+        此时MyBatis会将这些参数放在一个map集合中，以两种方式进行存储  
+        a>以agr0，arg1...为键，以参数为值  
+        b>以param1，param2...为键，以参数为值  
+        c>两者混用  
+        因此只需要通过#{}和\${}以键的方式访问值即可，但是需要注意${}的单引号问题
+
+        ```代码
+            <!--User checkLogin(String username,String password)-->
+            <select id="checkLogin" resultType="User">
+            <!--select * from t_user where username = #{arg0} and password = #{arg1}-->
+                select * from t_user where username = '${param0}' and password = '${param1}'
+            </select>
+        ```
+
     3. 若mapper接口的方法的参数有多个时,可以手动将这些参数放在一个map中存储
+
+        ```代码
+            <!--User checkLogin(String username,String password)-->
+            <select id="checkLogin" resultType="User">
+            <!--select * from t_user where username = #{arg0} and password = #{arg1}-->
+                select * from t_user where username = '${param0}' and password = '${param1}'
+            </select>
+        ```
+
+        ```代码
+            @Test
+            public void testCheckLoginByMap(){
+                SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+                ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
+                HashMap<String, Object> map = new HashMap<>();
+                map.put("username","hhh");
+                map.put("password","123");
+                User user = mapper.checkLoginByMap(map);
+                System.out.println(user);
+            }
+        ```
+
     4. 若mapper接口的方法的参数是实体类类型的参数时
-    5.使用@Param注解命名参数
-        此时MyBatis会将这些参数放在一个map集合中，以两种方式进行存储
-        a>以@Param为键,以参数为值
+
+        ```代码
+            <!--int insertUser(User user)-->
+            <insert id="insertUser">
+                insert into t_user values(null,#{username},#{password},#{age},#{sex},#{email})
+            </insert>
+        ```
+
+        ```代码
+            @Test
+            public void testInsertUser(){
+                SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+                ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
+                int result = mapper.insertUser(new User(null, "777", "123", 23, "男", "1224231137@qq.com"));
+                System.out.println(result);
+            }
+        ```
+
+    5. 使用@Param注解命名参数
+        此时MyBatis会将这些参数放在一个map集合中，以两种方式进行存储  
+        a>以@Param为键,以参数为值  
         b>以param1，param2...为键，以参数为值
+
+        ```代码
+            <!--User checkLoginByParam(@Param("username")String username,@Param("password") String password)-->
+            <select id="checkLoginByParam" resultType="User">
+                select * from t_user where username = #{username} and password = #{password};
+            </select>
+        ```
+
+        ```代码
+            @Test
+            public void testCheckLoginByParam(){
+                SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+                ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
+                User user = mapper.checkLoginByParam("777","123");
+                System.out.println(user);
+            }
+        ```
+
+## 6.MyBatis的各种查询功能
+
+* MyBatis 的各种查询功能  
+    1. 若查询出的数据只有一条  
+        a>可以通过实体类对象接收  
+        b>可以通过list集合接收  
+        c>可以通过mao集合接收  
+        结果:{password=123456, gender=男, name=admin3, id=3, age=23, email=12345@qq.com}
+    2. 若当前查询出的数据有多条  
+        a>可以通过实体类类型的list集合接收  
+        b>可以通过map类型的list集合接收  
+        c>可以在mapper接口的方法上添加@MapKey注解，
+        此时可以将每条数据转换的map集合作为值,以某个字段的值作为键，放在同一个map集合中  
+        注意：一定不能通过实体类对象接收，抛出异常TooManyResultException  
+        MyBatis中设置了默认的类型别名
+
+1. 查询一个实体类对象
+
+    ```代码
+        //根据id查询用户信息
+        List<User> getUserById(@Param("id") Integer id);
+    ```
+
+    ```代码
+        <!--User getUserById(@Param("id") Integer id)-->
+        <select id="getUserById" resultType="User">
+            select * from t_user where id = #{id};
+        </select>
+    ```
+
+2. 查询一个 List 集合
+
+    ```代码
+        //查询所有的用户信息
+        List<User> getAllUser();
+    ```
+
+    ```代码
+        <!--List<User> getAllUser();-->
+        <select id="getAllUser" resultType="User">
+            select * from t_user;
+        </select>
+    ```
+
+3. 查询单个数据
+
+    ```代码
+        //查询用户信息的总记录数
+        Integer getCount();
+    ```
+
+    ```代码
+        <!--Integer getCount();-->
+        <select id="getCount" resultType="Integer">
+            select count(*) from t_user;
+        </select>
+    ```
+
+4. 查询一条数据为 Map 的集合
+
+    ```代码
+        //根据id查询用户信息为一个map集合
+        Map<String,Object> getUserByIdToMap(@Param("id") Integer id);
+    ```
+
+    ```代码
+        <!--Map<String,Object> getUserByIdToMap(@Param("id") Integer id);-->
+        <select id="getUserByIdToMap" resultType="map">
+            select * from t_user where id = #{id};
+        </select>
+    ```
+
+5. 查询多条数据为 Map 的集合
+
+    ```代码
+        //查询所有用户信息为map集合
+        //List<Map<String,Object>> getAllUserToMap();
+        @MapKey("id")//找一个唯一字段做键
+        Map<String,Object> getAllUserToMap();
+    ```
+
+    ```代码
+        <!--Map<String,Object> getAllUserToMap();-->
+        <select id="getAllUserToMap" resultType="map">
+            select * from t_user;
+        </select>
+    ```
+
+## 7.特殊SQL的执行(使用${}的情况)
+
+1. 模糊查询
+
+    ```代码
+        <select id="getUserByLike" resultType="User">
+        /*select * from t_user where name like '%${name}%'*/
+        /*select * from t_user where name like concat('%',#{name},'%')*/
+        select * from t_user where name like "%"${name}"%"
+    </select>
+    ```
+
+2. 批量删除
+
+    ```代码
+        <!--int deleteMore(@Param("ids") String ids);-->
+        <delete id="deleteMore">
+            delete from t_user where id in (${ids})
+        </delete>
+    ```
+
+    ```代码
+        @Test
+        public void testDeleteMore(){
+            SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+            SQLMapper mapper = sqlSession.getMapper(SQLMapper.class);
+            int deleteMore = mapper.deleteMore("4,8");
+        }
+    ```
+
+3. 动态设置表名
+
+    ```代码
+        <!--List<User> getUserByTableName(@Param("tableName") String tableName);-->
+        <select id="getUserByTableName" resultType="User">
+            select * from ${tableName}
+        </select>
+    ```
+
+    ```代码
+        @Test
+        public void testGetUserByTableName(){
+            SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+            SQLMapper mapper = sqlSession.getMapper(SQLMapper.class);
+            List<User> list = mapper.getUserByTableName("t_user");
+            System.out.println(list);
+        }
+    ```
+
+4. 添加功能获取自增的主键
+
+   * 使用场景
+
+    t_clazz(clazz_id,clazz_name)  
+    t_student(student_id,student_name,clazz_id)  
+
+   * 添加班级信息
+   * 获取新添加的班级的 id
+   * 为班级分配学生，即将某学的班级 id 修改为新添加的班级的 id
+   * 在 mapper.xml 中设置两个属性
+     * useGeneratedKeys：设置使用自增的主键
+     * keyProperty：因为增删改有统一的返回值是受影响的行数，因此只能将获取的自增的主键放在传输的参数 user 对象的某个属性中
+
+    ```代码
+        <!--void insertUser(User user);-->
+        <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+            insert into t_user values(null,#{username},#{password},#{age},#{sex},#{email})
+        </insert>
+    ```
+
+    ```代码
+        @Test
+        public void testInsertUser(){
+            SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+            SQLMapper mapper = sqlSession.getMapper(SQLMapper.class);
+            User user = new User(null, "王五", "123", 23, "男", "1224231137");
+            mapper.insertUser(user);
+            System.out.println(user);
+        }
+    ```
+
+## 8.自定义映射resultMap
+
+> 若字段名和实体类中的属性名不一致，但是字段名符合数据库的规则（使用_），实体类中的属性名符合 Java 的规则（使用驼峰）。此时也可通过以下两种方式处理字段名和实体类中的属性的映射关系
+
+1. 在 sql 语句中给字段名取别名，别名为属性名，如 emp_name -> empName
+
+    ```代码
+        <select id="getAllEmp" resultType="Emp">
+            select eid,emp_name empName,age,sex,email from t_emp
+        </select>
+    ```
+
+2. 在 mybatis-config 中修改配置文件，设置 setting，设置一个全局配置信息 mapUnderscoreToCamelCase，可以在查询表中数据时，自动将_类型的字段名转换为驼峰，例如：字段名 user_name，设置了 mapUnderscoreToCamelCase，此时字段名就会转换为 userName。
+
+    ```代码
+        <settings>
+            <setting name="mapUnderscoreToCamelCase" value="true"/>
+        </settings>
+    ```
+
+3. 通过 resultMap 设置自定义的映射关系
+
+    ```代码
+        <!--自定义映射关系-->
+        <!--
+            resultMap：设置自定义映射关系
+            id：唯一标识，不能重复
+            type： 设置映射关系的实体类类型
+            属性：
+            property：设置映射关系中的属性名，必须是type属性设置的实体类类型中的属性名
+            column：设置映射关系中的字段名，必须是sql语句查询出的字段名
+        -->
+        <resultMap id="empResultMap" type="Emp">
+            <id property="eid" column="eid"></id>
+            <result property="empName" column="emp_name"></result>
+            <result property="age" column="age"></result>
+            <result property="sex" column="sex"></result>
+            <result property="email" column="email"></result>
+        </resultMap>
+        <!--List<Emp> getAllEmp();-->
+        <select id="getAllEmp" resultMap="empResultMap">
+            select * from t_emp
+        </select>
+    ```

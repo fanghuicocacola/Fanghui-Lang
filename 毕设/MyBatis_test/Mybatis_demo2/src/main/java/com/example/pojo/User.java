@@ -1,14 +1,14 @@
 package com.example.pojo;
 
 public class User {
-    private String id;
+    private Integer id;
     private String name;
     private String password;
     private Integer age;
     private String gender;
     private String email;
 
-    public User(String id,String name,String password,Integer age,String gender,String email){
+    public User(Integer id,String name,String password,Integer age,String gender,String email){
         this.id = id;
         this.name = name;
         this.password = password;

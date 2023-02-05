@@ -83,7 +83,7 @@ public class ParameterMapperTest {
     public void testInsertUser(){
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         ParameterMapper mapper = sqlSession.getMapper(ParameterMapper.class);
-        User user1 = new User("4","李四","123456",25,"男","234@qq.com");
+        User user1 = new User(4,"李四","123456",25,"男","234@qq.com");
         int result = mapper.insertUser(user1);
         System.out.println(result);
     }
