@@ -5,10 +5,10 @@
 <configuration>
     <properties resource="jdbc.properties" />
     <!--设置MyBatis的全局配置-->
-    <settings>
-        <!--将_自动映射为驼峰，emp_name->empName-->
-        <setting name="mapUnderscoreToCamelCase" value="false"/>
-    </settings>
+    <!--<settings>
+        &lt;!&ndash;将_自动映射为驼峰，emp_name->empName&ndash;&gt;
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>-->
     
     <typeAliases>
         <package name="com.example.pojo"/>

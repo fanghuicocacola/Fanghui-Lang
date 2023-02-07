@@ -52,6 +52,11 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -68,7 +73,7 @@
       <recent name="com.example.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ResultMapperTest.testGetAllEmp">
+  <component name="RunManager" selected="JUnit.ResultMapperTest.testGetEmpAndDept">
     <configuration name="ResultMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mybatis_demo" />
       <option name="PACKAGE_NAME" value="" />
@@ -88,8 +93,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ResultMapperTest.testGetEmpAndDept" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis_demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ResultMapperTest" />
+      <option name="METHOD_NAME" value="testGetEmpAndDept" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ResultMapperTest.testGetEmpAndDept" />
         <item itemvalue="JUnit.ResultMapperTest.testGetAllEmp" />
         <item itemvalue="JUnit.ResultMapperTest" />
       </list>
@@ -104,6 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675602057591</updated>
       <workItem from="1675602058729" duration="3537000" />
+      <workItem from="1675768315375" duration="4268000" />
     </task>
     <servers />
   </component>

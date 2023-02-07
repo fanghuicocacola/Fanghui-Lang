@@ -7,6 +7,8 @@ public class Emp {
     private String sex;
     private String email;
     private Integer did;
+
+    private Dept dept;
     public Integer getEid() {
         return eid;
     }
@@ -55,13 +57,12 @@ public class Emp {
         this.did = did;
     }
 
-    public Emp(Integer eid, String empName, Integer age, String sex, String email, Integer did) {
-        this.eid = eid;
-        this.empName = empName;
-        this.age = age;
-        this.sex = sex;
-        this.email = email;
-        this.did = did;
+    public Dept getDept() {
+        return dept;
+    }
+
+    public void setDept(Dept dept) {
+        this.dept = dept;
     }
 
     @Override
@@ -73,6 +74,19 @@ public class Emp {
                 ", sex='" + sex + '\'' +
                 ", email='" + email + '\'' +
                 ", did=" + did +
+                ", dept=" + dept +
                 '}';
     }
+
+
+    public Emp(Integer eid, String empName, Integer age, String sex, String email, Integer did) {
+        this.eid = eid;
+        this.empName = empName;
+        this.age = age;
+        this.sex = sex;
+        this.email = email;
+        this.did = did;
+    }
+
+
 }
