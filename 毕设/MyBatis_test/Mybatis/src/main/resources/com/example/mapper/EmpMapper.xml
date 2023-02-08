@@ -28,16 +28,65 @@
     </select>-->
 
     <!--处理多对一映射关系方式一:级联属性赋值-->
-    <resultMap id="empAndDeptResultMapOne" type="Emp">
+    <!--<resultMap id="empAndDeptResultMapOne" type="Emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <result property="dept.did" column="did"></result>
+        <result property="dept.deptName" column="dept_name"></result>
+    </resultMap>
+    &lt;!&ndash;Emp getEmpAndDept(@Param("eid")Integer eid);&ndash;&gt;
+    <select id="getEmpAndDept" resultMap="empAndDeptResultMapOne">
+        select * from t_emp left join t_dept on t_emp.eid = t_dept.did where t_emp.eid = #{eid}
+    </select>-->
+    <!--处理多对一映射关系方式一:association-->
+    <resultMap id="empAndDeptResultMapTwo" type="Emp">
         <id property="eid" column="eid"/>
         <result property="empName" column="emp_name"/>
         <result property="age" column="age"/>
         <result property="sex" column="sex"/>
         <result property="email" column="email"/>
-        <result property="dept.did" column="did"/>
-        <result property="dept.deptName" column="dept_name"/>
+        <result property="did" column="did"/>
+        <!--
+            association:处理多对一的映射关系
+            property:需要处理的属性名
+            javaType:该属性的类型
+         -->
+        <association property="dept" javaType="Dept">
+            <id property="did" column="did"/>
+            <result property="deptName" column="dept_name"/>
+        </association>
     </resultMap>
-    <select id="getEmpAndDept" resultMap="empAndDeptResultMapOne">
-        select * from t_emp left join t_dept on t_emp.did = t_dept.did where t_emp.eid = #{eid}
+    <!--Emp getEmpAndDept(@Param("eid")Integer eid);-->
+    <select id="getEmpAndDept" resultMap="empAndDeptResultMapTwo">
+        select * from t_emp left join t_dept on t_emp.eid = t_dept.did where t_emp.eid = #{eid}
+    </select>
+    
+    <resultMap id="empAndDeptByStepResultMapTwo" type="Emp">
+        <id property="eid" column="eid"/>
+        <result property="empName" column="emp_name"/>
+        <result property="age" column="age"/>
+        <result property="sex" column="sex"/>
+        <result property="email" column="email"/>
+        <result property="did" column="did"/>
+        <!--
+            select:设置分布查询的sql的唯一标识(namespace.SQLId或mapper接口的全类名，方法名)
+            column:设置分布查询的条件
+            fetchType:当开启了全局的延迟加载之后，可通过此属性手动控制延迟加载的效果
+            fetchType="lazy/eager":lazy表示延迟加载，eager表示立即加载
+        -->
+        <association property="dept"
+                     select="com.example.mapper.DeptMapper.getEmpAndDeptByStepTwo"
+                     column="did"
+                     fetchType="eager"/>
+    </resultMap>
+    <select id="getEmpAndDeptByStepOne" resultMap="empAndDeptByStepResultMapTwo">
+        select * from t_emp where eid = #{eid}
+    </select>
+
+    <select id="getDeptAndEmpByStepTwo" resultType="Emp">
+        select * from t_emp where did = #{did};
     </select>
 </mapper>

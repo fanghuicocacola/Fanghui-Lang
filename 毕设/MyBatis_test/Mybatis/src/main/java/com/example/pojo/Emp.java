@@ -79,6 +79,8 @@ public class Emp {
     }
 
 
+    public Emp() {
+    }
     public Emp(Integer eid, String empName, Integer age, String sex, String email, Integer did) {
         this.eid = eid;
         this.empName = empName;
@@ -87,6 +89,4 @@ public class Emp {
         this.email = email;
         this.did = did;
     }
-
-
 }

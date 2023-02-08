@@ -20,10 +20,6 @@ public class Dept {
         this.deptName = deptName;
     }
 
-    public Dept(Integer did, String deptName) {
-        this.did = did;
-        this.deptName = deptName;
-    }
 
     @Override
     public String toString() {
@@ -31,5 +27,13 @@ public class Dept {
                 "did=" + did +
                 ", deptName='" + deptName + '\'' +
                 '}';
+    }
+
+    public Dept() {
+    }
+
+    public Dept(Integer did, String deptName) {
+        this.did = did;
+        this.deptName = deptName;
     }
 }

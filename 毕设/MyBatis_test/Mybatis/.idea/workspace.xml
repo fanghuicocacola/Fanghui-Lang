@@ -38,27 +38,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/黑白灰/Documents/GitHub/Fanghui-Lang/毕设/MyBatis_test/Mybatis/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/黑白灰/Documents/GitHub/Fanghui-Lang/毕设/MyBatis_test/Mybatis/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\黑白灰\Documents\GitHub\Fanghui-Lang\毕设\MyBatis_test\Mybatis\src\main\resources" />
@@ -73,21 +73,32 @@
       <recent name="com.example.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ResultMapperTest.testGetEmpAndDept">
-    <configuration name="ResultMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Mybatis_demo" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ResultMapperTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ResultMapperTest.testGetDeptAndEmpByStep">
     <configuration name="ResultMapperTest.testGetAllEmp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mybatis_demo" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ResultMapperTest" />
       <option name="METHOD_NAME" value="testGetAllEmp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResultMapperTest.testGetDeptAndEmp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis_demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ResultMapperTest" />
+      <option name="METHOD_NAME" value="testGetDeptAndEmp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResultMapperTest.testGetDeptAndEmpByStep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis_demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ResultMapperTest" />
+      <option name="METHOD_NAME" value="testGetDeptAndEmpByStep" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,11 +114,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ResultMapperTest.testGetEmpAndDeptByStep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis_demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ResultMapperTest" />
+      <option name="METHOD_NAME" value="testGetEmpAndDeptByStep" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ResultMapperTest.testGetDeptAndEmpByStep" />
+        <item itemvalue="JUnit.ResultMapperTest.testGetDeptAndEmp" />
         <item itemvalue="JUnit.ResultMapperTest.testGetEmpAndDept" />
+        <item itemvalue="JUnit.ResultMapperTest.testGetEmpAndDeptByStep" />
         <item itemvalue="JUnit.ResultMapperTest.testGetAllEmp" />
-        <item itemvalue="JUnit.ResultMapperTest" />
       </list>
     </recent_temporary>
   </component>
@@ -121,6 +144,7 @@
       <updated>1675602057591</updated>
       <workItem from="1675602058729" duration="3537000" />
       <workItem from="1675768315375" duration="4268000" />
+      <workItem from="1675823846261" duration="21593000" />
     </task>
     <servers />
   </component>

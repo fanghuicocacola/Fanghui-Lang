@@ -711,7 +711,7 @@ serverTimezone=UTC&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=ut
             type： 设置映射关系的实体类类型
             属性：
             property：设置映射关系中的属性名，必须是type属性设置的实体类类型中的属性名
-            column：设置映射关系中的字段名，必须是sql语句查询出的字段名
+              column：设置映射关系中的字段名，必须是sql语句查询出的字段名
         -->
         <resultMap id="empResultMap" type="Emp">
             <id property="eid" column="eid"></id>

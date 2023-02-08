@@ -1,4 +1,6 @@
+import com.example.mapper.DeptMapper;
 import com.example.mapper.EmpMapper;
+import com.example.pojo.Dept;
 import com.example.pojo.Emp;
 import com.example.utils.SqlSessionUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -20,7 +22,7 @@ public class ResultMapperTest {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
         List<Emp> list = mapper.getAllEmp();
-        list.forEach(emp -> System.out.println(emp));
+        list.forEach(System.out::println);
     }
     @Test
     public void testGetEmpAndDept(){
@@ -28,5 +30,30 @@ public class ResultMapperTest {
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
         Emp emp = mapper.getEmpAndDept(1);
         System.out.println(emp);
+    }
+    @Test
+    public void testGetEmpAndDeptByStep(){
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+        Emp emp = mapper.getEmpAndDeptByStepOne(3);
+        DeptMapper mapper2 = sqlSession.getMapper(DeptMapper.class);
+        Dept dept = mapper2.getEmpAndDeptByStepTwo(3);
+        System.out.println(emp.getEmpName());
+        System.out.println("+++++++++++++++++++++++++++");
+        System.out.println(dept);
+    }
+    @Test
+    public void testGetDeptAndEmp(){
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+        Dept dept = mapper.getDeptAndEmp(1);
+        System.out.println(dept);
+    }
+    @Test
+    public void testGetDeptAndEmpByStep(){
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+        Dept dept = mapper.getDeptAndEmpByStepOne(1);
+        System.out.println(dept);
     }
 }
