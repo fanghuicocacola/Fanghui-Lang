@@ -725,3 +725,119 @@ serverTimezone=UTC&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=ut
             select * from t_emp
         </select>
     ```
+
+4. 多对一映射处理
+
+    * 级联方式处理映射关系
+
+   ```代码
+        </select>
+        <resultMap id="empAndDeptResultMapOne" type="Emp">
+            <id property="eid" column="eid"></id>
+            <result property="empName" column="emp_name"></result>
+            <result property="age" column="age"></result>
+            <result property="sex" column="sex"></result>
+            <result property="email" column="email"></result>
+            <result property="dept.did" column="did"></result>
+            <result property="dept.deptName" column="dept_name"></result>
+        </resultMap>
+        <!--Emp getEmpAndDept(@Param("eid") Integer eid);-->
+        <select id="getEmpAndDept" resultMap="empAndDeptResultMapOne">
+            select * from t_emp left join t_dept on t_emp.did = t_dept.did where t_emp.eid = #{eid}
+        </select>
+   ```
+
+   使用 association 处理映射关系
+    * association：处理多对一的映射关系
+    * property：需要处理多对的映射关系的属性名
+    * javaType：该属性的类型
+
+    ```代码
+        <resultMap id="empAndDeptResultMapTwo" type="Emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"></result>
+        <result property="email" column="email"></result>
+        <association property="dept" javaType="Dept">
+            <result property="did" column="did"></result>
+            <result property="deptName" column="dept_name"></result>
+        </association>
+    </resultMap>
+    ```
+
+    * 分步查询处理映射关系
+
+    1. 查询员工信息
+        * select：设置分步查询的 sql 的唯一标识（namespace.SQLId 或 mapper 接口的全类名。方法名)
+        * column: 设置分布查询的条件
+
+        ```代码
+            //通过分步查询查询员工以及员工所对应的部门信息
+            //分步查询第一步：查询员工信息
+            Emp getEmpAndDeptByStepOne(@Param("eid") Integer eid);
+        ```
+
+        ```代码
+            <resultMap id="empAndDeptByStepResultMap" type="Emp">
+            <id property="eid" column="eid"></id>
+            <result property="empName" column="emp_name"></result>
+            <result property="age" column="age"></result>
+            <result property="sex" column="sex"></result>
+            <result property="email" column="email"></result>
+            <association property="dept"
+                        select="com.llt.mybatis.mapper.DeptMapper.getEmpAndDeptByStepTwo"
+                        column="did"></association>
+            </resultMap>
+            <!--Emp getEmpAndDeptByStepOne(@Param("eid") Integer eid);-->
+            <select id="getEmpAndDeptByStepOne" resultMap="empAndDeptByStepResultMap">
+                select * from t_emp where eid = #{eid}
+            </select>
+        ```
+
+    2. 查询部门信息
+
+        ```代码
+            //通过分步查询查询员工以及员工所对应的部门信息
+            //分布查询第二部：通过did查询员工所对应的部门
+            Dept getEmpAndDeptByStepTwo(@Param("did") Integer did);
+        ```
+
+        ```代码
+            <!--mapUnderscoreToCamelCase-->
+            <select id="getEmpAndDeptByStepTwo" resultType="Dept">
+                select * from t_dept where did = #{did}
+            </select>
+        ```
+
+    分布查询的优点:可以实现延迟加载（解释：需要什么值，就加载什么值 ，节省资源），但是必须在核心配置文件中设置全局配置信息：
+
+    * lazyLoadingEnabled：延迟加载全局开关，当开启时，所有关联对象都会延迟加载（默认关闭，如需延迟加载，手动开启）
+    * aggressiveLazyLoading：当开启时，任何方法的调用都会加载该对象的所有属性。否则每个属性都会按需加载（默认关闭）
+
+        ```代码
+            <settings>
+                <setting name="mapUnderscoreToCamelCase" value="true"/>
+                <!--开启延迟加载-->
+                <setting name="lazyLoadingEnabled" value="true"/>
+            </settings>
+        ```
+
+    * fetchType: 当开启了全局的延迟加载之后，可通过此属性手动控制延迟加载的效果
+    * fetchType："lazy|eager"：lazy 表示延迟加载，eager 表示立即加载
+
+        ```代码
+            <resultMap id="empAndDeptByStepResultMap" type="Emp">
+            <id property="eid" column="eid"></id>
+            <result property="empName" column="emp_name"></result>
+            <result property="age" column="age"></result>
+            <result property="sex" column="sex"></result>
+            <result property="email" column="email"></result>
+            <association property="dept"
+                        select="com.llt.mybatis.mapper.DeptMapper.getEmpAndDeptByStepTwo"
+                        column="did"
+                        fetchType="eager"></association>
+            </resultMap>
+        ```
+
+## 9.动态SQL

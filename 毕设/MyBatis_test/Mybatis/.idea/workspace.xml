@@ -14,9 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="mybatis-mapper" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,12 +73,22 @@
       <recent name="com.example.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ResultMapperTest.testGetDeptAndEmpByStep">
-    <configuration name="ResultMapperTest.testGetAllEmp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DynamicSQLMapperTest.testGetEmpByChooseTest">
+    <configuration name="DynamicSQLMapperTest.testGetEmpByChooseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mybatis_demo" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ResultMapperTest" />
-      <option name="METHOD_NAME" value="testGetAllEmp" />
+      <option name="MAIN_CLASS_NAME" value="DynamicSQLMapperTest" />
+      <option name="METHOD_NAME" value="testGetEmpByChooseTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DynamicSQLMapperTest.testGetEmpByConditionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis_demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DynamicSQLMapperTest" />
+      <option name="METHOD_NAME" value="testGetEmpByConditionTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -114,23 +124,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ResultMapperTest.testGetEmpAndDeptByStep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Mybatis_demo" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ResultMapperTest" />
-      <option name="METHOD_NAME" value="testGetEmpAndDeptByStep" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ResultMapperTest.testGetDeptAndEmpByStep" />
+        <item itemvalue="JUnit.DynamicSQLMapperTest.testGetEmpByChooseTest" />
+        <item itemvalue="JUnit.DynamicSQLMapperTest.testGetEmpByConditionTest" />
         <item itemvalue="JUnit.ResultMapperTest.testGetDeptAndEmp" />
+        <item itemvalue="JUnit.ResultMapperTest.testGetDeptAndEmpByStep" />
         <item itemvalue="JUnit.ResultMapperTest.testGetEmpAndDept" />
-        <item itemvalue="JUnit.ResultMapperTest.testGetEmpAndDeptByStep" />
-        <item itemvalue="JUnit.ResultMapperTest.testGetAllEmp" />
       </list>
     </recent_temporary>
   </component>
@@ -145,6 +145,7 @@
       <workItem from="1675602058729" duration="3537000" />
       <workItem from="1675768315375" duration="4268000" />
       <workItem from="1675823846261" duration="21593000" />
+      <workItem from="1675935419113" duration="8137000" />
     </task>
     <servers />
   </component>
