@@ -10,6 +10,7 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
         <!--开启延迟加载-->
         <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="cacheEnabled" value="true" />
     </settings>
     
     <typeAliases>
