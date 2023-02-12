@@ -46,6 +46,19 @@
             <artifactId>mybatis</artifactId>
             <version>3.5.11</version>
         </dependency>
+
+        <!--Mybatis EHCache整合包-->
+        <dependency>
+            <groupId>org.mybatis.caches</groupId>
+            <artifactId>mybatis-ehcache</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <!--slf4j日志门面的一个具体实现-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.11</version>
+        </dependency>
     </dependencies>
 
     <properties>

@@ -38,31 +38,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/黑白灰/Documents/GitHub/Fanghui-Lang/毕设/MyBatis_test/Mybatis/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/黑白灰/Documents/GitHub/Fanghui-Lang/毕设/MyBatis_test/Mybatis/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "GenericSQL",
-      "MySQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;GenericSQL&quot;,
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\黑白灰\Documents\GitHub\Fanghui-Lang\毕设\MyBatis_test\Mybatis\src\main\resources" />
@@ -77,7 +77,7 @@
       <recent name="com.example.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CacheMapperTest.testOneCache">
+  <component name="RunManager" selected="JUnit.CacheMapperTest.testTwoCache">
     <configuration name="CacheMapperTest.testCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Mybatis_demo" />
       <option name="PACKAGE_NAME" value="" />
@@ -130,8 +130,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CacheMapperTest.testOneCache" />
         <item itemvalue="JUnit.CacheMapperTest.testTwoCache" />
+        <item itemvalue="JUnit.CacheMapperTest.testOneCache" />
         <item itemvalue="JUnit.CacheMapperTest.testCache" />
         <item itemvalue="JUnit.DynamicSQLMapperTest.testGetEmpByConditionTest" />
         <item itemvalue="JUnit.DynamicSQLMapperTest.testInsertMoreByList" />
@@ -151,6 +151,7 @@
       <workItem from="1675823846261" duration="21593000" />
       <workItem from="1675935419113" duration="8137000" />
       <workItem from="1676086477040" duration="13852000" />
+      <workItem from="1676169277251" duration="3127000" />
     </task>
     <servers />
   </component>
