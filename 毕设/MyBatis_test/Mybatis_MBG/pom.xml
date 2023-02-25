@@ -45,7 +45,7 @@
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
-            <version>5.2.0</version>
+            <version>5.3.1</version>
         </dependency>
     </dependencies>
     <!-- 控制Maven在构建过程中相关配置 -->
