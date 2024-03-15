@@ -1,5 +1,0 @@
-program main
-{
-    real v1=std.input_real(),v2=std.input_real();
-    std.cout(v1+v2);
-}

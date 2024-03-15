@@ -1,6 +1,0 @@
-﻿  学生成绩管理系统.cpp
-D:\My Projects\Merdog Code\学生成绩管理系统\学生成绩管理系统.cpp(13,12): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-D:\My Projects\Merdog Code\学生成绩管理系统\学生成绩管理系统.cpp(35,1): error C2556: “void Main_menu(void)”: 重载函数与“int Main_menu(void)”只是在返回类型上不同
-D:\My Projects\Merdog Code\学生成绩管理系统\学生成绩管理系统.cpp(13): message : 参见“Main_menu”的声明
-D:\My Projects\Merdog Code\学生成绩管理系统\学生成绩管理系统.cpp(34,6): error C2371: “Main_menu”: 重定义；不同的基类型
-D:\My Projects\Merdog Code\学生成绩管理系统\学生成绩管理系统.cpp(13): message : 参见“Main_menu”的声明

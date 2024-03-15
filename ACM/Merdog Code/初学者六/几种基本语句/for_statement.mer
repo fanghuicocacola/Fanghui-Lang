@@ -1,8 +1,0 @@
-program main
-{   
-    for(int i=0;i<1000;i+=1)
-    {
-        std.cout('hey fanghui');
-    }
-    std.sleep(1000000);
-}

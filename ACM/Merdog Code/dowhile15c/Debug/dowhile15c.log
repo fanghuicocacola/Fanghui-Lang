@@ -1,4 +1,0 @@
-﻿  dowhile15c.cpp
-D:\My Projects\Merdog Code\dowhile15c\dowhile15c.cpp(11,27): error C2664: “int scanf(const char *const ,...)”: 无法将参数 1 从“bool”转换为“const char *const ”
-D:\My Projects\Merdog Code\dowhile15c\dowhile15c.cpp(11,19): message : 从整型强制转换为指针类型要求 reinterpret_cast、C 样式强制转换或函数样式强制转换
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(1274,37): message : 参见“scanf”的声明

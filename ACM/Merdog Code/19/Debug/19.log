@@ -1,4 +1,0 @@
-﻿  19.cpp
-D:\My Projects\Merdog Code\19\19.cpp(7,24): warning C4101: “fx0”: 未引用的局部变量
-D:\My Projects\Merdog Code\19\19.cpp(7,20): warning C4101: “x3”: 未引用的局部变量
-D:\My Projects\Merdog Code\19\19.cpp(14): error C4700: 使用了未初始化的局部变量“x0”
