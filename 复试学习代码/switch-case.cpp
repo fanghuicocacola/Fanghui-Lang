@@ -30,5 +30,4 @@ int main(){
             std::cout<<"默认的语句被执行了！";
             break;
         }
-    }
-}
+    }}
