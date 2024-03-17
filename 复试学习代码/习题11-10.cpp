@@ -28,14 +28,15 @@ class square:public point
     public:
         int topLeftX,topLeftY,length;
     public:
-        square(int L)
+        square(int x,int y,int L)
         {
+            setxy(x,y);
             length = L;
         }
         void Area()
         {
-            topLeftX = point::getx();
-            topLeftY = point::gety();
+            topLeftX = getx();
+            topLeftY = gety();
             std::cout<<topLeftX<<topLeftY;
             std::cout<<"左上角的坐标为"<<"X = "<<x<<" Y = "<<y<<std::endl;
             std::cout<<"正方形的面积为"<<length*length<<std::endl;
@@ -45,7 +46,6 @@ class square:public point
 int main()
 {
     system("chcp 65001");//添加该代码防止乱码
-    square example1(10);
-    example1.setxy(1,1);
+    square example1(10,10,10);
     example1.Area();
 }
