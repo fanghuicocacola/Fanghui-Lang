@@ -1,6 +1,7 @@
 #include<iostream>
 #include <iomanip>
 
+
 int f(int x[],int n)
 {
     if(n!=1)
@@ -15,7 +16,7 @@ void func(int x,int y)
     x = x-y;
     std::cout<<"Change-> x:"<<x<<"  y:"<<y<<std::endl;
 }
-int main()
+int main1()
 {
     int b[5] = {1,2,3,4,0};
     f(b,3);
@@ -34,6 +35,11 @@ int main()
     }
 }
 
+int main()
+{
+    int a[] = {1,2,3,4},*p=a;
+    std::cout<<sizeof(a)/sizeof(int)<<sizeof(a)/sizeof(a[0])<<sizeof(a)/sizeof(1);
+}
 
 
 
