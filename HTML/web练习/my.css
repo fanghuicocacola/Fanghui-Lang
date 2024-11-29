@@ -1,0 +1,56 @@
+h1{color: darkcyan;}
+hr{color: blueviolet;}
+/*
+多行注释
+*/
+
+#test{
+    height: 300px;
+    width: 300px;
+    background: gray;
+}
+
+#test2{
+    height: 300px;
+    width: 300px;
+    background: pink;
+    position: relative;
+}
+
+/*p标签本身会有padding和margin值*/
+p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.p1{
+    height: 100px;
+    width: 100px;
+    background: blue;
+    /*设置相对定位*/
+    position: relative;
+    /*相对于左边偏移20px,相对于上边偏移20px*/
+    left: 20px;
+    top:20px;
+}
+
+.p2{
+    height: 80px;
+    width: 80px;
+    background: red;
+}
+.p3{
+    height: 100px;
+    width: 100px;
+    background: green;
+    /*設置绝对定位*/
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+.p4{
+    height: 90px;
+    width: 90px;
+    background: gold;
+}

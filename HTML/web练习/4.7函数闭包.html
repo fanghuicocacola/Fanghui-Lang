@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //匿名函数
+        // var func1 = function () {
+        //     console.log("func1");
+        // }
+        // func1();
+
+        // //自执行函数
+        // (function autoCall() {
+        //     console.log("autoCall");
+        // })();
+
+        //函数实现累加
+        // function add() {
+        //     var temp = 0;
+        //     return ++temp;
+        // }
+        // console.log(add());
+        // console.log(add());
+        // console.log(add());
+
+        // //闭包
+        // function func2() {
+        //     let temp = 0;
+
+        //     function increase() {
+        //         temp++;
+        //         console.log(temp);
+        //     }
+
+        //     return increase;
+        // }
+        // var clo = func2();
+        // clo();
+        // clo();
+        // clo();
+
+        //闭包2  错误
+        // var f3 = function () {
+        //     let temp = 0;
+        //     console.log("func3");
+
+        //     function increase() {
+        //         temp++;
+        //         console.log(temp);
+        //     }
+
+        //     return increase;
+        // }
+        // f3();
+
+        var f4 = (function () {
+            let temp = 0;
+            console.log("func4");
+
+            function increase() {
+                temp++;
+                console.log(temp);
+            }
+
+            return increase;
+        })();
+        f4();
+        f4();
+    </script>
+</body>
+
+</html>

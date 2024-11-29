@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="my.css">
+    <!--内部样式表-->
+    <style>
+        h3 {
+            color: aqua;
+        }
+
+        #img01 {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+        }
+
+        #img02 {
+            float: right;
+            width: 100px;
+            height: 100px;
+        }
+        p {
+            color: brown;
+            width: 200px;
+            height: 30px;
+        }
+
+        #p1 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 80px;
+            left: 80px;
+            border: 1px solid;
+        }
+
+        #test {
+            background-color: beige;
+            width: 120px;
+            height: 100px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .bgblue {
+            background-color: blue;
+        }
+
+        .box {
+            border: 1px solid;
+            width: 300px;
+            margin: 10px;
+        }
+
+        #p01 {
+            border-width: 10px;
+            border-color: aqua;
+            border-style: none;
+        }
+
+        #p02 {
+            border-width: 15px;
+            border-color: red;
+            border-style: dashed;
+        }
+
+        #p03 {
+            border-width: 20px;
+            border-color: pink;
+            border-style: dotted;
+        }
+
+        #p04 {
+            border-width: 25px;
+            border-color: black;
+            border-style: solid;
+        }
+
+        #p05 {
+            border-width: 30px;
+            border-color: purple;
+            border-style: double;
+        }
+
+        .style01 {
+            margin: 20px;
+            font-size: 1em;
+        }
+
+        .style02 {
+            margin: 10px 50px;
+            font: 16px;
+        }
+
+        .style03 {
+            margin-left: 100px;
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <!--内联样式表-->
+    <!--优先级：内联>内部>外部-->
+    <h3 style="color: blue;">内联样式表</h3>
+    <p>内部样式表可以批量改变元素样式</p>
+    <p id="test">ID选择器的使用</p>
+    <p class="red bgblue">类选择器的使用</p>
+    <h1>我的样式由外部决定</h1>
+    <hr>
+    <h1>我的样式由外部决定</h1>
+    <p id="p01">边框效果一</p>
+    <p id="p02">边框效果二</p>
+    <p id="p03">边框效果三</p>
+    <p id="p04">边框效果四</p>
+    <p id="p05">边框效果五</p>
+    <div class="box">
+        <div class="style01 bgblue">
+            该段落的各外边距为20像素
+        </div>
+        <div class="style02 bgblue">
+            该段落的上下外边距为10像素，左右外边距是20像素
+        </div>
+        <div class="style03 bgblue">
+            该段落的左外边距为100像素
+        </div>
+    </div>
+    <h3>CSS绝对定位的应用</h3>
+    <hr>
+    <p>该段落是相对于页面定位的，距离页面的顶端100像素，距离左边0像素</p>
+    <hr>
+    <hr>
+    <hr>
+    <div id="test">
+        <p class="p1">相对定位：相对于自己原来的位置，偏移一些距离</p>
+        <p class="p2">相对定位,相对的是自己</p>
+    </div>
+
+    <div id="test2">
+        <p class="p3">绝对定位：相对于自己父元素的位置，偏移一些距离</p>
+        <p class="p4">绝对定位,相对的是父元素</p>
+    </div>
+    <!--z-index的应用-->
+    <h1>This is a heading</h1>
+    <div>
+        <img id="img01" src="HTML背景.png" />
+        <p>由于图像的 z-index 是 -1，因此它在文本的后面出现。</p>
+    </div>
+    <p>
+        <img  id = "img02" src="boat.jpg" />
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        This is some text. This is some text. This is some text.
+        </p>
+</body>
+
+</html>
