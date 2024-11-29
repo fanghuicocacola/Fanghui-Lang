@@ -1,0 +1,81 @@
+﻿  BalanceStack.cpp
+  Count.cpp
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(29,12): warning C4018:  “>”: 有符号/无符号不匹配
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(105,18): warning C4018:  “<”: 有符号/无符号不匹配
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(101,7): warning C4101:  “lastChar”: 未引用的局部变量
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(157,16): warning C4018:  “<”: 有符号/无符号不匹配
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(153,7): warning C4101:  “lastChar”: 未引用的局部变量
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(205,15): warning C4018:  “<”: 有符号/无符号不匹配
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(313,13): warning C4244:  “初始化”: 从“float”转换到“int”，可能丢失数据
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\simple_algorithm.h(24,9): warning C4553:  “==”: 未使用表达式结果；是否打算使用“=”?
+  equation.cpp
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(317): message :  查看对正在编译的函数 模板 实例化“T Htto::SimpleAlgorithm::Pow<Htto::Fraction>(const T &,int)”的引用
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(317): message :         with
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(317): message :         [
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(317): message :             T=Htto::Fraction
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\Count.cpp(317): message :         ]
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\equation.cpp(21,20): warning C4018:  “<”: 有符号/无符号不匹配
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\equation.cpp(23,26): warning C4244:  “参数”: 从“float”转换到“const unsigned int”，可能丢失数据
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\equation.cpp(36,20): warning C4018:  “<”: 有符号/无符号不匹配
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\equation.cpp(38,26): warning C4244:  “参数”: 从“float”转换到“const unsigned int”，可能丢失数据
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\simple_algorithm.h(24,9): warning C4553:  “==”: 未使用表达式结果；是否打算使用“=”?
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(159): message :  查看对正在编译的函数 模板 实例化“T Htto::SimpleAlgorithm::Pow<T>(const T &,int)”的引用
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(159): message :         with
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(159): message :         [
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(159): message :             T=Htto::Rational_fraction
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(159): message :         ]
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(104): message :  在编译 类 模板 成员函数“T Htto::Count::UniversalCount<T>::Count(void)”时
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(104): message :         with
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(104): message :         [
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(104): message :             T=Htto::Rational_fraction
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(104): message :         ]
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\equation.cpp(177): message :  查看对正在编译的函数 模板 实例化“T Htto::Count::UniversalCount<T>::Count(void)”的引用
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\equation.cpp(177): message :         with
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\equation.cpp(177): message :         [
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\equation.cpp(177): message :             T=Htto::Rational_fraction
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\equation.cpp(177): message :         ]
+  factorization.cpp
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\equation.cpp(175): message :  查看对正在编译的 类 模板 实例化“Htto::Count::UniversalCount<Htto::Rational_fraction>”的引用
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\factorization.cpp(120,65): warning C4244:  “参数”: 从“float”转换到“int”，可能丢失数据
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\factorization.cpp(120,56): warning C4244:  “参数”: 从“float”转换到“int”，可能丢失数据
+  fraction.cpp
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\factorization.cpp(120,53): warning C4244:  “参数”: 从“int”转换到“float”，可能丢失数据
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\fraction.cpp(406,18): warning C4244:  “return”: 从“double”转换到“float”，可能丢失数据
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\fraction.cpp(646,12): warning C4244:  “初始化”: 从“float”转换到“int”，可能丢失数据
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\fraction.cpp(661,12): warning C4244:  “=”: 从“float”转换到“int”，可能丢失数据
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\fraction.cpp(702,11): warning C4244:  “初始化”: 从“float”转换到“int”，可能丢失数据
+  main.cpp
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\fraction.cpp(717,11): warning C4244:  “=”: 从“float”转换到“int”，可能丢失数据
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\simple_algorithm.h(24,9): warning C4553:  “==”: 未使用表达式结果；是否打算使用“=”?
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(159): message :  查看对正在编译的函数 模板 实例化“T Htto::SimpleAlgorithm::Pow<T>(const T &,int)”的引用
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(159): message :         with
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(159): message :         [
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(159): message :             T=Htto::Polynomial
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(159): message :         ]
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(104): message :  在编译 类 模板 成员函数“T Htto::Count::UniversalCount<T>::Count(void)”时
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(104): message :         with
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(104): message :         [
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(104): message :             T=Htto::Polynomial
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Count.h(104): message :         ]
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Examples\polynomial_counter.h(25): message :  查看对正在编译的函数 模板 实例化“T Htto::Count::UniversalCount<T>::Count(void)”的引用
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Examples\polynomial_counter.h(25): message :         with
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Examples\polynomial_counter.h(25): message :         [
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Examples\polynomial_counter.h(25): message :             T=Htto::Polynomial
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Examples\polynomial_counter.h(25): message :         ]
+  monomial.cpp
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\Examples\polynomial_counter.h(11): message :  查看对正在编译的 类 模板 实例化“Htto::Count::UniversalCount<Htto::Polynomial>”的引用
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\simple_algorithm.h(24,9): warning C4553:  “==”: 未使用表达式结果；是否打算使用“=”?
+  polynomial.cpp
+  rational_fraction.cpp
+  simple_algorithm.cpp
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\monomial.cpp(309): message :  查看对正在编译的函数 模板 实例化“T Htto::SimpleAlgorithm::Pow<_Ty2>(const T &,int)”的引用
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\monomial.cpp(309): message :         with
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\monomial.cpp(309): message :         [
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\monomial.cpp(309): message :             T=Htto::Fraction,
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\monomial.cpp(309): message :             _Ty2=Htto::Fraction
+D:\My Projects\HTTO\数学计算器\数学计算器\Base\CPP\monomial.cpp(309): message :         ]
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 1063 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  数学计算器.vcxproj -> D:\My Projects\HTTO\数学计算器\Release\数学计算器.exe
