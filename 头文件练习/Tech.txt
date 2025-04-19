@@ -1,7 +1,0 @@
-[expr: [term: 1] +   [term: 2*3]] 
-expr();
-(1 1 +)
-
-Term + Term
-str str2
-(+ str str2)

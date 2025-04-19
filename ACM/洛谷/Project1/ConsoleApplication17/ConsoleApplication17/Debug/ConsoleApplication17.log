@@ -1,6 +1,0 @@
-﻿  ConsoleApplication17.cpp
-C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication17\ConsoleApplication17\ConsoleApplication17.cpp(7,17): warning C4473: “scanf_s”: 没有为格式字符串传递足够的参数
-C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication17\ConsoleApplication17\ConsoleApplication17.cpp(7,17): message : 占位符和其参数预计 2 可变参数，但提供的却是 1 参数
-C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication17\ConsoleApplication17\ConsoleApplication17.cpp(7,17): message : 缺失的可变参数 2 为格式字符串“%c”所需
-C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication17\ConsoleApplication17\ConsoleApplication17.cpp(7,17): message : 此参数用作缓冲区大小
-  ConsoleApplication17.vcxproj -> C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication17\Debug\ConsoleApplication17.exe

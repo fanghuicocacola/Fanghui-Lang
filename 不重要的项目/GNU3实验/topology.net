@@ -1,9 +1,0 @@
-autostart = False
-version = 0.8.6
-[GNS3-DATA]
-    configs = configs
-    [[Cloud C3]]
-        symbol = Host
-        x = -494.5
-        y = 83.5
-        z = 1.0

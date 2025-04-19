@@ -1,6 +1,0 @@
-t1 = float(input('t1='))
-t2 = float(input('t2='))
-t3 = float(input('t3='))
-t4 = float(input('t4='))
-t5 = float(input('t5='))
-print((t1+t2+t3+t4+t5)/5)

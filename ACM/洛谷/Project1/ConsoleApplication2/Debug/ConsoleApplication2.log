@@ -1,5 +1,0 @@
-﻿  ConsoleApplication2.cpp
-C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication2\ConsoleApplication2.cpp(7,21): warning C4305: “初始化”: 从“double”到“float”截断
-C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication2\ConsoleApplication2.cpp(8,21): warning C4305: “初始化”: 从“double”到“float”截断
-C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication2\ConsoleApplication2.cpp(9,21): warning C4305: “初始化”: 从“double”到“float”截断
-  ConsoleApplication2.vcxproj -> C:\Users\黑白灰\source\repos\洛谷\Project1\ConsoleApplication2\Debug\ConsoleApplication2.exe
