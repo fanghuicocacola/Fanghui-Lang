@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+	<head>
+		<meta charset="utf-8">
+		<title>宝贝列表</title>
+		<meta content="校园共享平台" name="author">
+		<meta content="青山一道队" name="description">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="format-detection" content="telephone=no">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<link rel="manifest" href="assets/img/favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+		<link rel="stylesheet" href="assets/css/uikit.min.css">
+		<link rel="stylesheet" href="assets/css/all.min.css">
+		<link rel="stylesheet" href="assets/css/simple-line-icons.css">
+		<link rel="stylesheet" href="assets/css/main.css">
+	</head>
+
+	<body class="page-home">
+		<div class="page-wrapper">
+			<header class="page-header page-header--transparent">
+				<div class="page-header__scroll" data-uk-sticky="top: 100vh">
+					<div class="uk-container uk-container-xlarge">
+						<div class="page-header__inner">
+							<div class="page-header__left">
+								<div class="page-header__logo logo"><a class="logo__link" href="index.html"><img
+											class="logo__img" src="assets/img/logo.png" alt="ahstu"></a></div>
+							</div>
+							<div class="page-header__right">
+								<div class="page-header__mainmenu">
+									<nav class="mainmenu" data-uk-navbar="">
+										<ul class="uk-navbar-nav">
+											<li><a href="index.html">刷新<span class="uk-icon"
+														data-uk-icon="chevron-down"></span></a>
+												<div class="uk-navbar-dropdown">
+													<ul class="uk-nav uk-navbar-dropdown-nav">
+														<li><a href="index.html">刷新</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="page-item-listing.html">查看<span class="uk-icon"
+														data-uk-icon="chevron-down"></span></a>
+												<div class="uk-navbar-dropdown">
+													<ul class="uk-nav uk-navbar-dropdown-nav">
+														<li><a href="page-item-listing.html">全部宝贝</a></li>
+													</ul>
+												</div>
+											</li>
+											<li><a href="page-blog-grid.html">其他<span class="uk-icon"
+														data-uk-icon="chevron-down"></span></a>
+												<div class="uk-navbar-dropdown">
+													<ul class="uk-nav uk-navbar-dropdown-nav">
+														<li><a href="page-blog-article.html">每日安科</a></li>
+														<li><a href="page-contacts.html">联系我们</a></li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</nav>
+								</div>
+								<div class="page-header__sing-in"><a class="sing-in" href="login-register.html"> <i
+											class="fas fa-sign-in-alt"></i><span>登录/注册</span></a></div>
+								<div class="page-header__btn"> <a class="uk-button uk-button-primary"
+										href="page-item-listing.html"> <span
+											data-uk-icon="plus"></span><span>加入/查看宝贝</span></a></div>
+								<div class="page-header__lang"><select class="select-lang uk-select" data-width="fit">
+										<option value="简中">简中</option>
+										<option value="繁中">繁中</option>
+									</select></div>
+								<div class="page-header__btn-menu"><a href="#offcanvas" data-uk-toggle
+										data-uk-icon="menu"></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="page-main">
+				<div class="section-banner section-banner--item">
+					<div class="section-banner__bg" style="background-image: url(assets/img/bg-banner-items.jpg)">
+						<div class="uk-container uk-text-center">
+							<div class="section-banner__content">
+								<div class="section-banner__breadcrumb">
+									<ul class="uk-breadcrumb">
+									</ul>
+								</div>
+								<div>。</div>
+								<div class="section-banner__form">
+									<form action="#!">
+										<div class="form-search">
+											<div class="form-search__box"> <input type="text"
+													placeholder="在这里输入关键字"><button class="uk-button uk-button-danger"
+													type="submit">SEARCH</button></div>
+										</div>
+									</form>
+								</div>
+								<div class="section-banner__bottom">
+									<div class="popular-searches"><span
+											class="uk-margin-small-right uk-margin-small-bottom">快捷列表</span>
+										<div class="uk-grid uk-grid-small uk-child-width-auto uk-grid-divider uk-flex-center uk-margin-small-bottom"
+											data-uk-grid>
+											<div><a href="#!">数码产品</a></div>
+											<div><a href="#!">代步车专区</a></div>
+											<div><a href="#!">学习资料专区</a></div>
+											<div><a href="#!">衣物专区</a></div>
+											<div><a href="#!">运动产品专区</a></div>
+											<div><a href="#!">生活用品专区</a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="page-content">
+					<div class="uk-section-large uk-container">
+						<div class="uk-h2">
+							<div class="uk-flex uk-flex-middle"><img class="uk-margin-small-right"
+									src="assets/img/ico-photo.png" alt=""><span>部分宝贝展示</span></div>
+						</div>
+						<p><br>图片仅供参考</p>
+						<div class="uk-grid uk-grid-medium uk-child-width-1-3@m uk-child-width-1-2@s uk-margin-medium-top"
+							data-uk-grid>
+							<div>
+								<div class="rent-item">
+									<div class="rent-item__box">
+										<div class="rent-item__media"><a href="page-single-item.html"><img
+													src="assets/img/rent-item-1.jpg" alt="Canon 5D - MK III" /></a>
+										</div>
+										<div class="rent-item__body">
+											<div class="rent-item__title"> <a href="page-single-item.html">Canon 5D - MK
+													III</a></div>
+											<div class="rent-item__intro">9成新，箱说齐全</div>
+											<div class="rent-item__intro">大二男：1312345678</div>
+											<div class="rent-item__price">租赁 <b>￥45/天</b></div>
+											<div class="rent-item__price">购买 <b>￥8799</b></div>
+											<div class="rent-item__rating">
+												<div class="rent-item__stars">
+													<ul>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+													</ul>
+												</div>
+												<div class="rent-item__reviews">(16人 已评价)</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="rent-item">
+									<div class="rent-item__box">
+										<div class="rent-item__media"><a href="page-single-item.html"><img
+													src="assets/img/rent-item-5.jpg" alt="大疆air2s" /></a></div>
+										<div class="rent-item__body">
+											<div class="rent-item__title"> <a href="page-single-item.html">大疆
+													air2s</a></div>
+											<div class="rent-item__intro">考研了，不玩了，只卖不租，可小刀</div>
+											<div class="rent-item__intro">大四女：1912345678</div>
+											<div class="rent-item__price">购买 <b>￥6999</b></div>
+											<div class="rent-item__rating">
+												<div class="rent-item__stars">
+													<ul>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+													</ul>
+												</div>
+												<div class="rent-item__reviews">(0 已评价)</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="rent-item">
+									<div class="rent-item__box">
+										<div class="rent-item__media"><a href="page-single-item.html"><img
+													src="assets/img/rent-item-3.jpg" alt="捷安特MTX20" /></a></div>
+										<div class="rent-item__body">
+											<div class="rent-item__title"> <a href="page-single-item.html">捷安特MTX20</a>
+											</div>
+											<div class="rent-item__intro">18年购入，正常使用</div>
+											<div class="rent-item__intro">大三男：1712345678</div>
+											<div class="rent-item__price">租赁 <b>￥45/天</b></div>
+											<div class="rent-item__price">购买 <b>￥6499</b></div>
+											<div class="rent-item__rating">
+												<div class="rent-item__stars">
+													<ul>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+													</ul>
+												</div>
+												<div class="rent-item__reviews">(205 Reviews)</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="rent-item">
+									<div class="rent-item__box">
+										<div class="rent-item__media"><a href="page-single-item.html"><img
+													src="assets/img/rent-item-10.jpg" alt="李宁卫衣" /></a>
+										</div>
+										<div class="rent-item__body">
+											<div class="rent-item__title"> <a href="page-single-item.html">中国李宁卫衣xl码</a>
+											</div>
+											<div class="rent-item__intro">上个月前买的，没穿机会，不太喜欢，便宜出，可小刀</div>
+											<div class="rent-item__intro">大三男：1512345678</div>
+											<div class="rent-item__price">购买 <b>￥249</b></div>
+											<div class="rent-item__rating">
+												<div class="rent-item__stars">
+													<ul>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+													</ul>
+												</div>
+												<div class="rent-item__reviews">(0 已评价)</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="rent-item">
+									<div class="rent-item__box">
+										<div class="rent-item__media"><a href="page-single-item.html"><img
+													src="assets/img/rent-item-11.jpg" alt="报喜鸟西装xl码" /></a></div>
+										<div class="rent-item__body">
+											<div class="rent-item__title"> <a href="page-single-item.html">报喜鸟西装xl码</a>
+											</div>
+											<div class="rent-item__intro">长期短租各类男女西装</div>
+											<div class="rent-item__intro">众创空间三楼999号：1912345678</div>
+											<div class="rent-item__price">租赁 <b>￥38/天</b></div>
+											<div class="rent-item__rating">
+												<div class="rent-item__stars">
+													<ul>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+													</ul>
+												</div>
+												<div class="rent-item__reviews">(21 已评价)</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="rent-item">
+									<div class="rent-item__box">
+										<div class="rent-item__media"><a href="page-single-item.html"><img
+													src="assets/img/rent-item-12.jpg" alt="5kg哑铃x2" /></a></div>
+										<div class="rent-item__body">
+											<div class="rent-item__title"> <a href="page-single-item.html">5kg哑铃x2</a>
+											</div>
+											<div class="rent-item__intro">哑铃太占地方了。出了</div>
+											<div class="rent-item__intro">大二男：1812345678</div>
+											<div class="rent-item__price">购买 <b>￥50</b></div>
+											<div class="rent-item__rating">
+												<div class="rent-item__stars">
+													<ul>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+													</ul>
+												</div>
+												<div class="rent-item__reviews">(0 已评价)</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="rent-item">
+									<div class="rent-item__box">
+										<div class="rent-item__media"><a href="page-single-item.html"><img
+													src="assets/img/rent-item-13.jpg" alt="超能洗衣液2kgx8" /></a>
+										</div>
+										<div class="rent-item__body">
+											<div class="rent-item__title"> <a
+													href="page-single-item.html">超能洗衣液2kgx8</a></div>
+											<div class="rent-item__intro">薅羊毛（或许）买了十几袋洗衣服，当然是低价卖给姐妹们啦（用不掉）</div>
+											<div class="rent-item__intro">大一女：1812345678</div>
+											<div class="rent-item__price">购买 <b>￥10/袋</b></div>
+											<div class="rent-item__rating">
+												<div class="rent-item__stars">
+													<ul>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+													</ul>
+												</div>
+												<div class="rent-item__reviews">(3 已评价)</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="rent-item">
+									<div class="rent-item__box">
+										<div class="rent-item__media"><a href="page-single-item.html"><img
+													src="assets/img/rent-item-14.jpg" alt="CFA二级资料" /></a></div>
+										<div class="rent-item__body">
+											<div class="rent-item__title"> <a href="page-single-item.html">CFA二级资料</a>
+											</div>
+											<div class="rent-item__intro">因为已经过了，送给大家交个朋友</div>
+											<div class="rent-item__intro">大三女：1112345678</div>
+											<div class="rent-item__price">购买 <b>￥0</b></div>
+											<div class="rent-item__rating">
+												<div class="rent-item__stars">
+													<ul>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+													</ul>
+												</div>
+												<div class="rent-item__reviews">(0 已评价)</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="rent-item">
+									<div class="rent-item__box">
+										<div class="rent-item__media"><a href="page-single-item.html"><img
+													src="assets/img/rent-item-15.jpg" alt="李宁韦德之道" /></a>
+										</div>
+										<div class="rent-item__body">
+											<div class="rent-item__title"> <a href="page-single-item.html">李宁韦德之道</a>
+											</div>
+											<div class="rent-item__intro">脚感炸裂，奈何外观我不太能hold住，欢迎购买和试穿</div>
+											<div class="rent-item__intro">大三男：1212345678</div>
+											<div class="rent-item__price">购买 <b>￥599</b></div>
+											<div class="rent-item__rating">
+												<div class="rent-item__stars">
+													<ul>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+														<li><i class="far fa-star"></i></li>
+													</ul>
+												</div>
+												<div class="rent-item__reviews">(205 已评价)</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="uk-margin-large-top uk-text-center"><a class="uk-button uk-button-danger"
+								href="#!">加载更多</a></div>
+					</div>
+				</div>
+			</main>
+			<footer class="page-footer">
+				<div class="page-footer__top">
+					<div class="uk-container">
+						<div class="uk-grid" data-uk-grid>
+							<div class="uk-width-1-3@m uk-width-1-2@s">
+								<div class="logo"><a class="logo__link" href="index.html"><img class="logo__img"
+											src="assets/img/logo.png" alt="ahstu"></a></div>
+								<p>项目初期，暂无盈利，资助我们可以为我们的项目带来发展！</p>
+								<ul class="uk-list">
+									<li> <span>Email: </span><a href="mailto:support@domain.com">support@domain.com</a>
+									</li>
+									<li> <span>Phone: </span><a href="tel:1312345678">1312345678</a></li>
+								</ul>
+							</div>
+							<div class="uk-width-1-3@m uk-width-1-2@s uk-flex-last@m">
+								<h3 class="uk-h3">欢迎加入我们的项目！</h3>
+								<p>一起开发更多激动人心的功能</p>
+								<h3 class="uk-h3">联系我们（微信）</h3>
+								<ul>
+									<li><img src="assets/img/wechat.jpg" width="120px" height="120px" alt="加微信好友"></li>
+								</ul>
+							</div>
+							<div class="uk-width-1-3@m uk-visible@s">
+								<div class="uk-grid uk-grid-small uk-child-width-1-2@s" data-uk-grid>
+									<div>
+										<h3 class="uk-h3">其他信息</h3>
+										<ul class="uk-nav uk-nav-default">
+											<li> <a href="page-typography.html">公司名称</a></li>
+											<li> <a href="page-typography.html">微博</a></li>
+											<li> <a href="page-typography.html">技术支持</a></li>
+											<li> <a href="page-typography.html">开发经历</a></li>
+											<li> <a href="page-typography.html">赞助商</a></li>
+										</ul>
+									</div>
+									<div>
+										<h3 class="uk-h3">如下</h3>
+										<ul class="uk-nav uk-nav-default">
+											<li> <a href="#!"> ******</a></li>
+											<li> <a href="#!"> ******</a></li>
+											<li> <a href="#!"> ******</a></li>
+											<li> <a href="#!"> ******</a></li>
+											<li> <a href="#!"> ******</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="page-footer__bottom">
+					<div class="uk-container"><span>© 2020 青山一道 - 校园共享平台. All rights By 青山一道</span></div>
+				</div>
+			</footer>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/uikit.min.js"></script>
+		<script src="assets/js/uikit-icons.min.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

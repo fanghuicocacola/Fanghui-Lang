@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>注册</title>
+	<base href="/OnlineExam/" />
+	<link rel="stylesheet" href="css/user/register.css" />
+</head>
+
+<body background="imgs/accountcover.jpg">
+    <div id="register_right">
+        <p>已有账号？<a href="pages/user/login.html">立即登录</a></p>
+		<p>忘记密码？<a href="pages/user/forget.html">立即找回</a></p>
+    </div>
+	<div class="container">
+		<div id="register-root-div">
+			<img id="img-register-icon" alt="" src="imgs/student.jpg">
+			<!-- 提示文字 -->
+			<div id="tip-text-root-div">
+				<p class="text-large">欢迎注册</p>
+				<p>请输入你的个人信息</p>
+			</div>
+			<!-- 输入内容 -->
+			<div id="input-root-div">
+				<form id= "postForm" method="POST">
+				<!-- 用户名 -->
+				<p>用户名：<input type="text" id = "1" name = "username" placeholder="6-16位小写字母或数字"></p>
+				<!-- Password -->
+				<p>输入密码：<input type="password" id = "2" name = "password" placeholder="6-16位数字或字母"></p>
+				<div style="background-color: #b92c28;" class="plex" hidden>弱密码，长度不够</div>
+				<div style="background-color: #28a4c9;" class="plex" hidden>再复杂一点！字母和数字的组合</div>
+				<div style="background-color: #4cae4c;" class="plex" hidden>强密码！安全性高</div>
+                <p>再次输入：<input type="password" id = "3" placeholder="6-16位数字或字母"></p>
+                <!-- Email -->
+                <p>输入邮箱：<input type="email" id = "4" name = "email" placeholder="someone@example.com"></p>
+                <!-- Address -->
+                <p>输入地址：<input type="address" id = "5" name = "address" placeholder="xx省xx市xx村/小区..."></p>
+			</div>
+			<input id="register-btn" type="submit" value = "注册">
+		</form>
+			<!-- login result -->
+			<div id="register-result-div">
+				<span></span>
+			</div>
+		</div>
+        
+	</div>
+
+	<script type="text/javascript" src="js/base/finals.js"></script>
+	<script type="text/javascript" src="js/base/utils.js"></script>
+	<script type="text/javascript" src="js/user/register.js"></script>
+</body>
+
+</html>

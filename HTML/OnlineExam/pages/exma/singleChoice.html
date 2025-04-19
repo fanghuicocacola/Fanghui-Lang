@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>单选题</title>
+    <base href="/OnlineExam/" />
+    <link rel="stylesheet" href="css/exma/singleChoice.css" />
+</head>
+
+<body>
+    <div id="singleChoice-page-container">
+        <h2>单选题</h2>
+        <span id="timeDown-span"></span>
+        <div id="singleChoice-questions-div">
+            <table id="singleChoice-questions-table">
+                <!-- 浏览器自动添加 tbody-->
+                <tbody>
+                    <!-- <tr>
+                        <td>
+                            <span>1.题目</span><br>
+                            <span>A.</span><br>
+                            <span>B.</span><br>
+                            <span>C.</span><br>
+                            <span>D.</span>
+                        </td>
+                        <td class="td-answer">
+                            <input type="text">
+                        </td>
+                    </tr> -->
+                </tbody>
+
+                <!-- 不能直接放div,应该放tr和td。
+                     tfoot放置div或者tr放置div会跑到table之外 -->
+                <!-- <tfoot>
+                </tfoot> -->
+            </table>
+            <div id="footer">
+                <span>共10页，当前是第 1 页</span>
+                <div>
+                    <span>上一页</span>
+                    <span>下一页</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/exma/singleChoice.js"></script>
+</body>
+
+</html>

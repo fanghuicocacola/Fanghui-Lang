@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/Database.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/LoginIn.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/Tianjiadialog.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/account.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/atm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/java/dao/AdminDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/java/frame/AddBookInterface.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/java/model/Admin.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/repassworld.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/test666.java" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

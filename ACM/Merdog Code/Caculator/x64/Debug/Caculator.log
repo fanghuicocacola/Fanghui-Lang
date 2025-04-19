@@ -1,0 +1,5 @@
+﻿  main.c
+C:\Users\黑白灰\Documents\GitHub\Fanghui-Lang\src\main.c(18,7): warning C4013: “input”未定义；假设外部返回 int
+  parser.c
+  正在生成代码...
+  Caculator.vcxproj -> D:\My Projects\Merdog Code\Caculator\x64\Debug\Caculator.exe

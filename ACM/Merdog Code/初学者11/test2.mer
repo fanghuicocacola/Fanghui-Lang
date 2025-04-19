@@ -1,0 +1,10 @@
+function real sum()
+{
+real a=std.input_real();
+real b=std.input_real();
+return a+b;
+}
+program main
+{
+    std.cout(sum());
+}

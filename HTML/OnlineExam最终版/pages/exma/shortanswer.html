@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>简答题</title>
+    <base href="/OnlineExam/" />
+    <link rel="stylesheet" href="css/exma/shortanswer.css" />
+</head>
+
+<body>
+    <div id="shortanswer-page-container">
+        <h2>简答题</h2>
+        <span id="timeDown-span"></span>
+        <div id="shortanswer-questions-div">
+            <table id="shortanswer-questions-table">
+                <!-- 浏览器自动添加 tbody-->
+                <tbody>
+                
+                </tbody>
+
+                <!-- 不能直接放div,应该放tr和td。
+                     tfoot放置div或者tr放置div会跑到table之外 -->
+                <!-- <tfoot>
+                </tfoot> -->
+            </table>
+            <div id="footer">
+                <span>共10页，当前是第 1 页</span>
+                <div>
+                    <span>上一页</span>
+                    <span>下一页</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/exam/shortanswer.js"></script>
+</body>
+
+</html>

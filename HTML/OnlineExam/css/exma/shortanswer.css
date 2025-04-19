@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+html, body {
+    /*嵌套页面设置,防止内部滚动条*/
+    min-height: 100%;
+    margin: 0px;
+    font-size: 16px;
+    overflow: hidden;
+    background-color: #edf1f5;
+}
+
+
+/* 单选题容器 */
+#short-answer-page-container {
+    min-height: 600px;
+    padding: 20px;
+}
+
+h2 {
+    margin: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+}
+
+#timeDown-span{
+    float: right;
+}
+
+/* 题目内容 */
+#shortanswer-questions-div {
+    background-color: white;
+    width: auto;
+    min-height: 400px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* 
+* 题目表格 
+* width:auto，会自适应子元素。
+* 如果子元素width:100%,且父元素有padding,auto会保证子元素不超出边界。
+* 否则，父子元素都是width:100%会超出边界。
+*/
+#shortanswer-questions-table {
+    table-layout: fixed;
+    /* display: block;不能混用 */
+    width: 100%;
+    min-height: max-content;
+    color: #6c757d;
+    font-size: 18px;
+}
+
+#shortanswer-questions-table tbody tr td {
+    padding-bottom: 10px;
+}
+
+#shortanswer-questions-table tbody tr td:nth-child(1) {
+    word-wrap: break-word;
+    vertical-align: top;
+    width: 90%;
+}
+
+#shortanswer-questions-table tbody tr td:last-child {
+    width: 10%;
+    vertical-align: top;
+}
+
+#shortanswer-questions-table tbody tr span:last-child {
+    margin-bottom: 20px;
+}
+
+.td-answer input {
+    width: 80px;
+    height: 20px;
+    text-align: center;
+}
+
+#shortanswer-questions-table tbody tr span:first-of-type {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* 分页工具 */
+#footer {
+    display: block;
+    margin-top: 20px;
+    height: 30px;
+    color: #6c757d;
+}
+
+#footer>div {
+    float: right;
+}
+
+#footer>div span {
+    text-align: center;
+    width: 80px;
+    border-color: #6c757d;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+    user-select: none;
+}
+
+#footer>div span:hover {
+    background-color: #009efb;
+}

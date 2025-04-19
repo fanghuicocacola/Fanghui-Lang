@@ -1,0 +1,16 @@
+member=["on my god","jar jar blice","gogogo","良心"]
+member.append("happy again")
+member.extend(["哥斯拉","格瓦斯"])
+member.insert(0,"big holo")
+print(len(member))
+del member[1]
+member.pop(1)
+member.remove("big holo")
+print(len(member))
+print(member[:])
+print(member[1:])
+print(member[2:])
+print(member[3:])
+print(member[4:])
+print(member[4:4])
+print(member[0:1])

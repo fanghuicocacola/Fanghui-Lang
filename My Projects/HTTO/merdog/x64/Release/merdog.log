@@ -1,0 +1,226 @@
+﻿  block.cpp
+  compound_box.cpp
+D:\My Projects\Code\Merdog-master\merdog\source\block.cpp(21,13): warning C4267:  “=”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  environment.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  error.cpp
+  expr.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+D:\My Projects\Code\Merdog-master\merdog\source\expr.cpp(254,9): warning C4101:  “type_c”: 未引用的局部变量
+D:\My Projects\Code\Merdog-master\merdog\source\expr.cpp(325,38): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  function.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+D:\My Projects\Code\Merdog-master\merdog\source\function.cpp(205,13): warning C4267:  “=”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  if.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  lexer.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+  loop_statement.cpp
+D:\My Projects\Code\Merdog-master\merdog\source\lexer.cpp(366,16): warning C4553:  “==”: 未使用表达式结果；是否打算使用“=”?
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  main.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  maths.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+D:\My Projects\Code\Merdog-master\merdog\source\maths.cpp(11,26): warning C4244:  “参数”: 从“double”转换到“float”，可能丢失数据
+D:\My Projects\Code\Merdog-master\merdog\source\maths.cpp(11,23): warning C4244:  “参数”: 从“double”转换到“float”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  memory.cpp
+  merdog_io.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  namespace.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  object.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1527,71): warning C4244:  “参数”: 从“double”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<double&>(double &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<double&>(double &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  parser.cpp
+D:\My Projects\Code\Merdog-master\merdog\source\object.cpp(135): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,double&>(double &)”的引用
+D:\My Projects\Code\Merdog-master\merdog\source\parser.cpp(329,40): warning C4267:  “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\My Projects\Code\Merdog-master\merdog\source\parser.cpp(343,28): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  sys_class.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  type.cpp
+  value.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+  word_record.cpp
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1526,1): warning C4267:  “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1581): message :         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :  查看对正在编译的函数 模板 实例化“std::_Ref_count_obj<_Ty>::_Ref_count_obj<size_t&>(size_t &)”的引用
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         with
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         [
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :             _Ty=Mer::Mem::Int
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\memory(1582): message :         ]
+D:\My Projects\Code\Merdog-master\merdog\include\expr.hpp(25): message :  查看对正在编译的函数 模板 实例化“std::shared_ptr<Mer::Mem::Int> std::make_shared<Mer::Mem::Int,size_t&>(size_t &)”的引用
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 3474 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  merdog.vcxproj -> D:\My Projects\HTTO\merdog\x64\Release\merdog.exe

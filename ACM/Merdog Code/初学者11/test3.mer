@@ -1,0 +1,14 @@
+function int sum()
+{
+    int i=0;
+    int f=std.input_int();
+for(int r=1;r<=f;r+=2)
+{
+    i=i+r;
+}
+    return i;
+}
+program main
+{
+    std.cout(sum());
+}

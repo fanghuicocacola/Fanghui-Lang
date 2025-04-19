@@ -1,0 +1,15 @@
+program main
+{
+    int i=0;
+    int sum=0;
+    while (true)
+    {
+        i+=1;
+        sum+=i;
+        if(i==100)
+        {
+            break;
+        }
+    }
+    std.cout(sum);
+}

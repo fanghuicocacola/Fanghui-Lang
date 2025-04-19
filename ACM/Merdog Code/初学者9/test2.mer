@@ -1,0 +1,10 @@
+program main 
+{
+    int v1=1,sum=1;
+    while(v1<15)
+    {
+        v1+=2;
+        sum=v1+sum;
+    }
+    std.cout(sum);
+}

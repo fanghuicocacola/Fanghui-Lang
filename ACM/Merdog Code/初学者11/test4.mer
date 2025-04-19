@@ -1,0 +1,5 @@
+function int sum(int i)
+{
+int i=std.input_int();
+
+}
